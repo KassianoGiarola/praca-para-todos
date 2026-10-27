@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/diretrizes.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <title>Diretrizes de Acessibilidade | Praça para Todos</title>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/icons/logo.svg"
+                    alt=""
+                    class="logo-icone"
+                    width="36"
+                    height="36"
+                >
+                <span>Praça para Todos</span>
+            </a>
+
+            <button
+            class="botao-menu"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menu-principal">
+        
+            <!-- Ícone de abrir -->
+            <svg class="icone-menu icone-abrir"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true">
+            
+                <path d="M2 7h16"/>
+                <path d="M2 13h10"/>
+            </svg>
+        
+            <!-- Ícone de fechar -->
+            <svg class="icone-menu icone-fechar"
+                 viewBox="0 0 20 20"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 aria-hidden="true">
+                
+                 <path d="M5 5L15 15"/>
+                 <path d="M15 5L5 15"/>
+            </svg>
+        </button>
+
+            <nav id="menu-principal" aria-label="Navegação Principal">
+                <ul class="menu">
+                    <li><a href=index.html>Início</a></li>
+                    <li><a href=sobre.html>Sobre</a></li>
+                    <li><a href=diretrizes.html>Diretrizes</a></li>
+                    <li><a href=biblioteca.html>Biblioteca</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+
+
+    <main>
+
+        <!-- ==========================================
+            Seção: Diretrizes início
+        ========================================== -->
+
+        <section class="diretrizes-introducao"
+                aria-labelledby="titulo-diretrizes">
+
+            <div class="container">
+
+                <span class="diretrizes-etiqueta">
+                    ACESSIBILIDADE EM ESPAÇOS PÚBLICOS
+                </span>
+
+                <h1 id="titulo-diretrizes">
+                    Diretrizes de Acessibilidade
+                </h1>
+
+                <p class="diretrizes-destaque">
+                    Orientações para o planejamento e a melhoria
+                    de praças públicas, promovendo espaços mais
+                    acessíveis, seguros e inclusivos.
+                </p>
+
+                <p class="diretrizes-descricao">
+                    As diretrizes de acessibilidade são orientações
+                    que ajudam a identificar e reduzir barreiras
+                    nos espaços públicos. Elas consideram aspectos
+                    como circulação, mobiliário, sinalização,
+                    áreas de lazer e utilização dos ambientes.
+                </p>
+
+                <p class="diretrizes-descricao">
+                    O objetivo é contribuir para que pessoas com
+                    diferentes características e necessidades
+                    possam utilizar as praças com mais autonomia,
+                    conforto e segurança.
+                </p>
+
+            </div>
+
+        </section>
+
+        
+        <!-- ==========================================
+            Seção: áreas de acessibilidade
+        ========================================== -->
+
+        <section class="diretrizes-areas" aria-labelledby="titulo-areas">
+            <div class="container">
+
+                <div class="areas-cabecalho">
+                    <h2 id="titulo-areas">Áreas de acessibilidade</h2>
+
+                    <p>
+                        Conheça os principais aspectos que contribuem
+                        para praças mais acessíveis e inclusivas.
+                    </p>
+                </div>
+
+                <div class="areas-grid">
+
+                    <!-- 1. Circulação e mobilidade -->
+                    <article class="area-card">
+
+                        <div class="area-icone" aria-hidden="true">
+                            <svg width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 17h4"/>
+                                <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/>
+                                <path d="M4 13h4"/>
+                                <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/>
+                            </svg>
+                        </div>
+
+                        <h3>Circulação e mobilidade</h3>
+
+                        <p>
+                            Caminhos acessíveis, rampas e condições
+                            adequadas para um deslocamento seguro.
+                        </p>
+
+                        <a href="mobilidade.html">
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- 2. Mobiliário urbano -->
+                    <article class="area-card">
+
+                        <div class="area-icone" aria-hidden="true">
+                            <svg width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M19 18v2"/>
+                                <path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/>
+                                <path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/>
+                                <path d="M5 18v2"/>
+                            </svg>
+                        </div>
+
+                        <h3>Mobiliário urbano</h3>
+
+                        <p>
+                            Bancos, mesas e equipamentos que atendam
+                            às necessidades de diferentes usuários.
+                        </p>
+
+                        <a href="mobiliario.html">
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- 3. Sinalização acessível -->
+                    <article class="area-card">
+
+                        <div class="area-icone" aria-hidden="true">
+                            <svg width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 13v8"/>
+                                <path d="M12 3v3"/>
+                                <path d="M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z"/>
+                            </svg>
+                        </div>
+
+                        <h3>Sinalização acessível</h3>
+
+                        <p>
+                            Informações claras e recursos de orientação
+                            para facilitar a utilização das praças.
+                        </p>
+
+                        <a href="sinalizacao.html">
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- 4. Lazer inclusivo -->
+                    <article class="area-card">
+
+                        <div class="area-icone" aria-hidden="true">
+                            <svg width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/>
+                                <path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/>
+                                <path d="M13 19v3"/>
+                                <path d="M7 16v6"/>
+                            </svg>
+                        </div>
+
+                        <h3>Lazer inclusivo</h3>
+
+                        <p>
+                            Espaços de brincadeira, descanso e
+                            convivência que incentivem a participação.
+                        </p>
+
+                        <a href="lazer.html">
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- 5. Paisagismo -->
+                    <article class="area-card">
+
+                        <div class="area-icone" aria-hidden="true">
+                            <svg width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 10v12"/>
+                                <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z"/>
+                                <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z"/>
+                                <path d="M12 5A3 3 0 1 0 9 8"/>
+                                <path d="M12 5A3 3 0 1 1 15 8"/>
+                                <path d="M15 8A3 3 0 1 1 12 11"/>
+                                <path d="M9 8A3 3 0 1 0 12 11"/>
+                                <circle cx="12" cy="8" r="2"/>
+                            </svg>
+                        </div>
+
+                        <h3>Paisagismo</h3>
+
+                        <p>
+                            Vegetação e áreas verdes planejadas
+                            para proporcionar conforto e acessibilidade.
+                        </p>
+
+                        <a href="paisagismo.html">
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- 6. Tecnologias assistivas -->
+                    <article class="area-card">
+
+                        <div class="area-icone" aria-hidden="true">
+                            <svg width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="16" cy="4" r="1"/>
+                                <path d="m18 19 1-7-6 1"/>
+                                <path d="m5 8 3-3 5.5 3-2.36 3.5"/>
+                                <path d="M4.24 14.5a5 5 0 0 0 6.88 6"/>
+                                <path d="M13.76 17.5a5 5 0 0 1-6.88-6"/>
+                            </svg>
+                        </div>
+
+                        <h3>Tecnologias assistivas</h3>
+
+                        <p>
+                            Recursos e soluções tecnológicas que
+                            favoreçam a autonomia nos espaços públicos.
+                        </p>
+
+                        <a href="tecnologias.html">
+                            Saiba mais <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+            Seção: Princípios do desenho universal
+        ========================================== -->
+
+        <section class="diretrizes-principios" aria-labelledby="titulo-principios">
+            <div class="container">
+
+                <div class="principios-cabecalho">
+                    <span class="principios-etiqueta">
+                        PLANEJAMENTO INCLUSIVO
+                    </span>
+
+                    <h2 id="titulo-principios">
+                        Os 7 princípios do Desenho Universal
+                    </h2>
+
+                    <p>
+                        O Desenho Universal reúne princípios que orientam
+                        a criação de ambientes utilizáveis pelo maior
+                        número possível de pessoas, promovendo autonomia,
+                        conforto e segurança.
+                    </p>
+                </div>
+
+                <div class="principios-lista">
+
+                    <!-- 1. Uso equitativo -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 21a8 8 0 0 0-16 0"/>
+                                <circle cx="10" cy="8" r="5"/>
+                                <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>01. Uso equitativo</h3>
+                            <p>
+                                O espaço deve ser útil e acessível para
+                                pessoas com diferentes capacidades,
+                                evitando a exclusão de usuários.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 2. Flexibilidade de uso -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 7h16"/>
+                                <path d="M4 17h16"/>
+                                <circle cx="8" cy="7" r="2" fill="white"/>
+                                <circle cx="16" cy="17" r="2" fill="white"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>02. Flexibilidade de uso</h3>
+                            <p>
+                                O ambiente deve permitir diferentes formas
+                                de utilização, respeitando as preferências
+                                e necessidades individuais.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 3. Uso simples e intuitivo -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="m8 12 3 3 5-6"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>03. Uso simples e intuitivo</h3>
+                            <p>
+                                A utilização do espaço deve ser fácil
+                                de compreender, independentemente da
+                                experiência ou conhecimento do usuário.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 4. Informação perceptível -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>04. Informação perceptível</h3>
+                            <p>
+                                As informações devem ser apresentadas
+                                de maneiras acessíveis, considerando
+                                diferentes formas de percepção.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 5. Tolerância ao erro -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>05. Tolerância ao erro</h3>
+                            <p>
+                                O planejamento deve reduzir riscos
+                                e minimizar as consequências de
+                                ações acidentais.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 6. Baixo esforço físico -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 13V6a2 2 0 0 1 4 0v5"/>
+                                <path d="M12 11V5a2 2 0 0 1 4 0v6"/>
+                                <path d="M16 11V7a2 2 0 0 1 4 0v9a6 6 0 0 1-6 6h-3a6 6 0 0 1-5-2.7l-3.5-5a2 2 0 0 1 3.3-2.3L8 15"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>06. Baixo esforço físico</h3>
+                            <p>
+                                O espaço deve permitir sua utilização
+                                de maneira confortável, eficiente
+                                e com o mínimo esforço necessário.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 7. Dimensão e espaço para uso -->
+                    <article class="principio-item">
+                        <div class="principio-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m5 9-3 3 3 3"/>
+                                <path d="m9 5 3-3 3 3"/>
+                                <path d="m15 19-3 3-3-3"/>
+                                <path d="m19 9 3 3-3 3"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2v20"/>
+                            </svg>
+                        </div>
+
+                        <div class="principio-conteudo">
+                            <h3>07. Dimensão e espaço para uso</h3>
+                            <p>
+                                Devem existir dimensões adequadas para
+                                aproximação, alcance, circulação e
+                                utilização, independentemente das
+                                características físicas do usuário.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+            Seção: Normas e referências
+        ========================================== -->
+
+        <section class="diretrizes-normas" aria-labelledby="titulo-normas">
+            <div class="container">
+
+                <div class="normas-cabecalho">
+                    <span class="normas-etiqueta">
+                        FUNDAMENTAÇÃO TÉCNICA E LEGAL
+                    </span>
+
+                    <h2 id="titulo-normas">
+                        Normas e referências
+                    </h2>
+
+                    <p>
+                        Conheça alguns dos principais documentos
+                        que orientam a promoção da acessibilidade
+                        nos espaços públicos brasileiros.
+                    </p>
+                </div>
+
+                <div class="normas-grid">
+
+                    <!-- ABNT NBR 9050 -->
+                    <article class="norma-card">
+
+                        <div class="norma-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21.3 8.7 15.3 2.7a1 1 0 0 0-1.4 0L2.7 13.9a1 1 0 0 0 0 1.4l6 6a1 1 0 0 0 1.4 0L21.3 10.1a1 1 0 0 0 0-1.4Z"/>
+                                <path d="m7.5 10.5 2 2"/>
+                                <path d="m10.5 7.5 2 2"/>
+                                <path d="m13.5 4.5 2 2"/>
+                                <path d="m4.5 13.5 2 2"/>
+                            </svg>
+                        </div>
+
+                        <span class="norma-tipo">NORMA TÉCNICA</span>
+
+                        <h3>ABNT NBR 9050</h3>
+
+                        <p>
+                            Estabelece critérios e parâmetros técnicos
+                            de acessibilidade para edificações,
+                            mobiliário, espaços e equipamentos urbanos.
+                        </p>
+
+                        <a href="https://www.abntcatalogo.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar ABNT NBR 9050 no catálogo da ABNT (abre em nova aba)">
+                            Consultar referência
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Lei Brasileira de Inclusão -->
+                    <article class="norma-card">
+
+                        <div class="norma-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m16 16 3-8 3 8c-.87.65-2.13.65-3 0-.87.65-2.13.65-3 0Z"/>
+                                <path d="m2 16 3-8 3 8c-.87.65-2.13.65-3 0-.87.65-2.13.65-3 0Z"/>
+                                <path d="M7 21h10"/>
+                                <path d="M12 3v18"/>
+                                <path d="M3 7h2c2 0 5-2 7-2s5 2 7 2h2"/>
+                            </svg>
+                        </div>
+
+                        <span class="norma-tipo">LEI FEDERAL</span>
+
+                        <h3>Lei nº 13.146/2015</h3>
+
+                        <p>
+                            Institui a Lei Brasileira de Inclusão
+                            da Pessoa com Deficiência, assegurando
+                            direitos e promovendo a inclusão
+                            e a acessibilidade.
+                        </p>
+
+                        <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Lei Brasileira de Inclusão (abre em nova aba)">
+                            Consultar referência
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Decreto nº 5.296 -->
+                    <article class="norma-card">
+
+                        <div class="norma-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m3 10 9-7 9 7"/>
+                                <path d="M4 10h16"/>
+                                <path d="M6 10v8"/>
+                                <path d="M10 10v8"/>
+                                <path d="M14 10v8"/>
+                                <path d="M18 10v8"/>
+                                <path d="M3 21h18"/>
+                                <path d="M4 18h16"/>
+                            </svg>
+                        </div>
+
+                        <span class="norma-tipo">DECRETO FEDERAL</span>
+
+                        <h3>Decreto nº 5.296/2004</h3>
+
+                        <p>
+                            Regulamenta disposições sobre
+                            acessibilidade e atendimento prioritário,
+                            incluindo condições de acesso e
+                            circulação nos espaços públicos.
+                        </p>
+
+                        <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5296.htm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Decreto 5296 de 2004 (abre em nova aba)">
+                            Consultar referência
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+                <p class="normas-observacao">
+                <!--As informações apresentadas possuem caráter
+                    educativo. Para projetos e intervenções,
+                    devem ser consultadas as versões aplicáveis
+                    das normas técnicas e da legislação vigente.-->
+                </p>
+
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+
+            <div class="rodape-conteudo">
+
+                <!-- Informações do projeto -->
+                <div class="rodape-sobre">
+                    <h2>Praça para Todos</h2>
+
+                    <p>
+                        Promovendo acessibilidade, inclusão e
+                        conhecimento para transformar os
+                        espaços públicos.
+                    </p>
+                </div>
+
+                <!-- Navegação -->
+                <nav class="rodape-navegacao" aria-label="Navegação do rodapé">
+                    <h3>Navegação</h3>
+
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o projeto</a></li>
+                        <li><a href="diretrizes.html">Diretrizes</a></li>
+                        <li><a href="biblioteca.html">Biblioteca</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Informações institucionais -->
+                <div class="rodape-institucional">
+                    <h3>Projeto de extensão</h3>
+
+                    <p>
+                        Iniciativa acadêmica voltada à
+                        acessibilidade e à inclusão
+                        nos espaços públicos.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="rodape-inferior">
+                <p>
+                    Praça para Todos — Projeto de extensão universitária
+                </p>
+            </div>
+
+        </div>
+    </footer>    
+    <script src="js/global.js" defer></script>
+    <script src="js/acessibilidade.js" defer></script>
+
+
+    <!-- VLibras - Governo Federal -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <script>
+        new window.VLibras.Widget(
+            "https://vlibras.gov.br/app"
+        );
+    </script>
+
+</body>
+</html>
