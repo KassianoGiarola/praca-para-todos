@@ -1,21 +1,31 @@
 
 /* ==========================================
    CENTRAL DE ACESSIBILIDADE GLOBAL
+   PROJETO PRAÇA PARA TODOS
 ========================================== */
 
-/* Botão lateral de recursos assistivos */
+/* ==========================================
+   BOTÃO LATERAL
+========================================== */
 
-.a11y-barra {
+.a11y-barra,
+#a11y-barra {
     position: fixed;
     right: 0;
     top: 42%;
+    left: auto;
+    bottom: auto;
     z-index: 9998;
 
     display: flex;
     flex-direction: column;
+
+    width: auto;
+    height: auto;
 }
 
-.a11y-atalho {
+.a11y-atalho,
+#a11y-abrir {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -44,7 +54,9 @@
 }
 
 .a11y-atalho:hover,
-.a11y-atalho:focus-visible {
+.a11y-atalho:focus-visible,
+#a11y-abrir:hover,
+#a11y-abrir:focus-visible {
     width: 190px;
     background-color: #6A3FB2;
 }
@@ -56,14 +68,14 @@
 }
 
 .a11y-atalho:focus-visible,
-.a11y-painel button:focus-visible {
+.a11y-painel button:focus-visible,
+.a11y-painel input:focus-visible {
     outline: 3px solid #A78BD9;
     outline-offset: 2px;
 }
 
-
 /* ==========================================
-   FUNDO DO PAINEL
+   FUNDO ESCURO DO MODAL
 ========================================== */
 
 .a11y-fundo {
@@ -79,21 +91,25 @@
     display: none !important;
 }
 
-
 /* ==========================================
    PAINEL DE RECURSOS ASSISTIVOS
 ========================================== */
 
-.a11y-painel {
+.a11y-painel,
+#a11y-painel {
     position: fixed;
     z-index: 10000;
 
     top: 50%;
     left: 50%;
+    right: auto;
+    bottom: auto;
+
     transform: translate(-50%, -50%);
 
     width: min(94vw, 660px);
     max-height: 90dvh;
+
     overflow-y: auto;
 
     border-radius: 18px;
@@ -106,8 +122,9 @@
     line-height: 1.5;
 }
 
-
-/* Cabeçalho do painel */
+/* ==========================================
+   CABEÇALHO DO PAINEL
+========================================== */
 
 .a11y-topo {
     position: sticky;
@@ -137,6 +154,7 @@
 
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
 
     border: 1px solid rgb(255 255 255 / 40%);
     border-radius: 10px;
@@ -156,8 +174,9 @@
     height: 22px;
 }
 
-
-/* Conteúdo do painel */
+/* ==========================================
+   CONTEÚDO DO PAINEL
+========================================== */
 
 .a11y-conteudo {
     padding: 24px;
@@ -169,13 +188,13 @@
 
 .a11y-grupo h3 {
     margin: 0 0 12px;
-
     color: #3A1F5D;
     font-size: 1rem;
 }
 
-
-/* Grade de ferramentas */
+/* ==========================================
+   GRADE DE FERRAMENTAS
+========================================== */
 
 .a11y-grade {
     display: grid;
@@ -225,8 +244,115 @@
     flex-shrink: 0;
 }
 
+/* ==========================================
+   LEITOR DE TEXTO
+========================================== */
 
-/* Botão de restaurar configurações */
+.a11y-grupo-leitor {
+    border-top: 1px solid #E8DDF5;
+    padding-top: 22px;
+}
+
+.a11y-leitor-descricao {
+    margin: 0 0 16px;
+    color: #514B60;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.a11y-leitor-controles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.a11y-leitor-botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 88px;
+    padding: 12px 8px;
+
+    border: 2px solid #E8DDF5;
+    border-radius: 12px;
+
+    background-color: #F0EEFB;
+    color: #3A1F5D;
+
+    font: 600 12px Montserrat, sans-serif;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.a11y-leitor-botao svg {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+}
+
+.a11y-leitor-botao:hover:not(:disabled) {
+    background-color: #E8DDF5;
+    border-color: #6A3FB2;
+}
+
+.a11y-leitor-botao:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   VELOCIDADE DA LEITURA
+========================================== */
+
+.a11y-leitor-velocidade {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+    color: #3A1F5D;
+    font: 600 13px Montserrat, sans-serif;
+}
+
+#a11y-velocidade {
+    display: block;
+    width: 100%;
+    margin: 0 0 14px;
+
+    accent-color: #6A3FB2;
+    cursor: pointer;
+}
+
+/* ==========================================
+   STATUS DO LEITOR
+========================================== */
+
+.a11y-leitor-status {
+    margin: 0;
+    padding: 10px 12px;
+
+    border-radius: 8px;
+    background-color: #F0EEFB;
+
+    color: #514B60;
+    font: 500 12px Montserrat, sans-serif;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   RESTAURAR CONFIGURAÇÕES
+========================================== */
 
 .a11y-restaurar {
     width: 100%;
@@ -249,12 +375,9 @@
     background-color: #6A3FB2;
 }
 
-
 /* ==========================================
-   AJUSTES DE ACESSIBILIDADE DO SITE
+   ALTO CONTRASTE
 ========================================== */
-
-/* Cores utilizadas pelo modo de alto contraste */
 
 html.a11y-contraste {
     --contraste-fundo: #000000;
@@ -288,7 +411,7 @@ html.a11y-contraste body :is(
     border-color: var(--contraste-borda) !important;
 }
 
-/* Elementos de conteúdo, exceto a central */
+/* Elementos de conteúdo */
 
 html.a11y-contraste body :is(
     div,
@@ -297,12 +420,17 @@ html.a11y-contraste body :is(
     blockquote,
     details,
     summary
-):not(.a11y-painel):not(.a11y-barra):not(.a11y-fundo):not(.a11y-cursor-destaque):not([vw]):not([id^="vlibras"]) {
+):not(.a11y-painel)
+ :not(.a11y-barra)
+ :not(.a11y-fundo)
+ :not(.a11y-cursor-destaque)
+ :not([vw])
+ :not([id^="vlibras"]) {
     background-color: transparent;
     border-color: var(--contraste-borda);
 }
 
-/* Textos */
+/* Textos do site */
 
 html.a11y-contraste body :is(
     h1,
@@ -318,7 +446,7 @@ html.a11y-contraste body :is(
     small,
     label,
     blockquote
-) {
+):not(.a11y-painel *) {
     color: var(--contraste-texto) !important;
     text-shadow: none !important;
 }
@@ -338,7 +466,13 @@ html.a11y-contraste body a:hover {
 
 /* Botões do site */
 
-html.a11y-contraste body button:not(.a11y-atalho):not(.a11y-opcao):not(.a11y-fechar):not(.a11y-restaurar) {
+html.a11y-contraste body button:not(
+    .a11y-atalho,
+    .a11y-opcao,
+    .a11y-fechar,
+    .a11y-restaurar,
+    .a11y-leitor-botao
+) {
     background-color: #000000 !important;
     background-image: none !important;
     color: #FFFFFF !important;
@@ -351,7 +485,7 @@ html.a11y-contraste body :is(
     input,
     textarea,
     select
-) {
+):not(#a11y-velocidade) {
     background-color: #000000 !important;
     color: #FFFFFF !important;
     border: 2px solid #FFFFFF !important;
@@ -378,14 +512,18 @@ html.a11y-contraste body :is(
     outline-offset: 3px !important;
 }
 
-/* Ícones SVG do site */
+/* Ícones do site */
 
-html.a11y-contraste body svg:not(.a11y-painel svg):not(.a11y-barra svg) {
+html.a11y-contraste body svg:not(
+    .a11y-painel svg,
+    .a11y-barra svg
+) {
     color: #FFFFFF;
 }
 
 /* ==========================================
    PRESERVAR CENTRAL DE ACESSIBILIDADE
+   NO MODO ALTO CONTRASTE
 ========================================== */
 
 html.a11y-contraste .a11y-painel {
@@ -426,7 +564,36 @@ html.a11y-contraste .a11y-restaurar {
     border: 0 !important;
 }
 
-/* Destacar links */
+/* Preservar leitor de texto */
+
+html.a11y-contraste .a11y-grupo-leitor {
+    border-color: #E8DDF5 !important;
+}
+
+html.a11y-contraste .a11y-leitor-botao {
+    background-color: #F0EEFB !important;
+    color: #3A1F5D !important;
+    border-color: #E8DDF5 !important;
+}
+
+html.a11y-contraste .a11y-leitor-botao span,
+html.a11y-contraste .a11y-leitor-velocidade,
+html.a11y-contraste .a11y-leitor-descricao,
+html.a11y-contraste .a11y-leitor-status {
+    color: #3A1F5D !important;
+}
+
+html.a11y-contraste .a11y-leitor-status {
+    background-color: #F0EEFB !important;
+}
+
+html.a11y-contraste .a11y-leitor-botao:disabled {
+    opacity: 0.45;
+}
+
+/* ==========================================
+   DESTACAR LINKS
+========================================== */
 
 html.a11y-links body a {
     text-decoration: underline !important;
@@ -434,15 +601,17 @@ html.a11y-links body a {
     text-underline-offset: 4px !important;
 }
 
-
-/* Ocultar imagens */
+/* ==========================================
+   OCULTAR IMAGENS
+========================================== */
 
 html.a11y-sem-imagens body img:not(.a11y-preservar) {
     visibility: hidden !important;
 }
 
-
-/* Pausar animações */
+/* ==========================================
+   PAUSAR ANIMAÇÕES
+========================================== */
 
 html.a11y-sem-animacoes body *,
 html.a11y-sem-animacoes body *::before,
@@ -452,27 +621,19 @@ html.a11y-sem-animacoes body *::after {
     scroll-behavior: auto !important;
 }
 
-
-
 /* ==========================================
    CURSOR DESTACADO
 ========================================== */
 
-/* Mantém o cursor original do navegador */
-
 html.a11y-cursor body {
     cursor: auto !important;
 }
-
-/* Preserva o cursor de elementos interativos */
 
 html.a11y-cursor body a,
 html.a11y-cursor body button,
 html.a11y-cursor body select {
     cursor: pointer !important;
 }
-
-/* Destaque circular que acompanha o mouse */
 
 .a11y-cursor-destaque {
     position: fixed;
@@ -491,19 +652,16 @@ html.a11y-cursor body select {
         0 0 0 2px rgb(0 0 0 / 65%);
 
     pointer-events: none;
+
     z-index: 2147483647;
 
     transform: translate(-50%, -50%);
     visibility: hidden;
 }
 
-/* Exibe somente quando o recurso estiver ativo */
-
 html.a11y-cursor .a11y-cursor-destaque {
     visibility: visible;
 }
-
-/* Não exibir em dispositivos sem mouse */
 
 @media (hover: none), (pointer: coarse) {
     .a11y-cursor-destaque {
@@ -511,33 +669,34 @@ html.a11y-cursor .a11y-cursor-destaque {
     }
 }
 
-
-
-/* Impedir rolagem ao abrir o painel */
+/* ==========================================
+   BLOQUEAR ROLAGEM COM MODAL ABERTO
+========================================== */
 
 body.a11y-modal-aberto {
     overflow: hidden;
 }
 
-
-/* Espaçamento entre linhas */
+/* ==========================================
+   ESPAÇAMENTO ENTRE LINHAS
+========================================== */
 
 html[style*="--a11y-altura-linha"] body :is(
     p,
     li,
     blockquote
-) {
+):not(.a11y-painel *) {
     line-height: var(--a11y-altura-linha) !important;
 }
 
-
-/* Preservar espaçamento do painel */
+/* ==========================================
+   PRESERVAR ESPAÇAMENTO DO PAINEL
+========================================== */
 
 .a11y-painel,
 .a11y-barra {
     letter-spacing: normal;
 }
-
 
 /* ==========================================
    VLIBRAS - CANTO INFERIOR DIREITO
@@ -550,12 +709,9 @@ html[style*="--a11y-altura-linha"] body :is(
     z-index: 9997 !important;
 }
 
-/* Contêiner original do VLibras */
-
 div[vw].enabled {
     z-index: 9996 !important;
 }
-
 
 /* ==========================================
    RESPONSIVIDADE
@@ -563,14 +719,10 @@ div[vw].enabled {
 
 @media (max-width: 600px) {
 
-    /* Botão lateral */
-
     .a11y-barra {
         top: 42%;
         bottom: auto;
     }
-
-    /* Painel */
 
     .a11y-painel {
         width: 94vw;
@@ -582,19 +734,22 @@ div[vw].enabled {
         padding: 16px;
     }
 
-    /* Grade de ferramentas */
-
     .a11y-grade {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* VLibras */
+    .a11y-leitor-controles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .a11y-leitor-botao {
+        min-height: 85px;
+    }
 
     #vlibras-access-wrapper {
         inset: auto 12px 12px auto !important;
     }
 }
-
 
 /* ==========================================
    REDUÇÃO DE MOVIMENTO
@@ -604,7 +759,228 @@ div[vw].enabled {
 
     .a11y-atalho,
     .a11y-opcao,
-    .a11y-restaurar {
+    .a11y-restaurar,
+    .a11y-leitor-botao {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   GARANTIA DE POSICIONAMENTO
+   DA CENTRAL DE ACESSIBILIDADE
+========================================== */
+
+body > #a11y-barra {
+    position: fixed !important;
+    top: 42% !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 9998 !important;
+}
+
+body > .a11y-fundo {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 9999 !important;
+}
+
+body > #a11y-painel {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translate(-50%, -50%) !important;
+    z-index: 10000 !important;
+}
+
+body > #a11y-painel[hidden],
+body > .a11y-fundo[hidden] {
+    display: none !important;
+}
+
+
+/* ==========================================
+   CONTROLE FLUTUANTE DO LEITOR
+   PROJETO PRAÇA PARA TODOS
+========================================== */
+
+.a11y-leitor-flutuante {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 9995;
+
+    width: min(340px, calc(100vw - 48px));
+    padding: 16px;
+
+    border: 1px solid #E8DDF5;
+    border-radius: 16px;
+
+    background-color: #FFFFFF;
+    color: #3A1F5D;
+
+    box-shadow: 0 8px 30px rgb(0 0 0 / 18%);
+
+    font-family: Montserrat, sans-serif;
+    letter-spacing: normal;
+    line-height: 1.5;
+}
+
+.a11y-leitor-flutuante[hidden] {
+    display: none !important;
+}
+
+/* Cabeçalho */
+
+.a11y-flutuante-cabecalho {
+    margin-bottom: 14px;
+}
+
+.a11y-flutuante-identificacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.a11y-flutuante-identificacao > svg {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    color: #6A3FB2;
+}
+
+.a11y-flutuante-identificacao > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.a11y-flutuante-identificacao strong {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3A1F5D;
+}
+
+.a11y-flutuante-identificacao span {
+    color: #514B60;
+    font-size: 12px;
+}
+
+/* Botões */
+
+.a11y-flutuante-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.a11y-flutuante-acoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+
+    min-height: 42px;
+    padding: 10px 12px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background-color: #3A1F5D;
+    color: #FFFFFF;
+
+    font: 600 12px Montserrat, sans-serif;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.a11y-flutuante-acoes button:hover {
+    background-color: #6A3FB2;
+}
+
+.a11y-flutuante-acoes button:focus-visible {
+    outline: 3px solid #A78BD9;
+    outline-offset: 3px;
+}
+
+.a11y-flutuante-acoes button[hidden] {
+    display: none !important;
+}
+
+.a11y-flutuante-acoes button svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.a11y-flutuante-acoes .a11y-flutuante-parar {
+    background-color: #F0EEFB;
+    color: #3A1F5D;
+}
+
+.a11y-flutuante-acoes .a11y-flutuante-parar:hover {
+    background-color: #E8DDF5;
+}
+
+/* Preservação no alto contraste */
+
+html.a11y-contraste .a11y-leitor-flutuante {
+    background-color: #FFFFFF !important;
+    color: #3A1F5D !important;
+    border-color: #E8DDF5 !important;
+}
+
+html.a11y-contraste
+.a11y-leitor-flutuante
+.a11y-flutuante-identificacao strong {
+    color: #3A1F5D !important;
+}
+
+html.a11y-contraste
+.a11y-leitor-flutuante
+.a11y-flutuante-identificacao span {
+    color: #514B60 !important;
+}
+
+html.a11y-contraste
+.a11y-leitor-flutuante
+.a11y-flutuante-acoes button {
+    background-color: #3A1F5D !important;
+    color: #FFFFFF !important;
+    border: 0 !important;
+}
+
+html.a11y-contraste
+.a11y-leitor-flutuante
+.a11y-flutuante-acoes .a11y-flutuante-parar {
+    background-color: #F0EEFB !important;
+    color: #3A1F5D !important;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+    .a11y-leitor-flutuante {
+        left: 12px;
+        bottom: 12px;
+
+        width: min(320px, calc(100vw - 24px));
+        padding: 14px;
+    }
+
+    .a11y-flutuante-acoes button {
+        min-height: 44px;
+    }
+}
+
+/* Redução de movimento */
+
+@media (prefers-reduced-motion: reduce) {
+    .a11y-flutuante-acoes button {
         transition: none;
     }
 }
