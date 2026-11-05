@@ -70,8 +70,17 @@
 .a11y-atalho:focus-visible,
 .a11y-painel button:focus-visible,
 .a11y-painel input:focus-visible {
-    outline: 3px solid #A78BD9;
+    outline: 3px solid #3A1F5D;
     outline-offset: 2px;
+}
+
+/* No cabeçalho escuro, o contorno claro mantém contraste de 4,78:1. */
+.a11y-painel .a11y-fechar:focus-visible {
+    outline-color: #A78BD9;
+}
+
+.a11y-atalho:focus-visible {
+    box-shadow: 0 0 0 2px #FFFFFF;
 }
 
 /* ==========================================
@@ -332,6 +341,71 @@
 
     accent-color: #6A3FB2;
     cursor: pointer;
+}
+
+/* Em computadores, reproduz a trilha preenchida e o botão redondo do celular. */
+@media (hover: hover) and (pointer: fine) {
+    #a11y-velocidade {
+        --a11y-velocidade-cor: #6A3FB2;
+        --a11y-velocidade-trilha: #EDEBF0;
+        --a11y-velocidade-borda: #76717F;
+        --a11y-velocidade-fundo: linear-gradient(
+            to right,
+            var(--a11y-velocidade-cor) var(--a11y-velocidade-progresso),
+            var(--a11y-velocidade-trilha) var(--a11y-velocidade-progresso)
+        );
+
+        appearance: none;
+        height: 24px;
+        padding: 0;
+        background: transparent;
+    }
+
+    #a11y-velocidade::-webkit-slider-runnable-track {
+        height: 8px;
+        border: 1px solid var(--a11y-velocidade-borda);
+        border-radius: 999px;
+        background: var(--a11y-velocidade-fundo);
+    }
+
+    #a11y-velocidade::-webkit-slider-thumb {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        margin-top: -6px;
+        border: 0;
+        border-radius: 50%;
+        background-color: var(--a11y-velocidade-cor);
+    }
+
+    #a11y-velocidade::-moz-range-track {
+        box-sizing: border-box;
+        height: 8px;
+        border: 1px solid var(--a11y-velocidade-borda);
+        border-radius: 999px;
+        background: var(--a11y-velocidade-fundo);
+    }
+
+    #a11y-velocidade::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border: 0;
+        border-radius: 50%;
+        background-color: var(--a11y-velocidade-cor);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (forced-colors: active) {
+    #a11y-velocidade {
+        --a11y-velocidade-cor: Highlight;
+        --a11y-velocidade-trilha: Canvas;
+        --a11y-velocidade-borda: CanvasText;
+        forced-color-adjust: none;
+    }
+
+    #a11y-velocidade:focus-visible {
+        outline-color: Highlight;
+    }
 }
 
 /* ==========================================
@@ -903,7 +977,7 @@ body > .a11y-fundo[hidden] {
 }
 
 .a11y-flutuante-acoes button:focus-visible {
-    outline: 3px solid #A78BD9;
+    outline: 3px solid #3A1F5D;
     outline-offset: 3px;
 }
 

@@ -485,9 +485,8 @@
     );
 
     let leituraAtual = null;
-    let leituraPausada = false;
     let textoSelecionado = "";
-    let geracaoLeitura = 0;
+    let monitorFala;
 
     const botoesLeitor = {};
 
@@ -496,7 +495,9 @@
     });
 
     function atualizarStatusLeitor(mensagem) {
-        statusLeitor.textContent = mensagem;
+        if (statusLeitor.textContent.trim() !== mensagem) {
+            statusLeitor.textContent = mensagem;
+        }
     }
 
     // ==========================================
@@ -506,26 +507,27 @@
     function atualizarLeitorFlutuante() {
         const ativo = leitorDisponivel && leituraAtual !== null;
 
-        leitorFlutuante.hidden = !ativo;
+        leitorFlutuante.hidden = !ativo || !painel.hidden;
 
         if (!ativo) return;
 
-        flutuantePausar.hidden = leituraPausada;
-        flutuanteContinuar.hidden = !leituraPausada;
+        flutuantePausar.hidden = leituraAtual.pausada;
+        flutuanteContinuar.hidden = !leituraAtual.pausada;
 
-        flutuanteStatus.textContent = leituraPausada
+        flutuanteStatus.textContent = leituraAtual.pausada
             ? "Leitura pausada"
             : "Leitura em andamento";
     }
 
     function atualizarControlesLeitor() {
         const ativo = leituraAtual !== null;
+        const pausada = leituraAtual?.pausada;
 
         botoesLeitor.pausar.disabled =
-            !leitorDisponivel || !ativo || leituraPausada;
+            !leitorDisponivel || !ativo || pausada;
 
         botoesLeitor.continuar.disabled =
-            !leitorDisponivel || !ativo || !leituraPausada;
+            !leitorDisponivel || !ativo || !pausada;
 
         botoesLeitor.parar.disabled =
             !leitorDisponivel || !ativo;
@@ -568,21 +570,23 @@
             : copia.textContent.replace(/\s+/g, " ").trim();
     }
 
-    function pararLeitura(mostrarStatus = true) {
-        geracaoLeitura++;
+    function desligarFala(leitura) {
+        clearTimeout(monitorFala);
+        if (!leitura?.fala) return;
+        leitura.fala = null;
+        sintetizador.cancel();
+    }
 
+    function finalizarLeitura(mensagem) {
+        clearTimeout(monitorFala);
         leituraAtual = null;
-        leituraPausada = false;
-
-        if (leitorDisponivel) {
-            sintetizador.cancel();
-        }
-
         atualizarControlesLeitor();
+        atualizarStatusLeitor(mensagem);
+    }
 
-        if (mostrarStatus) {
-            atualizarStatusLeitor("Leitura interrompida.");
-        }
+    function pararLeitura(mostrarStatus = true) {
+        desligarFala(leituraAtual);
+        finalizarLeitura(mostrarStatus ? "Leitura interrompida." : "Leitor pronto para utilização.");
     }
 
     // ==========================================
@@ -590,27 +594,162 @@
     // ==========================================
 
     function pausarLeitura() {
-        if (!leitorDisponivel || !leituraAtual || leituraPausada) {
-            return;
-        }
+        const leitura = leituraAtual;
+        if (!leitura || leitura.pausada) return;
 
-        leituraPausada = true;
-        sintetizador.pause();
+        const foco = document.activeElement;
+        leitura.pausada = true;
+        clearTimeout(monitorFala);
+        if (leitura.computador && leitura.posicao > 0) {
+            // Algumas vozes de desktop continuam avançando após pause().
+            desligarFala(leitura);
+        } else {
+            sintetizador.pause();
+        }
 
         atualizarStatusLeitor("Leitura pausada.");
         atualizarControlesLeitor();
+        if (foco === flutuantePausar) flutuanteContinuar.focus({ preventScroll: true });
+        if (foco === botoesLeitor.pausar) botoesLeitor.continuar.focus({ preventScroll: true });
     }
 
     function continuarLeitura() {
-        if (!leitorDisponivel || !leituraAtual || !leituraPausada) {
-            return;
+        const leitura = leituraAtual;
+        if (!leitura?.pausada) return;
+
+        const foco = document.activeElement;
+        leitura.pausada = false;
+        leitura.ultimaRetomada = -1;
+        atualizarStatusLeitor("Leitura em andamento.");
+        if (leitura.fala && (!leitura.computador || sintetizador.speaking || sintetizador.pending)) {
+            leitura.ultimoSinal = performance.now();
+            sintetizador.resume();
+            monitorarFala(leitura, leitura.fala);
+        } else {
+            desligarFala(leitura);
+            falarTrecho(leitura);
+        }
+        atualizarControlesLeitor();
+        if (foco === flutuanteContinuar) flutuantePausar.focus({ preventScroll: true });
+        if (foco === botoesLeitor.continuar) botoesLeitor.pausar.focus({ preventScroll: true });
+    }
+
+    function dividirEmTrechos(conteudo, limite) {
+        const trechos = [];
+        let trecho = "";
+
+        for (const palavra of conteudo.split(" ")) {
+            if (trecho && trecho.length + 1 + palavra.length > limite) {
+                trechos.push(trecho);
+                trecho = "";
+            }
+            trecho = trecho ? `${trecho} ${palavra}` : palavra;
         }
 
-        sintetizador.resume();
-        leituraPausada = false;
+        if (trecho) trechos.push(trecho);
+        return trechos;
+    }
 
-        atualizarStatusLeitor("Leitura em andamento.");
-        atualizarControlesLeitor();
+    function recuperarFala(leitura) {
+        desligarFala(leitura);
+        if (leitura.pausada) return;
+
+        if (!leitura.computador) {
+            finalizarLeitura("Leitura interrompida.");
+        } else if (leitura.ultimaRetomada !== leitura.posicao) {
+            leitura.ultimaRetomada = leitura.posicao;
+            falarTrecho(leitura);
+        } else {
+            // Uma segunda falha no mesmo ponto aguarda ação do visitante.
+            leitura.pausada = true;
+            atualizarStatusLeitor("Leitura pausada. Selecione Continuar para retomar.");
+            atualizarControlesLeitor();
+        }
+    }
+
+    function monitorarFala(leitura, fala) {
+        clearTimeout(monitorFala);
+        if (!leitura.computador || !fala || leitura.pausada) return;
+
+        monitorFala = setTimeout(() => {
+            if (leituraAtual !== leitura || leitura.fala !== fala) return;
+
+            // Alguns motores param sem disparar end ou error.
+            const limite = Math.max(25000, fala.text.length * 140 / leitura.velocidade);
+            const inativo = !sintetizador.speaking && !sintetizador.pending;
+            const travado = performance.now() - leitura.ultimoSinal > limite;
+            if (document.hidden) leitura.ultimoSinal = performance.now();
+            else if (inativo || travado || sintetizador.paused) {
+                recuperarFala(leitura);
+                return;
+            }
+            monitorarFala(leitura, fala);
+        }, 1000);
+    }
+
+    function falarTrecho(leitura) {
+        const inicio = leitura.posicao;
+        const texto = leitura.trechos[leitura.indice].slice(inicio);
+        const fala = new SpeechSynthesisUtterance(texto);
+        fala.lang = "pt-BR";
+        fala.rate = leitura.velocidade;
+        if (leitura.voz) fala.voice = leitura.voz;
+        leitura.fala = fala;
+        leitura.ultimoSinal = performance.now();
+
+        const falaAtual = () => leituraAtual === leitura && leitura.fala === fala;
+
+        function registrarPosicao(evento) {
+            const indice = evento.charIndex;
+            if (!Number.isInteger(indice) || indice <= 0 || indice >= texto.length) return;
+
+            // A última palavra pode ter sido interrompida no meio.
+            const palavra = texto.lastIndexOf(" ", indice - 1) + 1;
+            leitura.posicao = Math.max(leitura.posicao, inicio + palavra);
+        }
+
+        fala.onstart = () => {
+            if (!falaAtual() || leitura.pausada) return;
+            leitura.ultimoSinal = performance.now();
+            atualizarStatusLeitor("Leitura em andamento.");
+        };
+
+        fala.onboundary = evento => {
+            if (!falaAtual() || leitura.pausada) return;
+            registrarPosicao(evento);
+            leitura.ultimoSinal = performance.now();
+        };
+
+        fala.onend = () => {
+            if (!falaAtual()) return;
+            clearTimeout(monitorFala);
+            leitura.fala = null;
+            if (leitura.pausada) return;
+
+            leitura.indice++;
+            if (leitura.indice === leitura.trechos.length) {
+                finalizarLeitura("Leitura concluída.");
+                return;
+            }
+            leitura.posicao = 0;
+            leitura.ultimaRetomada = -1;
+            falarTrecho(leitura);
+        };
+
+        fala.onerror = evento => {
+            if (!falaAtual()) return;
+            leitura.fala = null;
+            registrarPosicao(evento);
+            if (leitura.pausada || evento.error === "interrupted" || evento.error === "canceled") {
+                recuperarFala(leitura);
+            } else {
+                finalizarLeitura("Não foi possível reproduzir a leitura.");
+            }
+        };
+
+        if (sintetizador.paused) sintetizador.resume();
+        sintetizador.speak(fala);
+        if (falaAtual()) monitorarFala(leitura, fala);
     }
 
     function iniciarLeitura(texto) {
@@ -632,69 +771,22 @@
 
         pararLeitura(false);
 
-        const geracao = geracaoLeitura;
-        const fala = new SpeechSynthesisUtterance(conteudo);
-
-        fala.lang = "pt-BR";
-        fala.rate = Number(velocidadeInput.value);
-        fala.pitch = 1;
-        fala.volume = 1;
-
+        const velocidade = Number(velocidadeInput.value);
         const voz = obterVozPortugues();
+        const computador = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        // Falas curtas reduzem interrupções dos sintetizadores de desktop.
+        const trechos = computador
+            ? dividirEmTrechos(conteudo, Math.floor(120 * Math.min(velocidade, 1)))
+            : [conteudo];
 
-        if (voz) {
-            fala.voice = voz;
-        }
-
-        leituraAtual = fala;
-        leituraPausada = false;
-
-        fala.onstart = () => {
-            if (geracao !== geracaoLeitura) return;
-
-            atualizarStatusLeitor("Leitura em andamento.");
-            atualizarControlesLeitor();
+        leituraAtual = {
+            trechos, velocidade, voz, computador,
+            indice: 0, posicao: 0, ultimaRetomada: -1,
+            pausada: false, fala: null
         };
-
-        fala.onend = () => {
-            if (geracao !== geracaoLeitura) return;
-
-            if (leituraPausada) return;
-
-            leituraAtual = null;
-            leituraPausada = false;
-
-            atualizarStatusLeitor("Leitura concluída.");
-            atualizarControlesLeitor();
-        };
-
-        fala.onerror = evento => {
-            if (geracao !== geracaoLeitura) return;
-
-            if (leituraPausada) {
-                atualizarControlesLeitor();
-                return;
-            }
-
-            leituraAtual = null;
-            leituraPausada = false;
-
-            if (
-                evento.error !== "canceled" &&
-                evento.error !== "interrupted"
-            ) {
-                atualizarStatusLeitor(
-                    "Não foi possível reproduzir a leitura."
-                );
-            }
-
-            atualizarControlesLeitor();
-        };
-
         atualizarStatusLeitor("Preparando leitura...");
+        falarTrecho(leituraAtual);
         atualizarControlesLeitor();
-
-        sintetizador.speak(fala);
     }
 
     // ==========================================
@@ -766,12 +858,20 @@
     // VELOCIDADE DA LEITURA
     // ==========================================
 
-    velocidadeInput.addEventListener("input", () => {
+    function atualizarVelocidade() {
+        const valor = Number(velocidadeInput.value);
+        const minimo = Number(velocidadeInput.min);
+        const maximo = Number(velocidadeInput.max);
         velocidadeValor.textContent =
-            `${Number(velocidadeInput.value)
-                .toFixed(2)
-                .replace(".", ",")}x`;
-    });
+            `${valor.toFixed(2).replace(".", ",")}x`;
+        velocidadeInput.style.setProperty(
+            "--a11y-velocidade-progresso",
+            `${100 * (valor - minimo) / (maximo - minimo)}%`
+        );
+    }
+
+    velocidadeInput.addEventListener("input", atualizarVelocidade);
+    atualizarVelocidade();
 
     if (!leitorDisponivel) {
         painel.querySelectorAll("[data-leitor]").forEach(botao => {
@@ -803,6 +903,7 @@
 
         fundo.hidden = false;
         painel.hidden = false;
+        atualizarLeitorFlutuante();
 
         document.body.classList.add("a11y-modal-aberto");
         abrirBotao.setAttribute("aria-expanded", "true");
@@ -841,6 +942,7 @@
         });
 
         elementosInertes = [];
+        atualizarLeitorFlutuante();
 
         if (focoAnterior && focoAnterior.isConnected) {
             focoAnterior.focus();
@@ -902,6 +1004,12 @@
 
     function salvar() {
         try {
+            // Não grave preferências padrão para quem apenas visita a página.
+            // Restaurar as configurações também apaga a preferência persistida.
+            if (Object.keys(padrao).every(chave => config[chave] === padrao[chave])) {
+                localStorage.removeItem(STORAGE);
+                return;
+            }
             localStorage.setItem(
                 STORAGE,
                 JSON.stringify(config)
@@ -1051,7 +1159,7 @@
         pararLeitura(false);
 
         velocidadeInput.value = "1";
-        velocidadeValor.textContent = "1,00x";
+        atualizarVelocidade();
 
         atualizarStatusLeitor(
             "Leitor pronto para utilização."

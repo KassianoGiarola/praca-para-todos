@@ -1,0 +1,141 @@
+/* Componentes novos reutilizam a tipografia, as cores e os botões do site. */
+.pular-conteudo {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    transform: translateY(-180%);
+    z-index: 10001;
+    padding: 0.75rem 1rem;
+    background: var(--cor-clara);
+    color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+    border-radius: var(--borda-sm);
+}
+
+.pular-conteudo:focus {
+    transform: none;
+}
+
+.documento-legal {
+    max-width: 900px;
+    overflow-wrap: anywhere;
+}
+
+.documento-legal h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.documento-legal h2 {
+    font-size: 1.5rem;
+    margin-top: var(--espaco-xl);
+}
+
+.documento-legal a,
+.privacidade-dialogo a {
+    color: var(--cor-primaria);
+    text-underline-offset: 0.2em;
+}
+
+.documento-legal a:focus-visible,
+.privacidade-dialogo a:focus-visible,
+.privacidade-dialogo input:focus-visible,
+.pular-conteudo:focus-visible {
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 3px;
+}
+
+.aviso-minuta {
+    padding: var(--espaco-sm);
+    border: 2px solid var(--cor-secundaria);
+    border-radius: var(--borda-md);
+    background: var(--cor-fundo);
+}
+
+.rodape-legal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    padding: 0;
+    margin: 0 0 var(--espaco-sm);
+    list-style: none;
+}
+
+.rodape-legal a {
+    display: inline-block;
+    padding-block: 0.25rem;
+    color: var(--cor-clara);
+    text-underline-offset: 0.2em;
+}
+
+.rodape-legal a:focus-visible {
+    outline: 3px solid var(--cor-clara);
+    outline-offset: 3px;
+}
+
+.privacidade-dialogo {
+    width: min(94vw, 660px);
+    max-height: 85dvh;
+    padding: var(--espaco-lg);
+    border: 2px solid var(--cor-primaria);
+    border-radius: var(--borda-lg);
+    background: var(--cor-clara);
+    color: var(--cor-texto);
+    overflow: auto;
+    overflow-wrap: anywhere;
+    font: inherit;
+}
+
+.privacidade-dialogo::backdrop {
+    background: rgb(0 0 0 / 55%);
+}
+
+.privacidade-topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--espaco-sm);
+}
+
+.privacidade-topo h2 {
+    flex: 1 1 9rem;
+    font-size: 1.375rem;
+    margin: 0;
+}
+
+.privacidade-opcao {
+    display: flex;
+    gap: var(--espaco-xs);
+    align-items: flex-start;
+    padding-block: var(--espaco-xs);
+    cursor: pointer;
+}
+
+.privacidade-opcao input {
+    flex: 0 0 auto;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.2rem;
+    accent-color: var(--cor-secundaria);
+}
+
+.privacidade-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-sm);
+    margin-top: var(--espaco-sm);
+}
+
+.privacidade-dialogo button {
+    cursor: pointer;
+}
+
+.privacidade-estado:empty {
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .privacidade-dialogo {
+        padding: var(--espaco-sm);
+    }
+}
