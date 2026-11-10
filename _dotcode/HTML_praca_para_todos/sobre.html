@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/sobre.css">
     <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="stylesheet" href="css/privacidade.css">
     <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
     <title>Sobre o projeto | Praça para Todos</title>
 </head>
 <body>
+    <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <header class="cabecalho">
         <div class="container cabecalho-conteudo">
             <a href="index.html" class="logo">
@@ -69,7 +72,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
 
         <!-- Apresentação do projeto -->
         <section class="sobre-apresentacao" aria-labelledby="titulo-sobre">
@@ -436,6 +439,11 @@
             </div>
 
             <div class="rodape-inferior">
+                <ul class="rodape-legal" aria-label="Privacidade e condições de uso">
+                    <li><a href="privacidade.html">Privacidade (minuta)</a></li>
+                    <li><a href="termos.html">Termos de uso (minuta)</a></li>
+                    <li><a href="cookies.html#preferencias" data-privacidade-abrir>Preferências de privacidade</a></li>
+                </ul>
                 <p>
                     Praça para Todos — Projeto de extensão universitária
                 </p>
@@ -446,21 +454,8 @@
     <script src="js/global.js" defer></script>
     <script src="js/acessibilidade.js" defer></script>
     
-    <!-- VLibras - Governo Federal -->
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
-    <script>
-        new window.VLibras.Widget(
-            "https://vlibras.gov.br/app"
-        );
-    </script>
+    <!-- VLibras é opcional e só carrega após autorização específica. -->
+    <script src="js/privacidade.js" defer></script>
 
 </body>
 </html>

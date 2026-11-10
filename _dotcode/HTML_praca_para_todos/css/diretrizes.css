@@ -28,6 +28,7 @@
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: var(--espaco-lg);
+    overflow-wrap: anywhere;
 }
 
 .diretrizes-destaque {

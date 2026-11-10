@@ -1,0 +1,759 @@
+
+/* ==========================================
+   MOBILIÁRIOS URBANOS
+   Praça para Todos
+========================================== */
+
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS DA PÁGINA
+========================================== */
+
+.mobiliarios-hero,
+.mobiliarios-introducao,
+.mobiliarios-equipamentos,
+.mobiliarios-diagnostico {
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   APRESENTAÇÃO INICIAL
+========================================== */
+
+.mobiliarios-hero {
+    background:
+        linear-gradient(
+            120deg,
+            var(--cor-fundo) 0%,
+            #F8F6FD 60%,
+            #E8DDF5 100%
+        );
+
+    padding-block: 5.5rem;
+}
+
+.mobiliarios-hero-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin-inline: auto;
+}
+
+.mobiliarios-hero-texto {
+    width: 100%;
+    max-width: 850px;
+}
+
+
+/* ==========================================
+   ELEMENTOS DE IDENTIFICAÇÃO
+========================================== */
+
+.mobiliarios-etiqueta {
+    display: inline-block;
+
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    margin-bottom: 1rem;
+}
+
+.mobiliarios-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+
+    margin: 0 0 1.5rem;
+
+    max-width: 650px;
+}
+
+.mobiliarios-hero-texto > p {
+    max-width: 850px;
+
+    color: #514B60;
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    margin: 0 0 1rem;
+}
+
+
+/* ==========================================
+   DESTAQUE DA APRESENTAÇÃO
+========================================== */
+
+.mobiliarios-hero-destaque {
+    display: block;
+
+    width: 100%;
+    min-height: auto;
+}
+
+.mobiliarios-hero-card {
+    display: block;
+
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+
+    padding: 2rem 2.5rem;
+
+    color: var(--cor-clara);
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--cor-secundaria),
+            var(--cor-primaria)
+        );
+
+    border-radius: var(--borda-xl);
+
+    box-shadow: 0 12px 30px rgba(58, 31, 93, 0.12);
+}
+
+.mobiliarios-hero-card p {
+    color: var(--cor-clara);
+
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* ==========================================
+   LINK DE NAVEGAÇÃO
+========================================== */
+
+.mobiliarios-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+
+    margin-top: 0;
+    padding: 0.85rem 1.5rem;
+
+    color: var(--cor-clara);
+    background-color: var(--cor-secundaria);
+
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.mobiliarios-link:hover {
+    color: var(--cor-clara);
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.mobiliarios-link:focus-visible {
+    outline: 3px solid var(--cor-primaria);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   TÍTULOS DAS SEÇÕES
+========================================== */
+
+.mobiliarios-titulo-secao {
+    max-width: 760px;
+
+    margin: 0 auto 3.5rem;
+
+    text-align: center;
+}
+
+.mobiliarios-titulo-secao h2 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.mobiliarios-titulo-secao p {
+    color: #5A5468;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* ==========================================
+   INTRODUÇÃO
+========================================== */
+
+.mobiliarios-introducao {
+    padding-block: 5rem;
+
+    background-color: var(--cor-clara);
+}
+
+
+/* ==========================================
+   SEÇÃO DE EQUIPAMENTOS
+========================================== */
+
+.mobiliarios-equipamentos {
+    padding-block: 5rem;
+
+    background-color: #F8F7FC;
+}
+
+.mobiliarios-equipamentos .mobiliarios-titulo-secao {
+    margin-bottom: 4rem;
+}
+
+
+/* ==========================================
+   ESTRUTURA DOS MOBILIÁRIOS
+========================================== */
+
+.mobiliario-item {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 3.5rem;
+
+    margin-bottom: 4rem;
+    padding: 2rem;
+
+    background-color: var(--cor-clara);
+
+    border: 1px solid rgba(167, 139, 217, 0.25);
+    border-radius: var(--borda-xl);
+
+    box-shadow: 0 8px 30px rgba(58, 31, 93, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.mobiliario-item:last-child {
+    margin-bottom: 0;
+}
+
+.mobiliario-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 35px rgba(58, 31, 93, 0.1);
+}
+
+
+/* ==========================================
+   ALTERNÂNCIA DAS IMAGENS
+========================================== */
+
+.mobiliario-alternado .mobiliario-imagem {
+    order: 0;
+}
+
+.mobiliario-alternado .mobiliario-conteudo {
+    order: 1;
+}
+
+.mobiliario-card .mobiliario-imagem {
+    order: 1;
+}
+
+.mobiliario-card .mobiliario-conteudo {
+    order: 0;
+}
+
+
+/* ==========================================
+   IMAGENS
+========================================== */
+
+.mobiliario-imagem {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background-color: var(--cor-fundo);
+
+    border-radius: var(--borda-lg);
+
+    aspect-ratio: 5 / 4;
+}
+
+.mobiliario-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.mobiliario-item:hover .mobiliario-imagem img {
+    transform: scale(1.035);
+}
+
+
+/* ==========================================
+   CONTEÚDO DOS MOBILIÁRIOS
+========================================== */
+
+.mobiliario-conteudo {
+    min-width: 0;
+}
+
+.mobiliario-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 1rem;
+
+    color: var(--cor-secundaria);
+    background-color: var(--cor-fundo);
+
+    border-radius: 50%;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.mobiliario-conteudo h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+
+    margin: 0 0 1rem;
+}
+
+.mobiliario-conteudo > p {
+    color: #514B60;
+
+    font-size: 0.95rem;
+    line-height: 1.85;
+
+    margin: 0 0 1.5rem;
+}
+
+.mobiliario-conteudo h4 {
+    color: var(--cor-secundaria);
+
+    font-size: 1rem;
+
+    margin: 1.5rem 0 0.8rem;
+}
+
+
+/* ==========================================
+   LISTAS DE CRITÉRIOS
+========================================== */
+
+.mobiliario-conteudo ul {
+    display: grid;
+
+    gap: 0.7rem;
+
+    padding-left: 1.2rem;
+    margin: 0 0 1.5rem;
+}
+
+.mobiliario-conteudo li {
+    color: #514B60;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+
+    padding-left: 0.2rem;
+}
+
+.mobiliario-conteudo li::marker {
+    color: var(--cor-secundaria);
+}
+
+
+/* ==========================================
+   REFERÊNCIAS TÉCNICAS
+========================================== */
+
+.mobiliario-referencia {
+    display: block;
+
+    padding: 0.85rem 1rem;
+
+    color: var(--cor-primaria);
+    background-color: var(--cor-fundo);
+
+    border-left: 3px solid var(--cor-secundaria);
+    border-radius: 0 var(--borda-sm) var(--borda-sm) 0;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   DIAGNÓSTICO
+========================================== */
+
+.mobiliarios-diagnostico {
+    padding-block: 5rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            #F0EEFB,
+            #FFFFFF
+        );
+}
+
+.mobiliarios-diagnostico-intro {
+    max-width: 760px;
+
+    margin-bottom: 3rem;
+}
+
+.mobiliarios-diagnostico-intro h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+    margin: 0 0 1rem;
+}
+
+.mobiliarios-diagnostico-intro p {
+    color: #514B60;
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   CARDS DO DIAGNÓSTICO
+========================================== */
+
+.diagnostico-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.25rem;
+}
+
+.diagnostico-item {
+    padding: 1.5rem;
+
+    background-color: var(--cor-clara);
+
+    border: 1px solid rgba(167, 139, 217, 0.3);
+    border-radius: var(--borda-lg);
+
+    box-shadow: 0 5px 20px rgba(58, 31, 93, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.diagnostico-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(58, 31, 93, 0.09);
+}
+
+.diagnostico-item h3 {
+    color: var(--cor-secundaria);
+
+    font-size: 1.15rem;
+
+    margin: 0 0 0.8rem;
+}
+
+.diagnostico-item p {
+    color: #514B60;
+
+    font-size: 0.88rem;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* ==========================================
+   CONCLUSÃO
+========================================== */
+
+.mobiliarios-conclusao {
+    margin-top: 3rem;
+    padding: 2.5rem;
+
+    color: var(--cor-clara);
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--cor-primaria),
+            var(--cor-secundaria)
+        );
+
+    border-radius: var(--borda-xl);
+}
+
+.mobiliarios-conclusao h3 {
+    color: var(--cor-clara);
+
+    font-size: 1.6rem;
+
+    margin: 0 0 1rem;
+}
+
+.mobiliarios-conclusao p {
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    margin: 0 0 1rem;
+}
+
+.mobiliarios-conclusao p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .mobiliario-item {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .diagnostico-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - TABLETS PEQUENOS
+========================================== */
+
+@media (max-width: 768px) {
+
+    .mobiliarios-hero {
+        padding-block: 4rem;
+    }
+
+    .mobiliarios-hero-conteudo {
+        gap: 2rem;
+    }
+
+    .mobiliarios-hero-destaque {
+        min-height: auto;
+    }
+
+    .mobiliarios-hero-card {
+        padding: 2rem;
+    }
+
+    .mobiliarios-introducao,
+    .mobiliarios-equipamentos,
+    .mobiliarios-diagnostico {
+        padding-block: 4rem;
+    }
+
+    .mobiliarios-titulo-secao {
+        margin-bottom: 2.5rem;
+    }
+
+    .mobiliario-item {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .mobiliario-imagem,
+    .mobiliario-alternado .mobiliario-imagem,
+    .mobiliario-card .mobiliario-imagem {
+        order: 0;
+
+        aspect-ratio: 16 / 10;
+    }
+
+    .mobiliario-conteudo,
+    .mobiliario-alternado .mobiliario-conteudo,
+    .mobiliario-card .mobiliario-conteudo {
+        order: 1;
+    }
+
+    .mobiliarios-diagnostico-intro {
+        margin-bottom: 2rem;
+    }
+
+    .mobiliarios-conclusao {
+        padding: 2rem;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+
+    .mobiliarios-hero {
+        padding-block: 3rem;
+    }
+
+    .mobiliarios-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .mobiliarios-hero-texto > p {
+        font-size: 0.95rem;
+    }
+
+    .mobiliarios-hero-card {
+        padding: 1.5rem;
+    }
+
+    .mobiliarios-hero-card p {
+        font-size: 1rem;
+    }
+
+    .mobiliarios-introducao,
+    .mobiliarios-equipamentos,
+    .mobiliarios-diagnostico {
+        padding-block: 3rem;
+    }
+
+    .mobiliarios-titulo-secao h2,
+    .mobiliarios-diagnostico-intro h2 {
+        font-size: 1.7rem;
+    }
+
+    .mobiliario-item {
+        padding: 1rem;
+
+        border-radius: var(--borda-md);
+    }
+
+    .mobiliario-imagem {
+        aspect-ratio: 4 / 3;
+    }
+
+    .mobiliario-conteudo h3 {
+        font-size: 1.5rem;
+    }
+
+    .mobiliario-conteudo > p,
+    .mobiliario-conteudo li {
+        font-size: 0.88rem;
+    }
+
+    .diagnostico-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagnostico-item {
+        padding: 1.25rem;
+    }
+
+    .mobiliarios-conclusao {
+        padding: 1.5rem;
+    }
+
+    .mobiliarios-conclusao h3 {
+        font-size: 1.35rem;
+    }
+
+}
+
+
+/* ==========================================
+   ACESSIBILIDADE - MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mobiliarios-link,
+    .mobiliario-item,
+    .mobiliario-imagem img,
+    .diagnostico-item {
+        transition: none;
+    }
+
+    .mobiliarios-link:hover,
+    .mobiliario-item:hover,
+    .diagnostico-item:hover {
+        transform: none;
+    }
+
+    .mobiliario-item:hover .mobiliario-imagem img {
+        transform: none;
+    }
+
+}
+
+
+/* ==========================================
+   IMPRESSÃO
+========================================== */
+
+@media print {
+
+    .mobiliarios-hero,
+    .mobiliarios-introducao,
+    .mobiliarios-equipamentos,
+    .mobiliarios-diagnostico {
+        overflow: visible;
+    }
+
+    .mobiliario-item,
+    .diagnostico-item,
+    .mobiliarios-conclusao {
+        break-inside: avoid;
+
+        box-shadow: none;
+    }
+
+    .mobiliarios-link {
+        display: none;
+    }
+
+}

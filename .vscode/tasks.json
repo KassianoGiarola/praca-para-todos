@@ -1,0 +1,28 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar arquivo C++",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "${file}",
+                "-std=c++17",
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-o",
+                "${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
