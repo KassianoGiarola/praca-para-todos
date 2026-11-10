@@ -1,0 +1,403 @@
+/* ==========================================
+   CSS da página sobre.html
+========================================== */
+
+
+/* ==========================================
+   Sobre o projeto
+========================================== */
+
+.sobre-apresentacao {
+    background-color: var(--cor-fundo);
+    padding-block: var(--espaco-xxl);
+}
+
+.sobre-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.sobre-apresentacao h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-top: 0;
+    margin-bottom: var(--espaco-lg);
+}
+
+.sobre-destaque {
+    max-width: 850px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-bottom: var(--espaco-lg);
+}
+
+.sobre-descricao {
+    max-width: 850px;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: var(--espaco-md);
+}
+
+/* ==========================================
+   Seção de objetivos
+========================================== */
+
+.sobre-objetivos {
+    background-color: var(--cor-clara);
+    padding-block: var(--espaco-xxl);
+}
+
+.objetivos-cabecalho {
+    margin-bottom: var(--espaco-lg);
+}
+
+.objetivos-cabecalho h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: var(--espaco-xs);
+}
+
+.objetivos-cabecalho p {
+    max-width: 750px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   Cartões dos objetivos
+========================================== */
+
+.objetivos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--espaco-md);
+}
+
+.objetivo-card {
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-lg);
+    padding: var(--espaco-lg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-sm);
+}
+
+.objetivo-icone {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--cor-clara);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+}
+
+.objetivo-icone svg {
+    width: 26px;
+    height: 26px;
+}
+
+.objetivo-card h3 {
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+    margin: 0;
+}
+
+.objetivo-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ==========================================
+   Importância da acessibilidade
+========================================== */
+
+.sobre-importancia {
+    background-color: var(--cor-fundo);
+    padding-block: var(--espaco-xxl);
+}
+
+.importancia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--espaco-xxl);
+}
+
+
+/* Imagem */
+
+.importancia-imagem {
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    overflow: hidden;
+    border-radius: var(--borda-xl);
+}
+
+.importancia-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Conteúdo */
+
+.importancia-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.importancia-conteudo h2 {
+    color: var(--cor-primaria);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--espaco-md);
+}
+
+.importancia-descricao {
+    line-height: 1.8;
+    margin-bottom: var(--espaco-sm);
+}
+
+
+/* Destaques */
+
+.importancia-destaques {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-md);
+    margin-top: var(--espaco-lg);
+}
+
+.importancia-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--espaco-sm);
+}
+
+.importancia-marcador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.importancia-item h3 {
+    color: var(--cor-primaria);
+    font-size: 1rem;
+    margin: 0 0 0.25rem;
+}
+
+.importancia-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ==========================================
+   Equipe e instituição
+========================================== */
+
+.sobre-equipe {
+    background-color: var(--cor-clara);
+    padding-block: var(--espaco-xxl);
+}
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: var(--espaco-xxl);
+}
+
+
+/* Apresentação */
+
+.equipe-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.equipe-conteudo h2 {
+    color: var(--cor-primaria);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--espaco-md);
+}
+
+.equipe-conteudo p {
+    line-height: 1.8;
+    margin-bottom: var(--espaco-sm);
+}
+
+
+/* Cartão da instituição */
+
+.equipe-instituicao {
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-xl);
+    padding: var(--espaco-xl);
+}
+
+/* Logo da instituição */
+
+.instituicao-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.instituicao-logo img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+}
+
+.instituicao-divisor {
+    height: 1px;
+    background-color: var(--cor-destaque);
+    opacity: 0.5;
+    margin-block: var(--espaco-lg);
+}
+
+.instituicao-projeto {
+    font-weight: 600;
+    margin: 0 0 var(--espaco-xs);
+    text-align: center;
+}
+
+.instituicao-local {
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* ==========================================
+   Responsividade - Sobre o projeto
+========================================== */
+
+@media (max-width: 768px) {
+    .sobre-apresentacao {
+        padding-block: var(--espaco-xl);
+    }
+
+    .sobre-destaque {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-apresentacao {
+        padding-block: var(--espaco-lg);
+    }
+}
+
+
+/* ==========================================
+   Responsividade - Objetivos
+========================================== */
+
+@media (max-width: 900px) {
+    .objetivos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-objetivos {
+        padding-block: var(--espaco-lg);
+    }
+
+    .objetivos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .objetivo-card {
+        padding: var(--espaco-md);
+    }
+}
+
+/* ==========================================
+   Responsividade - Pq Importa?
+========================================== */
+
+@media (max-width: 900px) {
+    .importancia-grid {
+        grid-template-columns: 1fr;
+        gap: var(--espaco-lg);
+    }
+
+    .importancia-imagem {
+        height: 350px;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-importancia {
+        padding-block: var(--espaco-lg);
+    }
+
+    .importancia-imagem {
+        height: 250px;
+    }
+}
+
+/* ==========================================
+   Responsividade - Equipe
+========================================== */
+
+@media (max-width: 900px) {
+    .equipe-grid {
+        grid-template-columns: 1fr;
+        gap: var(--espaco-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-equipe {
+        padding-block: var(--espaco-lg);
+    }
+
+    .equipe-instituicao {
+        padding: var(--espaco-lg);
+    }
+}

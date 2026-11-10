@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "128095261088",
+    "project_id": "meu-treino-kassiano-2026",
+    "storage_bucket": "meu-treino-kassiano-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128095261088:android:1b6236a804755bcd1814c5",
+        "android_client_info": {
+          "package_name": "br.com.meutreino.meu_treino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128095261088-bqn773e9dsg8gl236rq9j5fhl2pfvcts.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.meutreino.meu_treino",
+            "certificate_hash": "f5258007bbe5099d6f43ac7090abc6735e7f3a25"
+          }
+        },
+        {
+          "client_id": "128095261088-n2f81lmka1fi6eo2ku01nkdglv176ndq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe9Y-3JXwxQWqceKhueR85z_cNR7RpI6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128095261088-n2f81lmka1fi6eo2ku01nkdglv176ndq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,365 @@
+
+/* ==========================================
+  CSS da página index.html
+========================================== */
+
+
+/* ==========================================
+   Hero e Imagem principal
+========================================== */
+
+.hero {
+    min-height: 550px;
+    background-color: var(--cor-fundo);
+    background-image: url('../assets/foto-praca.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-conteudo {
+    padding-block: var(--espaco-xxl);
+}
+
+
+/* ==========================================
+   Card de apresentação
+========================================== */
+
+.hero-card {
+    background-color: rgba(232, 221, 245, 0.90);
+    max-width: 550px;
+    padding: var(--espaco-lg);
+    border-radius: var(--borda-xl);
+    box-shadow: 0 8px 30px rgba(30, 27, 46, 0.15);
+}
+
+.hero-etiquetas {
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.hero-card h1 {
+    font-size: 3.9rem;
+    line-height: 1.15;
+    margin-block: var(--espaco-sm);
+}
+
+.hero-card p {
+    margin-bottom: var(--espaco-lg);
+    text-align: justify;
+}
+
+.hero-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--espaco-xl);
+}
+
+
+/* ==========================================
+   Benefícios
+========================================== */
+
+.beneficios {
+    background-color: var(--cor-clara);
+    padding-top: var(--espaco-lg);
+}
+
+.beneficios-conteudo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: var(--espaco-lg);
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-xs);
+    min-width: 0;
+}
+
+.beneficio strong {
+    display: block;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+.beneficio p {
+    margin: 0;
+    min-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.beneficio-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+}
+
+
+/* ==========================================
+   Seção de temas
+========================================== */
+
+.temas {
+    padding-top: var(--espaco-xs);
+    padding-bottom: var(--espaco-xxl);
+    background-color: var(--cor-clara);
+}
+
+.temas-cabecalho {
+    margin-bottom: var(--espaco-lg);
+}
+
+.temas-cabecalho h2 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espaco-xs);
+}
+
+.temas-cabecalho p {
+    color: var(--cor-texto);
+}
+
+
+/* ==========================================
+   Grid dos cartões
+========================================== */
+
+.temas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--espaco-md);
+}
+
+
+/* ==========================================
+   Cartões individuais
+========================================== */
+
+.tema-card {
+    overflow: hidden;
+    border-radius: var(--borda-lg);
+    background-color: var(--cor-clara);
+    border: 1px solid var(--cor-fundo);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tema-imagem-container {
+    position: relative;
+}
+
+.tema-imagem {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   Ícones dos cartões
+========================================== */
+
+.tema-icone {
+    position: absolute;
+    bottom: -20px;
+    left: var(--espaco-lg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+
+    border: 3px solid var(--cor-clara);
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+.tema-icone svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* ==========================================
+   Conteudo dos cartões
+========================================== */
+
+.tema-conteudo {
+    padding: var(--espaco-md);
+    padding-top: var(--espaco-xl);
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tema-conteudo h3 {
+    color: var(--cor-primaria);
+    font-size: 1rem;
+    margin-bottom: var(--espaco-sm);
+}
+
+.tema-link {
+    color: var(--cor-secundaria);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.tema-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   Seção acessibilidade
+========================================== */
+
+.acessibilidade {
+    padding-block: var(--espaco-xxl);
+    background-color: var(--cor-fundo);
+}
+
+.acessibilidade-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: var(--espaco-xl);
+}
+
+.acessibilidade-imagem img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: var(--borda-lg);
+}
+
+.acessibilidade-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.acessibilidade-texto h2 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espaco-md);
+}
+
+.acessibilidade-texto p {
+    line-height: 1.7;
+    margin-bottom: var(--espaco-md);
+}
+
+.acessibilidade-texto .botao {
+    margin-top: var(--espaco-sm);
+}
+
+
+/* ==========================================
+   Responsividade - Hero
+========================================== */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-conteudo {
+        padding-block: var(--espaco-lg);
+    }
+
+    .hero-card {
+        max-width: 100%;
+        padding: var(--espaco-lg);
+    }
+
+    .hero-card h1 {
+        font-size: 2rem;
+    }
+
+    .hero-acoes {
+        justify-content: left;
+        gap: var(--espaco-sm);
+    }
+}
+
+
+/* ==========================================
+   Responsividade - Benefícios
+========================================== */
+
+@media (max-width: 900px) {
+    .beneficios-conteudo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .beneficios-conteudo {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+   Responsividade - Temas
+========================================== */
+
+@media (max-width: 900px) {
+    .temas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .temas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+   Responsividade - Acessibilidade
+========================================== */
+
+@media (max-width: 768px) {
+    .acessibilidade-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .acessibilidade-imagem img {
+        height: 280px;
+    }
+}

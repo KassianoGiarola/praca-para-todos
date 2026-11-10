@@ -1,0 +1,502 @@
+
+/* ==========================================
+   CSS daa página diretrizes.html
+========================================== */
+
+
+/* ==========================================
+   Início
+========================================== */
+
+.diretrizes-introducao {
+    background-color: var(--cor-fundo);
+    padding-block: var(--espaco-xxl);
+}
+
+.diretrizes-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.diretrizes-introducao h1 {
+    color: var(--cor-primaria);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--espaco-lg);
+}
+
+.diretrizes-destaque {
+    max-width: 850px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-bottom: var(--espaco-lg);
+}
+
+.diretrizes-descricao {
+    max-width: 850px;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: var(--espaco-md);
+}
+
+
+/* ==========================================
+   Área de acessibilidade
+========================================== */
+
+.diretrizes-areas {
+    background-color: var(--cor-clara);
+    padding-block: var(--espaco-xxl);
+}
+
+.areas-cabecalho {
+    margin-bottom: var(--espaco-lg);
+}
+
+.areas-cabecalho h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: var(--espaco-xs);
+}
+
+.areas-cabecalho p {
+    max-width: 750px;
+    line-height: 1.7;
+}
+
+
+/* Grade de cartões */
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--espaco-md);
+}
+
+
+/* Cartões */
+
+.area-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-sm);
+
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-lg);
+    padding: var(--espaco-lg);
+}
+
+
+/* Ícones SVG */
+
+.area-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    background-color: var(--cor-clara);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+}
+
+.area-icone svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+}
+
+
+/* Conteúdo dos cartões */
+
+.area-card h3 {
+    color: var(--cor-primaria);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.area-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+}
+
+.area-card a {
+    color: var(--cor-secundaria);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.area-card a:hover {
+    text-decoration: underline;
+}
+
+.area-card a:focus-visible {
+    outline: 2px solid var(--cor-secundaria);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+
+/* ==========================================
+   Princípios do desenho universal
+========================================== */
+
+.diretrizes-principios {
+    background-color: var(--cor-fundo);
+    padding-block: var(--espaco-xxl);
+}
+
+
+/* Cabeçalho */
+
+.principios-cabecalho {
+    margin-bottom: var(--espaco-lg);
+}
+
+.principios-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.principios-cabecalho h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: var(--espaco-sm);
+}
+
+.principios-cabecalho p {
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+
+/* Lista de princípios */
+
+.principios-lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaco-sm);
+}
+
+
+/* Item */
+
+.principio-item {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-md);
+
+    background-color: var(--cor-clara);
+    border-radius: var(--borda-lg);
+    padding: var(--espaco-lg);
+}
+
+
+/* Ícone SVG */
+
+.principio-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 56px;
+    height: 56px;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    border-radius: var(--borda-md);
+}
+
+.principio-icone svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+}
+
+
+/* Textos */
+
+.principio-conteudo h3 {
+    color: var(--cor-primaria);
+    font-size: 1.05rem;
+    margin: 0 0 var(--espaco-xs);
+}
+
+.principio-conteudo p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ==========================================
+   Normas e referências
+========================================== */
+
+.diretrizes-normas {
+    background-color: var(--cor-clara);
+    padding-block: var(--espaco-xxl);
+}
+
+
+/* Cabeçalho */
+
+.normas-cabecalho {
+    margin-bottom: var(--espaco-lg);
+}
+
+.normas-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.normas-cabecalho h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: var(--espaco-sm);
+}
+
+.normas-cabecalho p {
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+
+/* Grade */
+
+.normas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--espaco-md);
+}
+
+
+/* Cartões */
+
+.norma-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-sm);
+
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-lg);
+    padding: var(--espaco-lg);
+}
+
+
+/* Ícones SVG */
+
+.norma-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    background-color: var(--cor-clara);
+    color: var(--cor-secundaria);
+    border-radius: var(--borda-md);
+}
+
+.norma-icone svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+}
+
+
+/* Textos */
+
+.norma-tipo {
+    color: var(--cor-secundaria);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.norma-card h3 {
+    color: var(--cor-primaria);
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.norma-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+}
+
+
+/* Links */
+
+.norma-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    color: var(--cor-secundaria);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    margin-top: var(--espaco-sm);
+}
+
+.norma-card a:hover {
+    text-decoration: underline;
+}
+
+.norma-card a:focus-visible {
+    outline: 2px solid var(--cor-secundaria);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+
+/* Observação */
+
+.normas-observacao {
+    max-width: 900px;
+    margin-top: var(--espaco-lg);
+    margin-bottom: 0;
+
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   Responsividade - Início
+========================================== */
+
+@media (max-width: 768px) {
+    .diretrizes-introducao {
+        padding-block: var(--espaco-xl);
+    }
+
+    .diretrizes-destaque {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diretrizes-introducao {
+        padding-block: var(--espaco-lg);
+    }
+}
+
+/* ==========================================
+   Responsividade - Áreas de acessibilidade
+========================================== */
+
+@media (max-width: 900px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .diretrizes-areas {
+        padding-block: var(--espaco-lg);
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card {
+        padding: var(--espaco-md);
+    }
+}
+
+/* ==========================================
+   Responsividade - Princípios D.U.
+========================================== */
+
+@media (max-width: 768px) {
+    .diretrizes-principios {
+        padding-block: var(--espaco-xl);
+    }
+
+    .principio-item {
+        padding: var(--espaco-md);
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .diretrizes-principios {
+        padding-block: var(--espaco-lg);
+    }
+
+    .principio-item {
+        gap: var(--espaco-sm);
+    }
+
+    .principio-icone {
+        width: 44px;
+        height: 44px;
+    }
+
+    .principio-icone svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ==========================================
+   Responsividade - Normas e referências
+========================================== */
+
+@media (max-width: 900px) {
+    .normas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .diretrizes-normas {
+        padding-block: var(--espaco-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .diretrizes-normas {
+        padding-block: var(--espaco-lg);
+    }
+
+    .normas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .norma-card {
+        padding: var(--espaco-md);
+    }
+}
