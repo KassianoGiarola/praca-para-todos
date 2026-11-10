@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/mobiliarios.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="stylesheet" href="css/privacidade.css">
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+    <title>Mobiliários Urbanos | Praça para Todos</title>
+    <meta
+        name="description"
+        content="Conheça os critérios de acessibilidade aplicados aos mobiliários urbanos e sua importância para a inclusão nas praças públicas."
+    >
+</head>
+
+<body>
+
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/icons/logo.svg"
+                    alt=""
+                    class="logo-icone"
+                    width="36"
+                    height="36"
+                >
+                <span>Praça para Todos</span>
+            </a>
+
+            <button
+                class="botao-menu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+
+                <!-- Ícone de abrir -->
+                <svg
+                    class="icone-menu icone-abrir"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="M2 7h16"/>
+                    <path d="M2 13h10"/>
+                </svg>
+
+                <!-- Ícone de fechar -->
+                <svg
+                    class="icone-menu icone-fechar"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    aria-hidden="true"
+                >
+                    <path d="M5 5L15 15"/>
+                    <path d="M15 5L5 15"/>
+                </svg>
+
+            </button>
+
+            <nav id="menu-principal" aria-label="Navegação principal">
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="mobiliarios.html" aria-current="page">Mobiliários Urbanos</a></li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo-principal" tabindex="-1">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="mobiliarios-hero" aria-labelledby="titulo-pagina">
+
+            <div class="container mobiliarios-hero-conteudo">
+
+                <div class="mobiliarios-hero-texto">
+
+                    <span class="mobiliarios-etiqueta">
+                        Desenho universal e acessibilidade
+                    </span>
+
+                    <h1 id="titulo-pagina">
+                        Mobiliários Urbanos
+                    </h1>
+
+                    <p>
+                        Os mobiliários urbanos fazem parte da estrutura das
+                        praças e contribuem para o descanso, a orientação,
+                        a convivência e a utilização dos espaços públicos.
+                    </p>
+
+                    <p>
+                        Para que esses ambientes sejam verdadeiramente
+                        inclusivos, bancos, mesas, bebedouros, lixeiras e
+                        elementos de sinalização precisam considerar as
+                        diferentes necessidades de seus usuários.
+                    </p>
+
+                </div>
+
+                <div class="mobiliarios-hero-destaque">
+                    <div class="mobiliarios-hero-card">
+                        <p>
+                            Acessibilidade também significa permitir que todas as pessoas
+                            utilizem os espaços públicos com autonomia e segurança.
+                        </p>
+                    </div>
+                </div>
+            
+                <button 
+                    type="button"
+                    class="mobiliarios-link" 
+                    onclick="document.getElementById('equipamentos').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+                >
+                    Conheça os mobiliários
+                </button>
+            
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+        <section class="mobiliarios-introducao">
+            <div class="container">
+
+                <div class="mobiliarios-titulo-secao">
+                    <span class="mobiliarios-etiqueta">
+                        Espaços para todos
+                    </span>
+
+                    <h2>
+                        A importância do mobiliário acessível
+                    </h2>
+
+                    <p>
+                        Um mobiliário adequado deve permitir aproximação,
+                        alcance e utilização por pessoas com diferentes
+                        capacidades físicas e sensoriais.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- EQUIPAMENTOS -->
+        <section
+            class="mobiliarios-equipamentos"
+            id="equipamentos"
+            aria-labelledby="titulo-equipamentos"
+        >
+
+            <div class="container">
+
+                <div class="mobiliarios-titulo-secao">
+                    <span class="mobiliarios-etiqueta">
+                        Critérios de acessibilidade
+                    </span>
+
+                    <h2 id="titulo-equipamentos">
+                        Conheça os mobiliários
+                    </h2>
+
+                    <p>
+                        Confira algumas soluções e critérios que ajudam
+                        a tornar as praças mais acessíveis e inclusivas.
+                    </p>
+                </div>
+
+
+                <!-- BEBEDOUROS -->
+                <article class="mobiliario-item mobiliario-alternado">
+
+                    <div class="mobiliario-imagem">
+                        <img
+                            src="assets/bebedouro-acessivel.jpeg"
+                            alt="Bebedouro com diferentes alturas, permitindo o uso por pessoas em cadeira de rodas e pessoas de baixa estatura."
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="mobiliario-conteudo">
+
+                        <span class="mobiliario-numero">01</span>
+
+                        <h3>Bebedouros acessíveis</h3>
+
+                        <p>
+                            Bebedouros instalados em alturas inadequadas
+                            dificultam o uso por cadeirantes, crianças e
+                            pessoas de baixa estatura. A utilização de
+                            equipamentos em diferentes alturas favorece
+                            o alcance e a aproximação.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Saída de água dos modelos de bica a
+                                0,90 m de altura.
+                            </li>
+
+                            <li>
+                                Altura livre inferior mínima de 0,73 m.
+                            </li>
+
+                            <li>
+                                Acionamento de fácil alcance e utilização.
+                            </li>
+
+                            <li>
+                                Área livre próxima ao equipamento para
+                                aproximação.
+                            </li>
+
+                            <li>
+                                Instalação sem obstruir as rotas acessíveis.
+                            </li>
+                        </ul>
+
+                        <span class="mobiliario-referencia">
+                            Referência: ABNT NBR 9050:2020, seção 8.5.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SINALIZAÇÃO -->
+                <article class="mobiliario-item mobiliario-card">
+
+                    <div class="mobiliario-imagem">
+                        <img
+                            src="assets/sinalizacao-acessivel.jpeg"
+                            alt="Placa direcional com informações em Braille para auxiliar na orientação de pessoas com deficiência visual."
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="mobiliario-conteudo">
+
+                        <span class="mobiliario-numero">02</span>
+
+                        <h3>Sinalização acessível</h3>
+
+                        <p>
+                            A falta de sinalização acessível dificulta a
+                            orientação de pessoas cegas ou com baixa visão.
+                            A combinação de placas visuais e táteis,
+                            informações em Braille e pisos táteis auxilia
+                            na identificação dos ambientes e na circulação.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Informações claras, legíveis e perceptíveis.
+                            </li>
+
+                            <li>
+                                Contraste adequado entre os caracteres
+                                e o fundo.
+                            </li>
+
+                            <li>
+                                Informações em Braille e sinalização tátil
+                                em relevo, quando exigidas.
+                            </li>
+
+                            <li>
+                                Piso tátil direcional para orientação
+                                do deslocamento.
+                            </li>
+
+                            <li>
+                                Piso tátil de alerta para indicar locais
+                                que exigem maior atenção.
+                            </li>
+                        </ul>
+
+                        <span class="mobiliario-referencia">
+                            Referências: ABNT NBR 9050:2020, seção 5,
+                            e ABNT NBR 16537:2024.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MESAS -->
+                <article class="mobiliario-item mobiliario-alternado">
+
+                    <div class="mobiliario-imagem">
+                        <img
+                            src="assets/mesa-acessivel.jpeg"
+                            alt="Mesa quadrada com um dos lados livres, permitindo a aproximação de uma pessoa em cadeira de rodas."
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="mobiliario-conteudo">
+
+                        <span class="mobiliario-numero">03</span>
+
+                        <h3>Mesas acessíveis</h3>
+
+                        <p>
+                            Mesas convencionais podem impedir a aproximação
+                            de cadeiras de rodas devido à altura, às bases
+                            e à falta de espaço para as pernas. Uma mesa
+                            acessível permite o uso compartilhado do
+                            mobiliário nos espaços de convivência.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Superfície superior entre 0,75 m e 0,85 m
+                                em relação ao piso acabado.
+                            </li>
+
+                            <li>
+                                Altura livre inferior mínima de 0,73 m.
+                            </li>
+
+                            <li>
+                                Largura livre mínima de 0,80 m sob o tampo.
+                            </li>
+
+                            <li>
+                                Profundidade livre mínima de 0,50 m sob
+                                o tampo.
+                            </li>
+
+                            <li>
+                                Espaço ao redor para circulação e manobras.
+                            </li>
+
+                            <li>
+                                Piso regular, firme, estável e antiderrapante.
+                            </li>
+                        </ul>
+
+                        <span class="mobiliario-referencia">
+                            Referência: ABNT NBR 9050:2020, seção 9.3.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BANCOS -->
+                <article class="mobiliario-item mobiliario-card">
+
+                    <div class="mobiliario-imagem">
+                        <img
+                            src="assets/banco-acessivel.jpeg"
+                            alt="Banco com encosto e apoio para os braços, acompanhado de espaço lateral livre para uma cadeira de rodas."
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="mobiliario-conteudo">
+
+                        <span class="mobiliario-numero">04</span>
+
+                        <h3>Bancos acessíveis</h3>
+
+                        <p>
+                            Bancos sem apoios ou espaço lateral adequado
+                            dificultam o descanso de pessoas idosas,
+                            com mobilidade reduzida ou que utilizam
+                            cadeiras de rodas. A presença de encostos,
+                            apoios para os braços e áreas livres adjacentes
+                            favorece a permanência e a convivência.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Encosto para oferecer apoio durante
+                                a utilização.
+                            </li>
+
+                            <li>
+                                Apoios para os braços que contribuam
+                                para a estabilidade dos usuários.
+                            </li>
+
+                            <li>
+                                Área livre adjacente para permanência
+                                de pessoas em cadeiras de rodas.
+                            </li>
+
+                            <li>
+                                Módulo de referência de 0,80 m por 1,20 m
+                                para ocupação de uma pessoa em cadeira
+                                de rodas.
+                            </li>
+
+                            <li>
+                                Posicionamento que não obstrua as faixas
+                                livres de circulação ou a sinalização tátil.
+                            </li>
+                        </ul>
+
+                        <span class="mobiliario-referencia">
+                            Referência: ABNT NBR 9050:2020.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LIXEIRAS -->
+                <article class="mobiliario-item mobiliario-alternado">
+
+                    <div class="mobiliario-imagem">
+                        <img
+                            src="assets/lixeira-acessivel.jpeg"
+                            alt="Idosa utilizando uma lixeira instalada em altura que permite o alcance e o descarte de resíduos."
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="mobiliario-conteudo">
+
+                        <span class="mobiliario-numero">05</span>
+
+                        <h3>Lixeiras acessíveis</h3>
+
+                        <p>
+                            A utilização de lixeiras pode ser difícil
+                            para pessoas idosas, usuários de cadeiras
+                            de rodas e pessoas com mobilidade reduzida
+                            quando a abertura está fora do alcance
+                            ou exige esforço excessivo.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Abertura em altura que permita o alcance
+                                dos usuários.
+                            </li>
+
+                            <li>
+                                Descarte sem movimentos complexos
+                                ou força excessiva.
+                            </li>
+
+                            <li>
+                                Piso firme, regular, estável e antiderrapante.
+                            </li>
+
+                            <li>
+                                Espaço livre para aproximação e manobra.
+                            </li>
+
+                            <li>
+                                Posicionamento que preserve a circulação
+                                e a sinalização tátil.
+                            </li>
+
+                            <li>
+                                Identificação visual clara e materiais
+                                resistentes.
+                            </li>
+                        </ul>
+
+                        <span class="mobiliario-referencia">
+                            Referência: ABNT NBR 9050:2020.
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIAGNÓSTICO -->
+        <section
+            class="mobiliarios-diagnostico"
+            aria-labelledby="titulo-diagnostico"
+        >
+
+            <div class="container">
+
+                <div class="mobiliarios-diagnostico-intro">
+
+                    <span class="mobiliarios-etiqueta">
+                        Análise das praças
+                    </span>
+
+                    <h2 id="titulo-diagnostico">
+                        Diagnóstico das condições de acessibilidade
+                    </h2>
+
+                    <p>
+                        A análise das condições de acessibilidade dos
+                        mobiliários urbanos nas praças evidenciou
+                        inadequações que podem dificultar ou impedir
+                        a utilização desses espaços por pessoas com
+                        deficiência ou mobilidade reduzida.
+                    </p>
+
+                </div>
+
+
+                <div class="diagnostico-grid">
+
+                    <article class="diagnostico-item">
+                        <h3>Bancos</h3>
+                        <p>
+                            Presença de modelos convencionais,
+                            frequentemente sem encosto e apoios para
+                            os braços, além da ausência de espaços
+                            livres adjacentes para usuários de
+                            cadeiras de rodas.
+                        </p>
+                    </article>
+
+                    <article class="diagnostico-item">
+                        <h3>Mesas</h3>
+                        <p>
+                            Ausência de mobiliários adaptados,
+                            com altura e espaço inferior adequados,
+                            comprometendo a aproximação frontal
+                            e a utilização por pessoas em cadeiras
+                            de rodas.
+                        </p>
+                    </article>
+
+                    <article class="diagnostico-item">
+                        <h3>Lixeiras</h3>
+                        <p>
+                            Aberturas em alturas inadequadas,
+                            ausência de espaços apropriados para
+                            aproximação e dificuldades para realizar
+                            o descarte de maneira independente.
+                        </p>
+                    </article>
+
+                    <article class="diagnostico-item">
+                        <h3>Circulação</h3>
+                        <p>
+                            Pavimentação irregular, obstáculos e
+                            disposição inadequada dos equipamentos,
+                            comprometendo o deslocamento seguro.
+                        </p>
+                    </article>
+
+                    <article class="diagnostico-item">
+                        <h3>Sinalização</h3>
+                        <p>
+                            Ausência de recursos de orientação
+                            acessível, incluindo informações
+                            visuais e táteis.
+                        </p>
+                    </article>
+
+                    <article class="diagnostico-item">
+                        <h3>Bebedouros</h3>
+                        <p>
+                            Ausência de equipamentos adaptados
+                            que considerem diferentes alturas
+                            e condições de aproximação.
+                        </p>
+                    </article>
+
+                </div>
+
+
+                <div class="mobiliarios-conclusao">
+
+                    <h3>Praças acessíveis são espaços para todos</h3>
+
+                    <p>
+                        O planejamento dos mobiliários urbanos deve
+                        considerar as diferentes necessidades das
+                        pessoas, garantindo condições adequadas
+                        de acessibilidade, segurança, circulação
+                        e permanência.
+                    </p>
+
+                    <p>
+                        Mais do que instalar equipamentos, é
+                        necessário garantir que todos possam
+                        utilizá-los com autonomia e participar
+                        dos espaços de convivência.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container">
+
+            <div class="rodape-conteudo">
+
+                <!-- Informações do projeto -->
+                <div class="rodape-sobre">
+                    <h2>Praça para Todos</h2>
+
+                    <p>
+                        Promovendo acessibilidade, inclusão e
+                        conhecimento para transformar os
+                        espaços públicos.
+                    </p>
+                </div>
+
+                <!-- Navegação -->
+                <nav
+                    class="rodape-navegacao"
+                    aria-label="Navegação do rodapé"
+                >
+                    <h3>Navegação</h3>
+
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o projeto</a></li>
+                        <li><a href="diretrizes.html">Diretrizes</a></li>
+                        <li><a href="mobiliarios.html">Mobiliários Urbanos</a></li>
+                        <li><a href="biblioteca.html">Biblioteca</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Informações institucionais -->
+                <div class="rodape-institucional">
+                    <h3>Projeto de extensão</h3>
+
+                    <p>
+                        Iniciativa acadêmica voltada à
+                        acessibilidade e à inclusão
+                        nos espaços públicos.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="rodape-inferior">
+
+                <ul
+                    class="rodape-legal"
+                    aria-label="Privacidade e condições de uso"
+                >
+                    <li>
+                        <a href="privacidade.html">
+                            Privacidade (minuta)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="termos.html">
+                            Termos de uso (minuta)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="cookies.html#preferencias"
+                            data-privacidade-abrir
+                        >
+                            Preferências de privacidade
+                        </a>
+                    </li>
+                </ul>
+
+                <p>
+                    Praça para Todos — Projeto de extensão universitária
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/global.js" defer></script>
+    <script src="js/acessibilidade.js" defer></script>
+
+    <!-- VLibras é opcional e só carrega após autorização específica. -->
+    <script src="js/privacidade.js" defer></script>
+
+</body>
+</html>
