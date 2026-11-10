@@ -1,0 +1,610 @@
+
+/* ==========================================
+   CENTRAL DE ACESSIBILIDADE GLOBAL
+========================================== */
+
+/* Botão lateral de recursos assistivos */
+
+.a11y-barra {
+    position: fixed;
+    right: 0;
+    top: 42%;
+    z-index: 9998;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.a11y-atalho {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+
+    overflow: hidden;
+    align-self: flex-end;
+    white-space: nowrap;
+
+    border: 0;
+    border-radius: 10px 0 0 10px;
+
+    background-color: #3A1F5D;
+    color: #FFFFFF;
+
+    font: 600 13px Montserrat, sans-serif;
+    cursor: pointer;
+
+    transition:
+        width 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.a11y-atalho:hover,
+.a11y-atalho:focus-visible {
+    width: 190px;
+    background-color: #6A3FB2;
+}
+
+.a11y-atalho svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.a11y-atalho:focus-visible,
+.a11y-painel button:focus-visible {
+    outline: 3px solid #A78BD9;
+    outline-offset: 2px;
+}
+
+
+/* ==========================================
+   FUNDO DO PAINEL
+========================================== */
+
+.a11y-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background-color: rgb(0 0 0 / 55%);
+}
+
+.a11y-fundo[hidden],
+.a11y-painel[hidden] {
+    display: none !important;
+}
+
+
+/* ==========================================
+   PAINEL DE RECURSOS ASSISTIVOS
+========================================== */
+
+.a11y-painel {
+    position: fixed;
+    z-index: 10000;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(94vw, 660px);
+    max-height: 90dvh;
+    overflow-y: auto;
+
+    border-radius: 18px;
+    background-color: #FFFFFF;
+    color: #1E1B2E;
+
+    box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+
+    font-family: Montserrat, sans-serif;
+    line-height: 1.5;
+}
+
+
+/* Cabeçalho do painel */
+
+.a11y-topo {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 20px 24px;
+
+    background-color: #3A1F5D;
+    color: #FFFFFF;
+}
+
+.a11y-topo h2 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+}
+
+.a11y-fechar {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgb(255 255 255 / 40%);
+    border-radius: 10px;
+
+    background-color: transparent;
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.a11y-fechar:hover {
+    background-color: rgb(255 255 255 / 15%);
+}
+
+.a11y-fechar svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* Conteúdo do painel */
+
+.a11y-conteudo {
+    padding: 24px;
+}
+
+.a11y-grupo {
+    margin-bottom: 24px;
+}
+
+.a11y-grupo h3 {
+    margin: 0 0 12px;
+
+    color: #3A1F5D;
+    font-size: 1rem;
+}
+
+
+/* Grade de ferramentas */
+
+.a11y-grade {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.a11y-opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 105px;
+    padding: 12px;
+
+    border: 2px solid #E8DDF5;
+    border-radius: 12px;
+
+    background-color: #F0EEFB;
+    color: #3A1F5D;
+
+    font: 600 12px Montserrat, sans-serif;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.a11y-opcao:hover {
+    border-color: #6A3FB2;
+    background-color: #E8DDF5;
+}
+
+.a11y-opcao[aria-pressed="true"] {
+    border-color: #6A3FB2;
+    background-color: #E0D1FA;
+}
+
+.a11y-opcao svg {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+}
+
+
+/* Botão de restaurar configurações */
+
+.a11y-restaurar {
+    width: 100%;
+    padding: 13px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background-color: #3A1F5D;
+    color: #FFFFFF;
+
+    font: 600 14px Montserrat, sans-serif;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.a11y-restaurar:hover {
+    background-color: #6A3FB2;
+}
+
+
+/* ==========================================
+   AJUSTES DE ACESSIBILIDADE DO SITE
+========================================== */
+
+/* Cores utilizadas pelo modo de alto contraste */
+
+html.a11y-contraste {
+    --contraste-fundo: #000000;
+    --contraste-texto: #FFFFFF;
+    --contraste-link: #FFFF00;
+    --contraste-borda: #FFFFFF;
+    --contraste-foco: #00FFFF;
+}
+
+/* Fundo principal */
+
+html.a11y-contraste body {
+    background-color: var(--contraste-fundo) !important;
+    color: var(--contraste-texto) !important;
+}
+
+/* Áreas estruturais */
+
+html.a11y-contraste body :is(
+    header,
+    main,
+    footer,
+    nav,
+    section,
+    article,
+    aside
+):not(.a11y-painel):not(.a11y-barra) {
+    background-color: var(--contraste-fundo) !important;
+    background-image: none !important;
+    color: var(--contraste-texto) !important;
+    border-color: var(--contraste-borda) !important;
+}
+
+/* Elementos de conteúdo, exceto a central */
+
+html.a11y-contraste body :is(
+    div,
+    figure,
+    figcaption,
+    blockquote,
+    details,
+    summary
+):not(.a11y-painel):not(.a11y-barra):not(.a11y-fundo):not(.a11y-cursor-destaque):not([vw]):not([id^="vlibras"]) {
+    background-color: transparent;
+    border-color: var(--contraste-borda);
+}
+
+/* Textos */
+
+html.a11y-contraste body :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    span,
+    strong,
+    small,
+    label,
+    blockquote
+) {
+    color: var(--contraste-texto) !important;
+    text-shadow: none !important;
+}
+
+/* Links */
+
+html.a11y-contraste body a {
+    color: var(--contraste-link) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+html.a11y-contraste body a:hover {
+    color: #00FFFF !important;
+}
+
+/* Botões do site */
+
+html.a11y-contraste body button:not(.a11y-atalho):not(.a11y-opcao):not(.a11y-fechar):not(.a11y-restaurar) {
+    background-color: #000000 !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+/* Formulários */
+
+html.a11y-contraste body :is(
+    input,
+    textarea,
+    select
+) {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+html.a11y-contraste body input::placeholder,
+html.a11y-contraste body textarea::placeholder {
+    color: #CCCCCC !important;
+    opacity: 1;
+}
+
+/* Foco de teclado */
+
+html.a11y-contraste body :is(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [tabindex]
+):focus-visible {
+    outline: 3px solid var(--contraste-foco) !important;
+    outline-offset: 3px !important;
+}
+
+/* Ícones SVG do site */
+
+html.a11y-contraste body svg:not(.a11y-painel svg):not(.a11y-barra svg) {
+    color: #FFFFFF;
+}
+
+/* ==========================================
+   PRESERVAR CENTRAL DE ACESSIBILIDADE
+========================================== */
+
+html.a11y-contraste .a11y-painel {
+    background-color: #FFFFFF !important;
+    color: #1E1B2E !important;
+}
+
+html.a11y-contraste .a11y-topo {
+    background-color: #3A1F5D !important;
+}
+
+html.a11y-contraste .a11y-topo h2,
+html.a11y-contraste .a11y-fechar {
+    color: #FFFFFF !important;
+}
+
+html.a11y-contraste .a11y-grupo h3,
+html.a11y-contraste .a11y-opcao,
+html.a11y-contraste .a11y-opcao span {
+    color: #3A1F5D !important;
+}
+
+html.a11y-contraste .a11y-opcao {
+    background-color: #F0EEFB !important;
+}
+
+html.a11y-contraste .a11y-opcao[aria-pressed="true"] {
+    background-color: #E0D1FA !important;
+}
+
+html.a11y-contraste .a11y-atalho,
+html.a11y-contraste .a11y-restaurar {
+    background-color: #3A1F5D !important;
+    color: #FFFFFF !important;
+}
+
+html.a11y-contraste .a11y-restaurar {
+    border: 0 !important;
+}
+
+/* Destacar links */
+
+html.a11y-links body a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 4px !important;
+}
+
+
+/* Ocultar imagens */
+
+html.a11y-sem-imagens body img:not(.a11y-preservar) {
+    visibility: hidden !important;
+}
+
+
+/* Pausar animações */
+
+html.a11y-sem-animacoes body *,
+html.a11y-sem-animacoes body *::before,
+html.a11y-sem-animacoes body *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+
+
+/* ==========================================
+   CURSOR DESTACADO
+========================================== */
+
+/* Mantém o cursor original do navegador */
+
+html.a11y-cursor body {
+    cursor: auto !important;
+}
+
+/* Preserva o cursor de elementos interativos */
+
+html.a11y-cursor body a,
+html.a11y-cursor body button,
+html.a11y-cursor body select {
+    cursor: pointer !important;
+}
+
+/* Destaque circular que acompanha o mouse */
+
+.a11y-cursor-destaque {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: 3px solid #FFBF00;
+    border-radius: 50%;
+
+    background-color: rgb(255 191 0 / 12%);
+
+    box-shadow:
+        0 0 0 2px rgb(0 0 0 / 65%);
+
+    pointer-events: none;
+    z-index: 2147483647;
+
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+/* Exibe somente quando o recurso estiver ativo */
+
+html.a11y-cursor .a11y-cursor-destaque {
+    visibility: visible;
+}
+
+/* Não exibir em dispositivos sem mouse */
+
+@media (hover: none), (pointer: coarse) {
+    .a11y-cursor-destaque {
+        display: none !important;
+    }
+}
+
+
+
+/* Impedir rolagem ao abrir o painel */
+
+body.a11y-modal-aberto {
+    overflow: hidden;
+}
+
+
+/* Espaçamento entre linhas */
+
+html[style*="--a11y-altura-linha"] body :is(
+    p,
+    li,
+    blockquote
+) {
+    line-height: var(--a11y-altura-linha) !important;
+}
+
+
+/* Preservar espaçamento do painel */
+
+.a11y-painel,
+.a11y-barra {
+    letter-spacing: normal;
+}
+
+
+/* ==========================================
+   VLIBRAS - CANTO INFERIOR DIREITO
+========================================== */
+
+#vlibras-access-wrapper {
+    position: fixed !important;
+    inset: auto 20px 20px auto !important;
+    margin: 0 !important;
+    z-index: 9997 !important;
+}
+
+/* Contêiner original do VLibras */
+
+div[vw].enabled {
+    z-index: 9996 !important;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 600px) {
+
+    /* Botão lateral */
+
+    .a11y-barra {
+        top: 42%;
+        bottom: auto;
+    }
+
+    /* Painel */
+
+    .a11y-painel {
+        width: 94vw;
+        max-height: 85dvh;
+    }
+
+    .a11y-topo,
+    .a11y-conteudo {
+        padding: 16px;
+    }
+
+    /* Grade de ferramentas */
+
+    .a11y-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* VLibras */
+
+    #vlibras-access-wrapper {
+        inset: auto 12px 12px auto !important;
+    }
+}
+
+
+/* ==========================================
+   REDUÇÃO DE MOVIMENTO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .a11y-atalho,
+    .a11y-opcao,
+    .a11y-restaurar {
+        transition: none;
+    }
+}
