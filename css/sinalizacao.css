@@ -11,7 +11,7 @@
 
 :root {
     --sinalizacao-primary:
-        var(--primary-color, var(--cor-primaria, #286b57));
+        var(--primary-color, var(--cor-primaria, #472272));
 
     --sinalizacao-secondary:
         var(--secondary-color, var(--cor-secundaria, #eaf2ed));
@@ -20,10 +20,10 @@
         var(--background-color, var(--cor-fundo, #f7f9f7));
 
     --sinalizacao-text:
-        var(--text-color, var(--cor-texto, #25352e));
+        var(--text-color, var(--cor-texto, #17141a));
 
     --sinalizacao-muted:
-        var(--text-secondary, var(--cor-texto-secundario, #66736c));
+        var(--text-secondary, var(--cor-texto-secundario, #000000));
 
     --sinalizacao-border:
         var(--border-color, var(--cor-borda, #e0e7e2));
