@@ -1,0 +1,129 @@
+
+/* ========================================
+   BIBLIOTECA
+======================================== */
+
+/* Introdução */
+.introducao-biblioteca {
+    background-color: var(--cor-fundo);
+    padding-block: var(--espaco-xxl);
+}
+
+.biblioteca-etiqueta {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.introducao-biblioteca h1 {
+    color: var(--cor-primaria);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--espaco-lg);
+    overflow-wrap: anywhere;
+}
+
+.biblioteca-destaque {
+    max-width: 850px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Lista de materiais */
+.lista-materiais {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Card de material */
+.card-material {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+    padding: 18px;
+
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+}
+
+/* Imagem do material */
+.imagem-material {
+    flex-shrink: 0;
+    width: 95px;
+    height: 120px;
+
+    border-radius: 8px;
+    background-color: #f0edf5;
+}
+
+.imagem-material img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Informações do material */
+.informacoes-material {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.informacoes-material h2 {
+    margin-bottom: 8px;
+}
+
+.informacoes-material p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Link de acesso */
+.link-material {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .introducao-biblioteca {
+        padding-block: var(--espaco-xl);
+    }
+
+    .biblioteca-destaque {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-material {
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .imagem-material {
+        width: 66px;
+        height: 84px;
+    }
+}
+
+@media (max-width: 480px) {
+    .introducao-biblioteca {
+        padding-block: var(--espaco-lg);
+    }
+}
