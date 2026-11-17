@@ -1,0 +1,677 @@
+
+/* ==========================================
+   LAZER E CONVIVÊNCIA
+   Praça para Todos
+========================================== */
+
+/* APRESENTAÇÃO INICIAL */
+
+.lazer-introducao {
+    background: linear-gradient(
+        120deg,
+        var(--cor-fundo) 0%,
+        #F8F6FD 60%,
+        #E8DDF5 100%
+    );
+
+    padding-block: 5.5rem;
+    overflow: hidden;
+}
+
+.lazer-introducao .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+/* IDENTIFICAÇÃO */
+
+.lazer-etiqueta {
+    display: inline-block;
+    align-self: flex-start;
+
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* TÍTULO PRINCIPAL */
+
+.lazer-introducao h1 {
+    max-width: 850px;
+
+    color: var(--cor-primaria);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+
+    margin: 0;
+}
+
+/* SUBTÍTULO */
+
+.lazer-introducao h2 {
+    max-width: 850px;
+
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+/* TEXTOS */
+
+.lazer-introducao p {
+    max-width: 850px;
+
+    color: #514B60;
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+/* CAIXA DE DESTAQUE */
+
+.lazer-destaque {
+    display: block;
+
+    width: 100%;
+    padding: 2rem 2.5rem;
+
+    color: var(--cor-clara);
+
+    background: linear-gradient(
+        110deg,
+        var(--cor-secundaria),
+        var(--cor-primaria)
+    );
+
+    border-radius: var(--borda-xl);
+
+    box-shadow: 0 12px 30px
+        rgba(58, 31, 93, 0.12);
+
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* BOTÃO */
+
+.lazer-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+
+    padding: 0.85rem 1.5rem;
+
+    color: var(--cor-clara);
+    background-color: var(--cor-secundaria);
+
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.lazer-botao:hover {
+    color: var(--cor-clara);
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.lazer-botao:focus-visible {
+    outline: 3px solid var(--cor-primaria);
+    outline-offset: 4px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .lazer-introducao {
+        padding-block: 4rem;
+    }
+
+    .lazer-destaque {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lazer-introducao {
+        padding-block: 3rem;
+    }
+
+    .lazer-introducao h1 {
+        font-size: 2.3rem;
+    }
+
+    .lazer-introducao p {
+        font-size: 0.95rem;
+    }
+
+    .lazer-destaque {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    .lazer-botao {
+        transition: none;
+    }
+}
+
+/* IMPRESSÃO */
+
+@media print {
+    .lazer-introducao {
+        overflow: visible;
+    }
+
+    .lazer-destaque {
+        box-shadow: none;
+    }
+
+    .lazer-botao {
+        display: none;
+    }
+}
+
+/* ==========================================
+   IMPORTÂNCIA DO LAZER ACESSÍVEL
+========================================== */
+
+.lazer-importancia {
+    padding-block: 5rem;
+    background-color: var(--cor-clara);
+}
+
+.lazer-titulo-secao {
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.lazer-titulo-secao .lazer-etiqueta {
+    margin-bottom: 1rem;
+}
+
+.lazer-titulo-secao h2 {
+    color: var(--cor-primaria);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+}
+
+.lazer-titulo-secao p {
+    color: #5A5468;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+    .lazer-importancia {
+        padding-block: 4rem;
+    }
+
+    .lazer-titulo-secao {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    .lazer-importancia {
+        padding-block: 3rem;
+    }
+
+    .lazer-titulo-secao h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* ==========================================
+   SOLUÇÕES INCLUSIVAS
+========================================== */
+
+.lazer-solucoes {
+    padding-block: 5rem;
+    background-color: #F8F7FC;
+    overflow: hidden;
+}
+
+.lazer-solucoes .lazer-titulo-secao {
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+    .lazer-solucoes {
+        padding-block: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lazer-solucoes {
+        padding-block: 3rem;
+    }
+}
+
+/* ==========================================
+   CARDS DE LAZER E CONVIVÊNCIA
+========================================== */
+
+.lazer-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3.5rem;
+
+    margin-bottom: 4rem;
+    padding: 2rem;
+
+    background-color: var(--cor-clara);
+
+    border: 1px solid rgba(167, 139, 217, 0.25);
+    border-radius: var(--borda-xl);
+
+    box-shadow: 0 8px 30px rgba(58, 31, 93, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.lazer-item:last-child {
+    margin-bottom: 0;
+}
+
+.lazer-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(58, 31, 93, 0.1);
+}
+
+/* IMAGEM */
+
+.lazer-imagem {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-lg);
+    aspect-ratio: 5 / 4;
+}
+
+.lazer-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.lazer-item:hover .lazer-imagem img {
+    transform: scale(1.035);
+}
+
+/* CONTEÚDO */
+
+.lazer-conteudo {
+    min-width: 0;
+}
+
+.lazer-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 1rem;
+
+    color: var(--cor-secundaria);
+    background-color: var(--cor-fundo);
+
+    border-radius: 50%;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.lazer-conteudo h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin: 0 0 1rem;
+}
+
+.lazer-conteudo > p {
+    color: #514B60;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    margin: 0 0 1.5rem;
+}
+
+.lazer-conteudo h4 {
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    margin: 1.5rem 0 0.8rem;
+}
+
+/* CRITÉRIOS */
+
+.lazer-conteudo ul {
+    display: grid;
+    gap: 0.7rem;
+
+    padding-left: 1.2rem;
+    margin: 0 0 1.5rem;
+}
+
+.lazer-conteudo li {
+    color: #514B60;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    padding-left: 0.2rem;
+}
+
+.lazer-conteudo li::marker {
+    color: var(--cor-secundaria);
+}
+
+/* REFERÊNCIAS */
+
+.lazer-referencia {
+    display: block;
+    padding: 0.85rem 1rem;
+
+    color: var(--cor-primaria);
+    background-color: var(--cor-fundo);
+
+    border-left: 3px solid var(--cor-secundaria);
+    border-radius: 0 var(--borda-sm) var(--borda-sm) 0;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 768px) {
+    .lazer-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .lazer-imagem {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (max-width: 480px) {
+    .lazer-item {
+        padding: 1rem;
+    }
+
+    .lazer-imagem {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lazer-item,
+    .lazer-imagem img {
+        transition: none;
+    }
+
+    .lazer-item:hover,
+    .lazer-item:hover .lazer-imagem img {
+        transform: none;
+    }
+}
+
+/* CARD 02 - IMAGEM À DIREITA */
+
+.lazer-item-alternado .lazer-imagem {
+    order: 2;
+}
+
+.lazer-item-alternado .lazer-conteudo {
+    order: 1;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .lazer-item-alternado .lazer-imagem {
+        order: 0;
+    }
+
+    .lazer-item-alternado .lazer-conteudo {
+        order: 1;
+    }
+}
+
+/* ==========================================
+   DIAGNÓSTICO DAS CONDIÇÕES DE LAZER
+========================================== */
+
+.lazer-diagnostico {
+    padding-block: 5rem;
+
+    background: linear-gradient(
+        145deg,
+        #F0EEFB,
+        #FFFFFF
+    );
+
+    overflow: hidden;
+}
+
+/* INTRODUÇÃO */
+
+.lazer-diagnostico-intro {
+    max-width: 760px;
+    margin-bottom: 3rem;
+}
+
+.lazer-diagnostico-intro h2 {
+    color: var(--cor-primaria);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.25;
+
+    margin: 0 0 1rem;
+}
+
+.lazer-diagnostico-intro p {
+    color: #514B60;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* CARDS DO DIAGNÓSTICO */
+
+.lazer-diagnostico-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.25rem;
+}
+
+.lazer-diagnostico-item {
+    padding: 1.5rem;
+
+    background-color: var(--cor-clara);
+
+    border: 1px solid rgba(167, 139, 217, 0.3);
+    border-radius: var(--borda-lg);
+
+    box-shadow: 0 5px 20px rgba(58, 31, 93, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.lazer-diagnostico-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(58, 31, 93, 0.09);
+}
+
+.lazer-diagnostico-item h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.15rem;
+
+    margin: 0 0 0.8rem;
+}
+
+.lazer-diagnostico-item p {
+    color: #514B60;
+
+    font-size: 0.88rem;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+/* CONCLUSÃO */
+
+.lazer-conclusao {
+    margin-top: 3rem;
+    padding: 2.5rem;
+
+    color: var(--cor-clara);
+
+    background: linear-gradient(
+        120deg,
+        var(--cor-primaria),
+        var(--cor-secundaria)
+    );
+
+    border-radius: var(--borda-xl);
+}
+
+.lazer-conclusao h3 {
+    color: var(--cor-clara);
+    font-size: 1.6rem;
+
+    margin: 0 0 1rem;
+}
+
+.lazer-conclusao p {
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+/* RESPONSIVIDADE - TABLETS */
+
+@media (max-width: 900px) {
+    .lazer-diagnostico-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .lazer-diagnostico {
+        padding-block: 4rem;
+    }
+
+    .lazer-diagnostico-intro {
+        margin-bottom: 2rem;
+    }
+
+    .lazer-conclusao {
+        padding: 2rem;
+    }
+}
+
+/* RESPONSIVIDADE - CELULARES */
+
+@media (max-width: 480px) {
+    .lazer-diagnostico {
+        padding-block: 3rem;
+    }
+
+    .lazer-diagnostico-intro h2 {
+        font-size: 1.7rem;
+    }
+
+    .lazer-diagnostico-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lazer-diagnostico-item {
+        padding: 1.25rem;
+    }
+
+    .lazer-conclusao {
+        padding: 1.5rem;
+    }
+
+    .lazer-conclusao h3 {
+        font-size: 1.35rem;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    .lazer-diagnostico-item {
+        transition: none;
+    }
+
+    .lazer-diagnostico-item:hover {
+        transform: none;
+    }
+}
+
+/* IMPRESSÃO */
+
+@media print {
+    .lazer-diagnostico {
+        overflow: visible;
+    }
+
+    .lazer-diagnostico-item,
+    .lazer-conclusao {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}
