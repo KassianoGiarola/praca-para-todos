@@ -163,10 +163,12 @@
 
     display: flex;
     flex-direction: column;
+    
 }
 
 .tema-imagem-container {
     position: relative;
+    
 }
 
 .tema-imagem {
