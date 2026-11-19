@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="stylesheet" href="css/privacidade.css">
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+    <title>Diagnóstico e Avaliação | Praça para Todos</title>
+
+    <style>
+        /* ==========================================
+           PÁGINA
+        ========================================== */
+
+        .diagnostico-pagina {
+            background: #F8F6FC;
+            overflow: hidden;
+            padding-bottom: 5rem;
+        }
+
+        .diagnostico-container {
+            width: 100%;
+            max-width: 1280px;
+            margin-inline: auto;
+            padding-inline: 2rem;
+        }
+
+        /* ==========================================
+           APRESENTAÇÃO
+        ========================================== */
+
+        .diagnostico-hero {
+            background: linear-gradient(
+                115deg,
+                #F4F1FC 0%,
+                #F8F5FC 55%,
+                #EBDDF5 100%
+            );
+
+            padding: 3.8rem 0 4.2rem;
+        }
+
+        .diagnostico-hero-conteudo {
+            max-width: 1160px;
+            margin-inline: auto;
+        }
+
+        .diagnostico-etiqueta {
+            display: block;
+            color: #7040B5;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+
+        .diagnostico-hero h1 {
+            max-width: 700px;
+            color: #39205E;
+            font-size: clamp(2.8rem, 4.5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            margin: 0 0 1.5rem;
+        }
+
+        .diagnostico-descricao {
+            max-width: 900px;
+        }
+
+        .diagnostico-descricao p {
+            color: #51466A;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        /* ==========================================
+           QUADRO DE DESTAQUE
+        ========================================== */
+
+        .diagnostico-destaque {
+            width: 100%;
+            max-width: 1160px;
+            min-height: 130px;
+
+            margin-top: 2.8rem;
+            padding: 1.8rem 2.4rem;
+
+            display: flex;
+            align-items: center;
+
+            background: linear-gradient(
+                110deg,
+                #7040B5 0%,
+                #39205E 100%
+            );
+
+            border-radius: 20px;
+            box-shadow: 0 14px 30px rgba(57, 32, 94, 0.13);
+        }
+
+        .diagnostico-destaque p {
+            max-width: 950px;
+            color: #FFFFFF;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ==========================================
+           BOTÃO PRINCIPAL
+        ========================================== */
+
+        .diagnostico-botoes {
+            margin-top: 2rem;
+        }
+
+        .botao-principal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 50px;
+            padding: 0.8rem 1.7rem;
+
+            background: #7040B5;
+            color: #FFFFFF;
+
+            border: 2px solid #7040B5;
+            border-radius: 50px;
+
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .botao-principal:hover {
+            background: #39205E;
+            border-color: #39205E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(57, 32, 94, 0.2);
+        }
+
+        .botao-principal:focus-visible {
+            outline: 3px solid #39205E;
+            outline-offset: 4px;
+        }
+
+        /* ==========================================
+           INTRODUÇÃO DOS CRITÉRIOS
+        ========================================== */
+
+        .diagnostico-introducao {
+            padding-top: 4rem;
+            padding-bottom: 1rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .diagnostico-titulo-secao {
+            max-width: 760px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .diagnostico-titulo-secao h2 {
+            color: #39205E;
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            margin: 0 0 0.8rem;
+        }
+
+        .diagnostico-titulo-secao p {
+            color: #5A5468;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ==========================================
+           CARDS
+        ========================================== */
+
+        .diagnostico-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .diagnostico-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: center;
+            gap: 2.5rem;
+            padding: 1.7rem;
+
+            background: #FFFFFF;
+            border: 1px solid rgba(167, 139, 217, 0.25);
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(58, 31, 93, 0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .diagnostico-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(58, 31, 93, 0.1);
+        }
+
+        .diagnostico-card:nth-child(even) .diagnostico-imagem {
+            order: 2;
+        }
+
+        .diagnostico-card:nth-child(even) .diagnostico-conteudo {
+            order: 1;
+        }
+
+        /* ==========================================
+           IMAGENS
+        ========================================== */
+
+        .diagnostico-imagem {
+            width: 100%;
+            min-width: 0;
+            aspect-ratio: 5 / 4;
+            overflow: hidden;
+            display: block;
+
+            background: #F0EEFB;
+            border-radius: 14px;
+        }
+
+        .diagnostico-imagem img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: inherit;
+            transition: transform 0.5s ease;
+        }
+
+        .diagnostico-card:hover .diagnostico-imagem img {
+            transform: scale(1.035);
+        }
+
+        .diagnostico-imagem-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 2rem;
+            text-align: center;
+
+            color: #7651A8;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .diagnostico-imagem-placeholder span {
+            display: block;
+            font-size: 2.2rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .diagnostico-imagem:has(img) .diagnostico-imagem-placeholder {
+            display: none;
+        }
+
+        /* ==========================================
+           CONTEÚDO DOS CARDS
+        ========================================== */
+
+        .diagnostico-conteudo {
+            min-width: 0;
+        }
+
+        .diagnostico-numero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+            margin-bottom: 0.8rem;
+
+            color: #7651A8;
+            background: #F0EEFB;
+
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .diagnostico-conteudo h2 {
+            color: #49316D;
+            font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+            line-height: 1.3;
+            margin: 0 0 0.8rem;
+        }
+
+        .diagnostico-conteudo h3 {
+            color: #7651A8;
+            font-size: 0.95rem;
+            margin: 1.3rem 0 0.7rem;
+        }
+
+        .diagnostico-conteudo p {
+            color: #514B60;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin: 0 0 0.9rem;
+        }
+
+        /* ==========================================
+           LISTAS
+        ========================================== */
+
+        .diagnostico-conteudo ul {
+            display: grid;
+            gap: 0.6rem;
+            padding-left: 1.1rem;
+            margin: 0 0 1.3rem;
+        }
+
+        .diagnostico-conteudo li {
+            color: #514B60;
+            font-size: 0.86rem;
+            line-height: 1.65;
+            padding-left: 0.2rem;
+        }
+
+        .diagnostico-conteudo li::marker {
+            color: #7651A8;
+        }
+
+        /* ==========================================
+           RESPONSIVIDADE
+        ========================================== */
+
+        @media (max-width: 900px) {
+            .diagnostico-hero {
+                padding-block: 3.5rem;
+            }
+
+            .diagnostico-card {
+                gap: 1.8rem;
+                padding: 1.4rem;
+            }
+
+            .diagnostico-destaque {
+                margin-top: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .diagnostico-container {
+                padding-inline: 1.5rem;
+            }
+
+            .diagnostico-hero {
+                padding-block: 3rem;
+            }
+
+            .diagnostico-hero-conteudo {
+                max-width: 100%;
+            }
+
+            .diagnostico-hero h1 {
+                font-size: clamp(2.4rem, 8vw, 3.2rem);
+            }
+
+            .diagnostico-descricao p {
+                font-size: 0.98rem;
+            }
+
+            .diagnostico-destaque {
+                min-height: auto;
+                padding: 1.6rem;
+                border-radius: 17px;
+            }
+
+            .diagnostico-destaque p {
+                font-size: 1rem;
+            }
+
+            .diagnostico-card {
+                grid-template-columns: 1fr;
+                gap: 1.3rem;
+                padding: 1.2rem;
+            }
+
+            .diagnostico-card:nth-child(even) .diagnostico-imagem,
+            .diagnostico-card:nth-child(even) .diagnostico-conteudo {
+                order: initial;
+            }
+
+            .diagnostico-imagem {
+                aspect-ratio: 16 / 10;
+            }
+
+            .diagnostico-introducao {
+                padding-top: 3rem;
+            }
+
+            .diagnostico-lista {
+                gap: 1.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .diagnostico-container {
+                padding-inline: 1rem;
+            }
+
+            .diagnostico-hero {
+                padding-block: 2.7rem;
+            }
+
+            .diagnostico-etiqueta {
+                font-size: 0.72rem;
+            }
+
+            .diagnostico-hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .diagnostico-descricao p {
+                font-size: 0.92rem;
+            }
+
+            .diagnostico-destaque {
+                padding: 1.3rem;
+                margin-top: 2rem;
+            }
+
+            .diagnostico-destaque p {
+                font-size: 0.95rem;
+            }
+
+            .diagnostico-botoes {
+                margin-top: 1.7rem;
+            }
+
+            .botao-principal {
+                width: 100%;
+                min-height: 50px;
+            }
+
+            .diagnostico-card {
+                padding: 1rem;
+                border-radius: 14px;
+            }
+
+            .diagnostico-imagem {
+                aspect-ratio: 4 / 3;
+            }
+
+            .diagnostico-conteudo h2 {
+                font-size: 1.4rem;
+            }
+
+            .diagnostico-conteudo p,
+            .diagnostico-conteudo li {
+                font-size: 0.86rem;
+            }
+        }
+
+        /* ==========================================
+           MOVIMENTO REDUZIDO
+        ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            .diagnostico-card,
+            .diagnostico-imagem img,
+            .botao-principal {
+                transition: none;
+            }
+
+            .diagnostico-card:hover,
+            .botao-principal:hover {
+                transform: none;
+            }
+
+            .diagnostico-card:hover .diagnostico-imagem img {
+                transform: none;
+            }
+        }
+
+        /* ==========================================
+           IMPRESSÃO
+        ========================================== */
+
+        @media print {
+            .diagnostico-card {
+                break-inside: avoid;
+                box-shadow: none;
+            }
+
+            .diagnostico-botoes {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/icons/logo.svg"
+                    alt=""
+                    class="logo-icone"
+                    width="36"
+                    height="36"
+                >
+                <span>Praça para Todos</span>
+            </a>
+
+            <button
+                class="botao-menu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+
+                <svg class="icone-menu icone-abrir"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+
+                    <path d="M2 7h16"/>
+                    <path d="M2 13h10"/>
+                </svg>
+
+                <svg class="icone-menu icone-fechar"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    aria-hidden="true">
+
+                    <path d="M5 5L15 15"/>
+                    <path d="M15 5L5 15"/>
+                </svg>
+            </button>
+
+            <nav id="menu-principal" aria-label="Navegação Principal">
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main id="conteudo-principal" tabindex="-1">
+
+        <div class="diagnostico-pagina">
+
+            <!-- APRESENTAÇÃO -->
+
+            <section class="diagnostico-hero">
+                <div class="diagnostico-container">
+
+                    <div class="diagnostico-hero-conteudo">
+
+                        <span class="diagnostico-etiqueta">
+                            DESENHO UNIVERSAL E ACESSIBILIDADE
+                        </span>
+
+                        <h1>Diagnóstico e Avaliação</h1>
+
+                        <div class="diagnostico-descricao">
+
+                            <p>
+                                A avaliação dos espaços públicos é essencial para
+                                identificar barreiras, compreender as necessidades
+                                dos usuários e propor melhorias que promovam
+                                acessibilidade, segurança, inclusão e qualidade de vida.
+                            </p>
+
+                            <p>
+                                Por meio do diagnóstico, é possível analisar as
+                                condições das praças e identificar os aspectos que
+                                precisam ser melhorados para garantir espaços
+                                públicos mais acolhedores, seguros e acessíveis.
+                            </p>
+
+                        </div>
+
+                        <!-- QUADRO DE DESTAQUE -->
+
+                        <div class="diagnostico-destaque">
+
+                            <p>
+                                Acessibilidade também significa permitir que todas
+                                as pessoas utilizem os espaços públicos com autonomia
+                                e segurança.
+                            </p>
+
+                        </div>
+
+                        <!-- BOTÃO PRINCIPAL -->
+
+                        <div class="diagnostico-botoes">
+
+                            <a
+                                href="#criterios-avaliacao"
+                                class="botao-principal">
+
+                                Conheça os critérios
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- INTRODUÇÃO -->
+
+            <section
+                class="diagnostico-introducao"
+                id="criterios-avaliacao">
+
+                <div class="diagnostico-container">
+
+                    <div class="diagnostico-titulo-secao">
+
+                        <h2>Critérios de avaliação</h2>
+
+                        <p>
+                            Conheça os principais aspectos que devem ser observados
+                            durante o diagnóstico dos espaços públicos e as possíveis
+                            soluções para torná-los mais acessíveis e inclusivos.
+                        </p>
+
+                    </div>
+
+                    <div class="diagnostico-lista">
+
+                        <!-- 01 - MOBILIDADE E CIRCULAÇÃO -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                               
+                                <img
+                                    src="assets/Avaliacao/Parque Acessível para Todos.png"
+                                    alt="Mobilidade e circulação em espaço público"
+                                >
+                            
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>01</span>
+                                    Espaço reservado para a imagem de mobilidade e circulação
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">01</span>
+
+                                <h2>Mobilidade e circulação</h2>
+
+                                <p>
+                                    A mobilidade e a circulação estão relacionadas às
+                                    condições de deslocamento dos pedestres, ciclistas
+                                    e demais usuários do espaço. Problemas como calçadas
+                                    irregulares, estreitas ou danificadas, ausência de
+                                    rampas de acesso, obstáculos nos caminhos e falta
+                                    de travessias seguras podem dificultar a circulação,
+                                    principalmente de pessoas com deficiência, idosos,
+                                    crianças e pessoas com mobilidade reduzida.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Calçadas com buracos, desníveis e pisos escorregadios.</li>
+                                    <li>Ausência de rampas de acessibilidade.</li>
+                                    <li>Caminhos estreitos ou obstruídos por árvores, postes e mobiliários.</li>
+                                    <li>Falta de conexão entre diferentes áreas do espaço.</li>
+                                    <li>Travessias de pedestres sem segurança adequada.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Recuperar e nivelar as calçadas e os caminhos de circulação.</li>
+                                    <li>Implantar rampas acessíveis, respeitando as normas técnicas.</li>
+                                    <li>Garantir rotas contínuas, livres de obstáculos e com largura adequada.</li>
+                                    <li>Criar travessias seguras e bem posicionadas.</li>
+                                    <li>Utilizar pisos firmes, regulares e antiderrapantes.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                        <!-- 02 - MOBILIÁRIO URBANO -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                             
+                                <img
+                                    src="assets/Avaliacao/Parque Acessível com Mobiliário Urbano.png"
+                                    alt="Mobiliário urbano em espaço público"
+                                >
+                               
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>02</span>
+                                    Espaço reservado para a imagem de mobiliário urbano
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">02</span>
+
+                                <h2>Mobiliário urbano</h2>
+
+                                <p>
+                                    O mobiliário urbano compreende bancos, mesas,
+                                    lixeiras, bebedouros, bicicletários e outros
+                                    equipamentos destinados ao conforto e à utilização
+                                    dos espaços públicos. A ausência desses elementos,
+                                    sua distribuição inadequada ou a falta de manutenção
+                                    podem comprometer a permanência dos usuários e
+                                    dificultar o aproveitamento do ambiente.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Quantidade insuficiente de bancos e locais para descanso.</li>
+                                    <li>Bancos danificados ou sem condições adequadas de utilização.</li>
+                                    <li>Ausência de lixeiras ou distribuição inadequada.</li>
+                                    <li>Falta de mobiliários acessíveis para pessoas com deficiência.</li>
+                                    <li>Equipamentos instalados em locais que atrapalham a circulação.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Instalar bancos em pontos estratégicos, preferencialmente em áreas sombreadas.</li>
+                                    <li>Disponibilizar lixeiras em quantidade adequada.</li>
+                                    <li>Implantar mesas, bebedouros e bicicletários conforme a necessidade local.</li>
+                                    <li>Utilizar mobiliários resistentes, seguros e de fácil manutenção.</li>
+                                    <li>Garantir espaços de aproximação e utilização por cadeirantes.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                        <!-- 03 - LAZER E CONVIVÊNCIA -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                            
+                                <img
+                                    src="assets/Avaliacao/Parque Acessível para Todos (2).png"
+                                    alt="Área de lazer e convivência"
+                                >
+                                
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>03</span>
+                                    Espaço reservado para a imagem de lazer e convivência
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">03</span>
+
+                                <h2>Lazer e convivência</h2>
+
+                                <p>
+                                    Os espaços de lazer e convivência são fundamentais
+                                    para promover a interação social, a prática de
+                                    atividades físicas e o bem-estar da população.
+                                    A falta de equipamentos, a conservação inadequada
+                                    e a ausência de espaços destinados a diferentes
+                                    faixas etárias podem limitar a utilização desses
+                                    ambientes.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Ausência de áreas destinadas ao lazer infantil.</li>
+                                    <li>Falta de equipamentos para atividades físicas.</li>
+                                    <li>Poucos espaços de convivência e descanso.</li>
+                                    <li>Equipamentos de lazer deteriorados ou inseguros.</li>
+                                    <li>Falta de acessibilidade nos espaços recreativos.</li>
+                                    <li>Pouca diversidade de atividades para diferentes idades.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Implantar playgrounds acessíveis e seguros.</li>
+                                    <li>Criar áreas destinadas à prática de atividades físicas.</li>
+                                    <li>Disponibilizar espaços para convivência, descanso e encontros comunitários.</li>
+                                    <li>Recuperar e realizar manutenção periódica dos equipamentos.</li>
+                                    <li>Desenvolver atividades recreativas, esportivas e culturais.</li>
+                                    <li>Garantir que pessoas com diferentes capacidades possam utilizar os espaços.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                        <!-- 04 - SINALIZAÇÃO -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                                <img
+                                    src="assets/Avaliacao/Acessibilidade e inclusão no parque.png"
+                                    alt="Sinalização em espaço público"
+                                >
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>04</span>
+                                    Espaço reservado para a imagem de sinalização
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">04</span>
+
+                                <h2>Sinalização</h2>
+
+                                <p>
+                                    A sinalização é essencial para orientar os usuários,
+                                    facilitar a identificação dos espaços e garantir
+                                    a segurança durante a circulação. A ausência de
+                                    placas, informações pouco visíveis ou sinalizações
+                                    inadequadas pode causar dificuldades de orientação
+                                    e aumentar o risco de acidentes.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Ausência de placas indicativas e informativas.</li>
+                                    <li>Sinalização desgastada, danificada ou pouco visível.</li>
+                                    <li>Falta de identificação dos acessos e equipamentos.</li>
+                                    <li>Ausência de sinalização tátil para pessoas com deficiência visual.</li>
+                                    <li>Falta de informações sobre rotas acessíveis.</li>
+                                    <li>Placas instaladas em locais inadequados.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Implantar placas de identificação, orientação e informação.</li>
+                                    <li>Padronizar a comunicação visual dos espaços.</li>
+                                    <li>Utilizar cores e símbolos de fácil compreensão.</li>
+                                    <li>Instalar sinalização tátil e visual conforme as normas de acessibilidade.</li>
+                                    <li>Identificar rotas acessíveis, entradas, saídas e equipamentos.</li>
+                                    <li>Realizar inspeções periódicas para substituir placas danificadas.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                        <!-- 05 - PAISAGISMO E INFRAESTRUTURA -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                                
+                                <img
+                                    src="assets/Avaliacao/Parque Urbano Acessível e Sustentável.png"
+                                    alt="Paisagismo e infraestrutura de uma praça"
+                                >
+                              
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>05</span>
+                                    Espaço reservado para a imagem de paisagismo e infraestrutura
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">05</span>
+
+                                <h2>Paisagismo e infraestrutura</h2>
+
+                                <p>
+                                    O paisagismo e a infraestrutura influenciam
+                                    diretamente a qualidade ambiental, o conforto
+                                    e a conservação dos espaços públicos. A falta
+                                    de vegetação, a manutenção inadequada das áreas
+                                    verdes e problemas na drenagem, iluminação e
+                                    pavimentação podem comprometer a utilização e
+                                    a segurança dos ambientes.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Ausência de árvores e áreas sombreadas.</li>
+                                    <li>Vegetação sem manutenção, prejudicando a circulação.</li>
+                                    <li>Falta de iluminação adequada.</li>
+                                    <li>Acúmulo de água devido à drenagem insuficiente.</li>
+                                    <li>Pisos e estruturas deteriorados.</li>
+                                    <li>Ausência de manutenção das áreas verdes e dos equipamentos.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Implantar árvores e vegetação apropriadas ao ambiente.</li>
+                                    <li>Priorizar espécies que proporcionem sombra e não prejudiquem a circulação.</li>
+                                    <li>Realizar manutenção periódica das áreas verdes.</li>
+                                    <li>Melhorar os sistemas de drenagem para evitar alagamentos.</li>
+                                    <li>Instalar iluminação eficiente em caminhos e áreas de convivência.</li>
+                                    <li>Recuperar pavimentos e estruturas danificadas.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                        <!-- 06 - TECNOLOGIAS ASSISTIVAS -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                              
+                                <img
+                                    src="assets/Avaliacao/Praça Acessível com Tecnologia Assistiva.png"
+                                    alt="Tecnologias assistivas e acessibilidade"
+                                >
+                                
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>06</span>
+                                    Espaço reservado para a imagem de tecnologias assistivas
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">06</span>
+
+                                <h2>Tecnologias assistivas</h2>
+
+                                <p>
+                                    As tecnologias assistivas são recursos,
+                                    equipamentos e soluções que contribuem para
+                                    ampliar a autonomia e a participação de pessoas
+                                    com deficiência ou mobilidade reduzida. A falta
+                                    desses recursos pode dificultar o acesso às
+                                    informações, a utilização dos equipamentos e
+                                    a participação nas atividades oferecidas pelos
+                                    espaços públicos.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Ausência de mapas táteis e informações em braille.</li>
+                                    <li>Falta de pisos táteis direcionais e de alerta onde necessários.</li>
+                                    <li>Equipamentos de lazer sem adaptações para pessoas com deficiência.</li>
+                                    <li>Ausência de recursos de comunicação acessível.</li>
+                                    <li>Falta de dispositivos que facilitem a orientação de pessoas com deficiência visual ou auditiva.</li>
+                                    <li>Pouca oferta de equipamentos adaptados.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Implantar mapas táteis e placas com informações em braille.</li>
+                                    <li>Instalar pisos táteis de alerta e direcionais conforme as normas técnicas.</li>
+                                    <li>Disponibilizar equipamentos de lazer adaptados.</li>
+                                    <li>Utilizar recursos de comunicação visual, sonora e tátil.</li>
+                                    <li>Adotar tecnologias de apoio à orientação e à autonomia dos usuários.</li>
+                                    <li>Promover avaliações periódicas com participação de pessoas com deficiência.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                        <!-- 07 - COMUNICAÇÃO E EXTENSÃO -->
+
+                        <article class="diagnostico-card">
+
+                            <div class="diagnostico-imagem">
+
+                               
+                                <img
+                                    src="assets/Avaliacao/Comunicação e Extensão na Praça.png"
+                                    alt="Comunicação e extensão comunitária"
+                                >
+                               
+
+                                <div class="diagnostico-imagem-placeholder">
+                                    <span>07</span>
+                                    Espaço reservado para a imagem de comunicação e extensão
+                                </div>
+
+                            </div>
+
+                            <div class="diagnostico-conteudo">
+
+                                <span class="diagnostico-numero">07</span>
+
+                                <h2>Comunicação e extensão</h2>
+
+                                <p>
+                                    A comunicação e a extensão estão relacionadas
+                                    à divulgação das informações, à participação
+                                    da comunidade e à promoção de atividades
+                                    educativas e sociais. A ausência de canais de
+                                    comunicação eficientes e de ações de envolvimento
+                                    comunitário pode dificultar o conhecimento sobre
+                                    os espaços, reduzir a participação da população
+                                    e comprometer a identificação de problemas e
+                                    necessidades.
+                                </p>
+
+                                <h3>Possíveis problemas</h3>
+
+                                <ul>
+                                    <li>Falta de divulgação das atividades e serviços disponíveis.</li>
+                                    <li>Ausência de canais para sugestões, reclamações e solicitações.</li>
+                                    <li>Pouca participação da comunidade nas decisões.</li>
+                                    <li>Falta de campanhas de conscientização sobre conservação e acessibilidade.</li>
+                                    <li>Informações divulgadas em formatos pouco acessíveis.</li>
+                                    <li>Ausência de atividades educativas e de integração social.</li>
+                                </ul>
+
+                                <h3>Soluções propostas</h3>
+
+                                <ul>
+                                    <li>Criar canais de comunicação, como redes sociais, páginas informativas e QR Codes.</li>
+                                    <li>Implantar mecanismos para receber sugestões e reclamações dos usuários.</li>
+                                    <li>Promover consultas públicas e reuniões com a comunidade.</li>
+                                    <li>Desenvolver campanhas educativas sobre preservação, acessibilidade e utilização dos espaços.</li>
+                                    <li>Divulgar atividades culturais, esportivas e sociais.</li>
+                                    <li>Disponibilizar informações em formatos acessíveis, incluindo letras ampliadas, audiodescrição e Libras quando necessário.</li>
+                                </ul>
+
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+        <div class="container">
+
+            <div class="rodape-conteudo">
+
+                <div class="rodape-sobre">
+                    <h2>Praça para Todos</h2>
+
+                    <p>
+                        Promovendo acessibilidade, inclusão e
+                        conhecimento para transformar os
+                        espaços públicos.
+                    </p>
+                </div>
+
+                <nav class="rodape-navegacao" aria-label="Navegação do rodapé">
+
+                    <h3>Navegação</h3>
+
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o projeto</a></li>
+                        <li><a href="diretrizes.html">Diretrizes</a></li>
+                        <li><a href="biblioteca.html">Biblioteca</a></li>
+                    </ul>
+
+                </nav>
+
+                <div class="rodape-institucional">
+
+                    <h3>Projeto de extensão</h3>
+
+                    <p>
+                        Iniciativa acadêmica voltada à
+                        acessibilidade e à inclusão
+                        nos espaços públicos.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="rodape-inferior">
+
+                <ul class="rodape-legal" aria-label="Privacidade e condições de uso">
+                    <li><a href="privacidade.html">Privacidade (minuta)</a></li>
+                    <li><a href="termos.html">Termos de uso (minuta)</a></li>
+                    <li>
+                        <a href="cookies.html#preferencias" data-privacidade-abrir>
+                            Preferências de privacidade
+                        </a>
+                    </li>
+                </ul>
+
+                <p>
+                    Praça para Todos — Projeto de extensão universitária
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script src="js/global.js" defer></script>
+    <script src="js/acessibilidade.js" defer></script>
+    <script src="js/privacidade.js" defer></script>
+
+</body>
+</html>

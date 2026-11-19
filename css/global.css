@@ -36,6 +36,7 @@
     /* Paleta de cores */
     --cor-primaria: #3A1F5D;
     --cor-secundaria: #6A3FB2;
+    --cor-fundo2: #d9caf4;
     --cor-destaque: #A78BD9;
     --cor-fundo: #F0EEFB;
     --cor-texto: #1E1B2E;
@@ -174,7 +175,7 @@ h4 {
 .menu {
     display: flex;
     align-items: center;
-    gap: var(--espaco-sm);
+    gap: var(--espaco-xl);
     list-style: none;
     margin: 0;
     padding: 0;

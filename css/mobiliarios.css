@@ -546,6 +546,32 @@
 }
 
 
+
+/* ==========================================
+   LINK PARA A PÁGINA DE PISOS TÁTEIS
+========================================== */
+
+.mobiliario-saiba-mais {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 0 1.5rem;
+
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.mobiliario-saiba-mais:hover {
+    color: var(--cor-primaria);
+}
+
+.mobiliario-saiba-mais:focus-visible {
+    outline: 3px solid var(--cor-primaria);
+    outline-offset: 4px;
+}
+
+
 /* ==========================================
    RESPONSIVIDADE - TABLETS
 ========================================== */

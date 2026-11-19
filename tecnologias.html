@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+
+    <title>Tecnologias Assistivas | Praça para Todos</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tecnologias.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="stylesheet" href="css/privacidade.css">
+</head>
+
+<body>
+
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Cabeçalho e navegação principal -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/icons/logo.svg"
+                    alt=""
+                    class="logo-icone"
+                    width="36"
+                    height="36"
+                >
+                <span>Praça para Todos</span>
+            </a>
+
+            <button
+                class="botao-menu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+                <svg class="icone-menu icone-abrir"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M2 7h16" />
+                    <path d="M2 13h10" />
+                </svg>
+
+                <svg class="icone-menu icone-fechar"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    aria-hidden="true">
+                    <path d="M5 5L15 15" />
+                    <path d="M15 5L5 15" />
+                </svg>
+            </button>
+
+            <nav id="menu-principal" aria-label="Navegação principal">
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li>
+                        <a href="tecnologias.html" aria-current="page">
+                            Tecnologias Assistivas
+                        </a>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="conteudo-principal" tabindex="-1">
+
+        <!-- Introdução -->
+        <section class="tech-hero" aria-labelledby="titulo-tecnologias">
+            <div class="tech-container">
+
+                <span class="tech-subtitulo-topo">
+                    DESENHO UNIVERSAL E ACESSIBILIDADE
+                </span>
+
+                <h1 id="titulo-tecnologias" class="tech-titulo-hero">
+                    Tecnologias Assistivas
+                </h1>
+
+                <p class="tech-intro-texto">
+                    As Tecnologias Assistivas (TA) desempenham um papel
+                    transformador quando aplicadas ao planejamento e
+                    diagnóstico de espaços públicos, unindo os cinco
+                    pilares fundamentais da acessibilidade urbana.
+                </p>
+
+                <div class="tech-banner-destaque">
+                    <p>
+                        A integração entre recursos físicos, sensoriais
+                        e digitais garante autonomia, orientação e
+                        participação plena em todos os ambientes da praça.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Cinco tópicos de tecnologias assistivas -->
+        <section class="tech-showcase"
+            aria-label="Pilares de tecnologias assistivas">
+
+            <div class="tech-container">
+
+                <!-- 1. Beacons -->
+                <article class="tech-bloco-variado tech-card-horizontal">
+
+                    <div class="tech-card-midia">
+                        <img
+                            src="assets/images/tecnologias/beacons.png"
+                            alt="Sistema de navegação e orientação por proximidade utilizando Beacons"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="tech-card-conteudo">
+
+                        <span class="tech-pill">
+                            01 · Orientação e localização
+                        </span>
+
+                        <h2>
+                            Sistemas de Navegação e Orientação por Proximidade (Beacons)
+                        </h2>
+
+                        <p class="tech-lead">
+                            Dispositivos sem fio que transmitem informações de localização
+                            e orientação para smartphones, auxiliando pessoas com
+                            deficiência visual na exploração da praça.
+                        </p>
+
+                        <div class="tech-criterio-destaque">
+
+                            <h3>Como funciona</h3>
+
+                            <p>
+                                Sensores Bluetooth Low Energy (BLE) são instalados em pontos
+                                estratégicos. Ao se aproximar deles, o celular recebe sinais
+                                que acionam orientações sonoras por meio de aplicativos e
+                                leitores de tela.
+                            </p>
+
+                            <h3>Benefícios</h3>
+
+                            <p>
+                                Promovem autonomia e segurança, permitindo identificar caminhos,
+                                acessos e pontos de interesse sem depender exclusivamente
+                                de terceiros.
+                            </p>
+
+                        </div>
+
+                        <p class="tech-referencia">
+                            <strong>
+                                ABNT NBR 9050:2020 — Seção 5 e Subseção 5.2.9;
+                                Lei nº 13.146/2015 (LBI) — Arts. 53 e 74.
+                            </strong>
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- 2. QR Codes e audiodescrição -->
+                <article class="tech-bloco-variado tech-card-horizontal">
+
+                    <div class="tech-card-midia">
+                        <img
+                            src="assets/images/tecnologias/audiodescrição.png"
+                            alt="Recurso de QR Code e audiodescrição dinâmica para acesso a informações"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="tech-card-conteudo">
+
+                        <span class="tech-pill">
+                            02 · Informação acessível
+                        </span>
+
+                        <h2>QR Codes e Audiodescrição Dinâmica</h2>
+
+                        <p class="tech-lead">
+                            Códigos QR instalados em elementos da praça que disponibilizam
+                            informações e descrições em áudio sobre o ambiente.
+                        </p>
+
+                        <div class="tech-criterio-destaque">
+
+                            <h3>Como funciona</h3>
+
+                            <p>
+                                Os códigos são posicionados próximos a monumentos, jardins e
+                                esculturas. Ao escaneá-los, o usuário acessa uma página com
+                                audiodescrições sobre os elementos.
+                            </p>
+
+                            <h3>Benefícios</h3>
+
+                            <p>
+                                Facilitam o acesso à cultura, à história e às informações do
+                                espaço, especialmente para pessoas com deficiência visual
+                                ou intelectual.
+                            </p>
+
+                        </div>
+
+                        <p class="tech-referencia">
+                            <strong>
+                                ABNT NBR 9050:2020 — Seção 5, Subseções 5.1 e 5.2;
+                                ABNT NBR 16452:2016 — Acessibilidade na comunicação — Audiodescrição.
+                            </strong>
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- 3. Totens interativos e Libras -->
+                <article class="tech-bloco-variado tech-card-horizontal">
+
+                    <div class="tech-card-midia">
+                        <img
+                            src="assets/images/tecnologias/libras.png"
+                            alt="Terminal interativo de acessibilidade com comunicação em Libras"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="tech-card-conteudo">
+
+                        <span class="tech-pill">
+                            03 · Comunicação inclusiva
+                        </span>
+
+                        <h2>
+                            Totens Interativos e Terminais de Acessibilidade em Libras
+                        </h2>
+
+                        <p class="tech-lead">
+                            Equipamentos digitais que disponibilizam informações da praça
+                            em Língua Brasileira de Sinais (Libras), facilitando a
+                            comunicação de pessoas com deficiência auditiva.
+                        </p>
+
+                        <div class="tech-criterio-destaque">
+
+                            <h3>Como funciona</h3>
+
+                            <p>
+                                Totens ou páginas acessadas por QR Code utilizam ferramentas
+                                como o VLibras e serviços de atendimento em Libras para
+                                apresentar informações sobre atividades, serviços e orientações.
+                            </p>
+
+                            <h3>Benefícios</h3>
+
+                            <p>
+                                Reduzem barreiras comunicacionais e ampliam o acesso à
+                                informação e à participação nas atividades da praça.
+                            </p>
+
+                        </div>
+
+                        <p class="tech-referencia">
+                            <strong>
+                                ABNT NBR 9050:2020 — Seção 5, Subseção 5.5, e Seção 9;
+                                Lei nº 13.146/2015 (LBI) — Arts. 63 e 67.
+                            </strong>
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- 4. Lazer, esporte e integração sensorial -->
+                <article class="tech-bloco-lazer tech-card-horizontal">
+
+                    <div class="tech-card-midia">
+                        <img
+                            src="assets/images/tecnologias/lazer.png"
+                            alt="Espaço de lazer, esporte e recreação inclusivo"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="tech-card-conteudo">
+
+                        <span class="tech-pill">
+                            04 · Lazer e participação
+                        </span>
+
+                        <h2>Lazer, Esporte e Integração Sensorial</h2>
+
+                        <p class="tech-lead">
+                            Brinquedos, aparelhos de ginástica e espaços recreativos
+                            projetados para o uso de pessoas com e sem deficiência.
+                        </p>
+
+                        <div class="tech-criterio-destaque">
+
+                            <h3>Como funciona</h3>
+
+                            <p>
+                                Incluem balanços adaptados, carrosséis nivelados com o piso,
+                                gangorras com apoio, aparelhos acessíveis para cadeirantes
+                                e jardins sensoriais com diferentes texturas e estímulos.
+                            </p>
+
+                            <h3>Benefícios</h3>
+
+                            <p>
+                                Promovem o brincar, a atividade física, o desenvolvimento
+                                sensorial e a convivência entre pessoas com diferentes capacidades.
+                            </p>
+
+                        </div>
+
+                        <p class="tech-referencia">
+                            <strong>
+                                ABNT NBR 16071-1 a 7 — Playgrounds;
+                                ABNT NBR 9050:2020 — Seção 10 e Subseção 10.12;
+                                Lei nº 13.146/2015 (LBI) — Arts. 42 e 43.
+                            </strong>
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- 5. Segurança, iluminação e manutenção -->
+                <article class="tech-bloco-seguranca tech-card-horizontal">
+
+                    <div class="tech-card-midia">
+                        <img
+                            src="assets/images/tecnologias/segurança.png"
+                            alt="Infraestrutura, iluminação e segurança de espaço público"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="tech-card-conteudo">
+
+                        <span class="tech-pill">
+                            05 · Conservação e visibilidade
+                        </span>
+
+                        <h2>Segurança, Iluminação e Manutenção</h2>
+
+                        <p class="tech-lead">
+                            Medidas de infraestrutura e conservação que garantem condições
+                            seguras e acessíveis de utilização da praça.
+                        </p>
+
+                        <div class="tech-criterio-destaque">
+
+                            <h3>Como funciona</h3>
+
+                            <p>
+                                Envolvem iluminação uniforme, manutenção dos pisos e sinalizações,
+                                poda da vegetação e canais digitais para comunicar problemas,
+                                como obstáculos e equipamentos danificados.
+                            </p>
+
+                            <h3>Benefícios</h3>
+
+                            <p>
+                                Reduzem riscos de acidentes, favorecem a orientação e preservam
+                                as condições de acessibilidade para todos os frequentadores.
+                            </p>
+
+                        </div>
+
+                        <p class="tech-referencia">
+                            <strong>
+                                ABNT NBR 9050:2020;
+                                ABNT NBR 5101 — Iluminação Pública.
+                            </strong>
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+
+            <div class="rodape-conteudo">
+
+                <div class="rodape-sobre">
+                    <h2>Praça para Todos</h2>
+
+                    <p>
+                        Promovendo acessibilidade, inclusão e
+                        conhecimento para transformar os
+                        espaços públicos.
+                    </p>
+                </div>
+
+                <nav class="rodape-navegacao"
+                    aria-label="Navegação do rodapé">
+
+                    <h3>Navegação</h3>
+
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o projeto</a></li>
+                        <li><a href="diretrizes.html">Diretrizes</a></li>
+                        <li>
+                            <a href="tecnologias.html" aria-current="page">
+                                Tecnologias Assistivas
+                            </a>
+                        </li>
+                        <li><a href="biblioteca.html">Biblioteca</a></li>
+                    </ul>
+
+                </nav>
+
+                <div class="rodape-institucional">
+                    <h3>Projeto de extensão</h3>
+
+                    <p>
+                        Iniciativa acadêmica voltada à
+                        acessibilidade e à inclusão
+                        nos espaços públicos.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="rodape-inferior">
+
+                <ul class="rodape-legal"
+                    aria-label="Privacidade e condições de uso">
+
+                    <li>
+                        <a href="privacidade.html">Privacidade (minuta)</a>
+                    </li>
+
+                    <li>
+                        <a href="termos.html">Termos de uso (minuta)</a>
+                    </li>
+
+                    <li>
+                        <a href="cookies.html#preferencias"
+                            data-privacidade-abrir>
+                            Preferências de privacidade
+                        </a>
+                    </li>
+
+                </ul>
+
+                <p>
+                    Praça para Todos — Projeto de extensão universitária
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/global.js" defer></script>
+    <script src="js/acessibilidade.js" defer></script>
+    <script src="js/privacidade.js" defer></script>
+
+</body>
+</html>

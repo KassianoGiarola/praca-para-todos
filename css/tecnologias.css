@@ -1,0 +1,339 @@
+
+/* ==========================================
+   TECNOLOGIAS ASSISTIVAS
+   Praça para Todos
+   Cabeçalho, menu e rodapé estilizados
+   pelo arquivo compartilhado global.css.
+========================================== */
+
+/* Estrutura geral */
+.tech-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   APRESENTAÇÃO INICIAL
+========================================== */
+
+.tech-hero {
+    padding-block: var(--espaco-xxl);
+    background-color: var(--cor-fundo);
+}
+
+.tech-subtitulo-topo {
+    display: block;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--espaco-sm);
+}
+
+.tech-titulo-hero {
+    width: 100%;
+    max-width: none;
+    color: var(--cor-primaria);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    white-space: nowrap;
+    margin: 0 0 var(--espaco-lg);
+}
+
+.tech-intro-texto {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 0 var(--espaco-lg);
+}
+
+.tech-banner-destaque {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding: var(--espaco-lg);
+    background-color: var(--cor-primaria);
+    border-radius: var(--borda-lg);
+}
+
+.tech-banner-destaque p {
+    color: var(--cor-clara);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ==========================================
+   ÁREA DOS CINCO TÓPICOS
+========================================== */
+
+.tech-showcase {
+    padding-block: var(--espaco-xxl);
+    background-color: var(--cor-clara);
+}
+
+.tech-showcase .tech-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-xl);
+}
+
+/* Mantém a identidade visual dos cartões originais */
+.tech-bloco-variado,
+.tech-bloco-lazer,
+.tech-bloco-seguranca {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: var(--espaco-xl);
+    background-color: var(--cor-clara);
+    border: 1px solid rgba(94, 53, 177, 0.16);
+    border-radius: var(--borda-lg);
+    box-shadow: 0 6px 22px rgba(46, 16, 101, 0.06);
+}
+
+/* Os cinco blocos usam a mesma organização horizontal */
+.tech-card-horizontal {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.5fr);
+    align-items: center;
+    gap: var(--espaco-xl);
+}
+
+/* Imagem à esquerda: vertical, um pouco mais alta que larga */
+.tech-card-midia {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    min-height: 340px;
+    overflow: hidden;
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-md);
+}
+
+.tech-card-midia img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--borda-md);
+}
+
+/* Conteúdo à direita */
+.tech-card-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+}
+
+/* Identificação numérica dos tópicos */
+.tech-pill {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.35rem 0.8rem;
+    margin-bottom: var(--espaco-sm);
+    color: var(--cor-secundaria);
+    background-color: var(--cor-fundo);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Títulos dos cinco tópicos */
+.tech-card-conteudo h2 {
+    color: var(--cor-primaria);
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    line-height: 1.3;
+    margin: 0 0 var(--espaco-md);
+}
+
+/* Texto introdutório */
+.tech-lead {
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0 0 var(--espaco-md);
+}
+
+/* Área destacada para funcionamento e benefícios */
+.tech-criterio-destaque {
+    padding: var(--espaco-lg);
+    margin-bottom: var(--espaco-md);
+    background-color: var(--cor-fundo);
+    border: 1px solid rgba(94, 53, 177, 0.14);
+    border-radius: var(--borda-md);
+}
+
+.tech-criterio-destaque h3 {
+    color: var(--cor-primaria);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 var(--espaco-xs);
+}
+
+.tech-criterio-destaque h3:not(:first-child) {
+    margin-top: var(--espaco-md);
+}
+
+.tech-criterio-destaque p {
+    color: var(--cor-texto);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Referências normativas */
+.tech-referencia {
+    padding: var(--espaco-sm) var(--espaco-md);
+    margin: 0;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    border-left: 4px solid var(--cor-secundaria);
+    border-radius: 0 var(--borda-md) var(--borda-md) 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   RESPONSIVIDADE — TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+    .tech-card-horizontal {
+        grid-template-columns: minmax(190px, 0.75fr) minmax(0, 1.25fr);
+        gap: var(--espaco-lg);
+    }
+
+    .tech-card-midia,
+    .tech-card-midia img {
+        min-height: 300px;
+    }
+
+    .tech-card-conteudo h2 {
+        font-size: 1.45rem;
+    }
+
+    .tech-criterio-destaque {
+        padding: var(--espaco-md);
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE — TABLETS MENORES
+========================================== */
+
+@media (max-width: 700px) {
+    .tech-card-horizontal {
+        grid-template-columns: 1fr;
+        gap: var(--espaco-lg);
+    }
+
+    .tech-card-midia {
+        height: auto;
+        min-height: 0;
+    }
+
+    .tech-card-midia img {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+        max-height: 420px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE — CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+    .tech-container {
+        padding-inline: 18px;
+    }
+
+    .tech-hero,
+    .tech-showcase {
+        padding-block: var(--espaco-lg);
+    }
+
+    .tech-titulo-hero {
+        font-size: clamp(1.55rem, 7vw, 2.2rem);
+        white-space: nowrap;
+    }
+
+    .tech-intro-texto,
+    .tech-lead {
+        font-size: 0.92rem;
+    }
+
+    .tech-banner-destaque {
+        padding: var(--espaco-md);
+    }
+
+    .tech-banner-destaque p {
+        font-size: 1rem;
+    }
+
+    .tech-bloco-variado,
+    .tech-bloco-lazer,
+    .tech-bloco-seguranca {
+        padding: var(--espaco-md);
+        border-radius: var(--borda-md);
+    }
+
+    .tech-card-conteudo h2 {
+        font-size: 1.35rem;
+    }
+
+    .tech-criterio-destaque {
+        padding: var(--espaco-md);
+    }
+
+    .tech-criterio-destaque p {
+        font-size: 0.9rem;
+    }
+
+    .tech-referencia {
+        font-size: 0.78rem;
+    }
+}
+
+/* ==========================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* ==========================================
+   IMPRESSÃO
+========================================== */
+
+@media print {
+    .tech-bloco-variado,
+    .tech-bloco-lazer,
+    .tech-bloco-seguranca {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}

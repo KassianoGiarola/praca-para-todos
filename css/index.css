@@ -146,7 +146,7 @@
 
 .temas-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--espaco-md);
 }
 
@@ -163,10 +163,12 @@
 
     display: flex;
     flex-direction: column;
+    
 }
 
 .tema-imagem-container {
     position: relative;
+    
 }
 
 .tema-imagem {
@@ -287,6 +289,149 @@
 }
 
 
+/* =========================================
+   DIAGNÓSTICO E AVALIAÇÃO
+========================================= */
+
+.diagnostico-secao {
+    margin-top: 50px;
+}
+
+/* Cabeçalho da seção */
+
+.etiqueta {
+    
+    display: flex;
+    align-items: center;    /* Centraliza verticalmente */
+    
+}
+
+.diagnostico-etiqueta {
+    padding: 3px 11px;
+
+    background-color: var(--cor-fundo2);
+    color: var(--cor-secundaria);
+
+    border-radius: 30px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Card horizontal */
+
+.diagnostico-card {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 16px;
+    align-content: start;
+    overflow: hidden;
+
+    background-color: #f5efff;
+
+    padding: 20px;
+    
+    border-radius: 18px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.diagnostico-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(70, 35, 120, 0.10);
+}
+
+/* Cabeçalho Card */
+
+.diagnostico-cabecalho-card {
+    
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.cabecalho-card {
+    display: flex;
+    flex-direction: row; /* Fica em linha (padrão do flex) */
+    gap: 10px; /* Adiciona espaço entre os spans */
+    align-items: center;
+    
+}
+
+/* Ícone */
+
+.diagnostico-icone {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: var(--cor-clara);
+    color: var(--cor-secundaria);
+
+    border: 4px solid #f5efff;
+    border-radius: 50%;
+}
+
+/* Conteúdo */
+
+.diagnostico-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 24px;
+}
+
+.diagnostico-conteudo h3 {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+
+.diagnostico-conteudo p {
+    margin: 0;
+
+    color: #626078;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Link */
+
+.diagnostico-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    color: #7040b5;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: gap 0.2s ease;
+}
+
+.diagnostico-link:hover {
+    gap: 14px;
+}
+
+.diagnostico-link:focus-visible {
+    outline: 3px solid #7040b5;
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
 /* ==========================================
    Responsividade - Hero
 ========================================== */
@@ -341,12 +486,20 @@
     .temas-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .tema-card:last-child {
+        grid-column: auto; /* Remove a regra da coluna 2 em telas pequenas */
+      }
 }
 
 @media (max-width: 480px) {
     .temas-grid {
         grid-template-columns: 1fr;
     }
+
+    .tema-card:last-child {
+        grid-column: auto; /* Remove a regra da coluna 2 em telas pequenas */
+      }
 }
 
 
