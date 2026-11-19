@@ -1,0 +1,150 @@
+/* ADICIONE ESTE BLOCO AO FINAL DE css/sinalizacao.css */
+
+/* Hero com card roxo de destaque */
+.sinalizacao-hero-conteudo {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    align-items: center;
+    gap: 36px;
+}
+
+.sinalizacao-hero-texto {
+    min-width: 0;
+}
+
+.sinalizacao-destaque-roxo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    min-height: 210px;
+    padding: 28px;
+    color: #fff;
+    background: linear-gradient(135deg, #56328f, #7449b6);
+    border-radius: 24px;
+    box-shadow: 0 14px 35px rgba(66, 37, 112, 0.18);
+}
+
+.sinalizacao-destaque-roxo .destaque-icone {
+    display: grid;
+    place-items: center;
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
+    color: #56328f;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.sinalizacao-destaque-roxo h2 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    line-height: 1.25;
+}
+
+.sinalizacao-destaque-roxo p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.94);
+    line-height: 1.65;
+}
+
+/* Imagens sem tarja/overlay; a tarja que vinha nas duas fotos foi removida
+   dos arquivos de imagem no pacote atualizado. */
+.sinalizacao-card > img,
+.diagnostico-card > img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    background: var(--sinalizacao-secondary, #eaf2ed);
+}
+
+/* Referências técnicas e legais em cada card */
+.card-fontes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 0;
+    padding: 14px 0 0;
+    border-top: 1px solid var(--sinalizacao-border, #e0e7e2);
+    list-style: none;
+}
+
+.card-fontes li {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 11px;
+    color: var(--sinalizacao-primary, #286b57);
+    background: var(--sinalizacao-secondary, #eaf2ed);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+/* Diagnósticos acompanham a paleta principal do site, sem laranja */
+.diagnostico-card {
+    border-bottom: 4px solid var(--sinalizacao-primary, #286b57);
+}
+
+.diagnostico-card .card-number {
+    color: var(--sinalizacao-primary, #286b57);
+    background: var(--sinalizacao-secondary, #eaf2ed);
+}
+
+.diagnostico-card .card-content h3 {
+    color: var(--sinalizacao-primary, #286b57);
+}
+
+@media (max-width: 900px) {
+    .sinalizacao-hero-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .sinalizacao-destaque-roxo {
+        min-height: 0;
+    }
+
+    .sinalizacao-card > img,
+    .diagnostico-card > img {
+        height: 290px;
+    }
+}
+
+@media (max-width: 650px) {
+    .sinalizacao-destaque-roxo {
+        align-items: flex-start;
+        gap: 14px;
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .sinalizacao-destaque-roxo .destaque-icone {
+        flex-basis: 54px;
+        width: 54px;
+        height: 54px;
+        font-size: 1.8rem;
+    }
+
+    .sinalizacao-card > img,
+    .diagnostico-card > img {
+        height: 250px;
+    }
+
+    .card-fontes li {
+        font-size: 0.74rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sinalizacao-card,
+    .diagnostico-card,
+    .sinalizacao-card > img,
+    .diagnostico-card > img {
+        transition: none !important;
+        transform: none !important;
+    }
+}

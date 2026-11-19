@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title id="title">Piso tátil direcional</title>
+<desc id="desc">Ilustração de uma calçada cinza com uma faixa amarela de piso tátil direcional formada por barras longitudinais em relevo.</desc>
+<defs>
+  <linearGradient id="ground" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#d9ddda"/><stop offset="1" stop-color="#aeb7b1"/></linearGradient>
+  <linearGradient id="yellow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f6d65b"/><stop offset="1" stop-color="#d9a900"/></linearGradient>
+  <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b98408"/><stop offset=".22" stop-color="#ffe889"/><stop offset=".55" stop-color="#f4d24f"/><stop offset="1" stop-color="#b98408"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
+  <pattern id="pavers" width="260" height="150" patternUnits="userSpaceOnUse"><path d="M0 0H260M0 75H260M0 150H260M130 0V75M65 75V150" fill="none" stroke="#929c96" stroke-opacity=".34" stroke-width="3"/></pattern>
+</defs>
+<rect width="1200" height="700" fill="url(#ground)"/>
+<rect width="1200" height="700" fill="url(#pavers)"/>
+<path d="M390 700 L485 0 H715 L810 700 Z" fill="#b18a18" opacity=".25" filter="url(#shadow)"/>
+<path d="M350 700 L470 0 H730 L850 700 Z" fill="url(#yellow)" stroke="#c99b10" stroke-width="5"/>
+<!-- Longitudinal bars: the raised ribs run in the direction of travel. -->
+<g stroke="#b88b0b" stroke-width="5" stroke-linejoin="round">
+  <path d="M425 700 L520 0 L553 0 L475 700 Z" fill="url(#bar)"/>
+  <path d="M505 700 L558 0 L591 0 L555 700 Z" fill="url(#bar)"/>
+  <path d="M585 700 L609 0 L642 0 L635 700 Z" fill="url(#bar)"/>
+  <path d="M665 700 L657 0 L690 0 L715 700 Z" fill="url(#bar)"/>
+  <path d="M745 700 L705 0 L738 0 L795 700 Z" fill="url(#bar)"/>
+</g>
+<g opacity=".18" stroke="#fff" stroke-width="3"><path d="M0 230H1200M0 470H1200"/></g>
+</svg>
