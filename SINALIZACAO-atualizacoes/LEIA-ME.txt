@@ -1,0 +1,15 @@
+PACOTE DE IMAGENS ATUALIZADO — SINALIZAÇÃO
+
+Coloque a pasta assets/images na raiz do repositório, mantendo os nomes.
+
+Arquivos novos:
+- piso-tatil-direcional.svg: ilustração esquemática com barras longitudinais em relevo.
+- piso-tatil-alerta.svg: ilustração esquemática com relevos pontuais em grade.
+
+Imagens ajustadas:
+- exemplo-02-piso-tatil.jpg
+- exemplo-03-emissor-sonoro.jpg
+
+As duas imagens acima tinham uma tarja preta com legenda incorporada na própria fotografia. Ela foi removida por recorte da parte inferior. A tarja não era um elemento CSS.
+
+Os demais arquivos JPEG foram preservados a partir do pacote de imagens original do projeto.
