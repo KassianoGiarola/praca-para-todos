@@ -1,0 +1,245 @@
+
+/* ==========================================
+   PÁGINA DE DIRETRIZES
+========================================== */
+
+.diretrizes-page {
+    background-color: var(--cor-fundo);
+    padding: var(--espaco-xxl) 0;
+}
+
+/* ==========================================
+   APRESENTAÇÃO DA PÁGINA
+========================================== */
+
+.diretrizes-intro {
+    max-width: 850px;
+    margin: 0 auto var(--espaco-xxl);
+    padding: 0 var(--espaco-md);
+    text-align: center;
+}
+
+.diretrizes-etiqueta {
+    display: inline-block;
+    color: var(--cor-secundaria);
+    background-color: #E5DDF4;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: var(--espaco-sm);
+    text-transform: uppercase;
+}
+
+.diretrizes-intro h1 {
+    margin: 0 0 var(--espaco-md);
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+}
+
+.diretrizes-intro p {
+    color: var(--cor-texto);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL
+========================================== */
+
+.diretrizes-conteudo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-xl);
+}
+
+/* ==========================================
+   CARDS DAS DIRETRIZES
+========================================== */
+
+.diretriz-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    background-color: var(--cor-clara);
+    border: 1px solid #DED5ED;
+    border-radius: var(--borda-xl);
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(58, 31, 93, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.diretriz-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(58, 31, 93, 0.12);
+}
+
+/* ==========================================
+   IMAGENS
+========================================== */
+
+.diretriz-imagem {
+    min-height: 380px;
+    background-color: #E5DDF4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.diretriz-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+}
+
+/* ==========================================
+   CONTEÚDO DOS CARDS
+========================================== */
+
+.diretriz-conteudo {
+    padding: var(--espaco-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.diretriz-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--espaco-md);
+}
+
+.diretriz-conteudo h2 {
+    font-size: 1.65rem;
+    margin: 0 0 var(--espaco-md);
+    color: var(--cor-primaria);
+}
+
+.diretriz-conteudo p {
+    color: var(--cor-texto);
+    line-height: 1.8;
+    margin: 0 0 var(--espaco-md);
+}
+
+/* ==========================================
+   TÍTULOS DOS TÓPICOS
+========================================== */
+
+.diretriz-conteudo h3 {
+    font-size: 1.05rem;
+    color: var(--cor-secundaria);
+    margin: var(--espaco-sm) 0 var(--espaco-xs);
+}
+
+/* ==========================================
+   LISTAS
+========================================== */
+
+.diretriz-conteudo ul {
+    padding-left: 1.3rem;
+    margin: 0 0 var(--espaco-md);
+}
+
+.diretriz-conteudo li {
+    color: var(--cor-texto);
+    line-height: 1.7;
+    padding-left: 0.25rem;
+    margin-bottom: 0.45rem;
+}
+
+.diretriz-conteudo li::marker {
+    color: var(--cor-secundaria);
+}
+
+/* ==========================================
+   CARDS ALTERNADOS
+========================================== */
+
+.diretriz-card:nth-child(even) .diretriz-imagem {
+    order: 2;
+}
+
+.diretriz-card:nth-child(even) .diretriz-conteudo {
+    order: 1;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 900px) {
+    .diretriz-card {
+        grid-template-columns: 1fr;
+    }
+
+    .diretriz-imagem {
+        min-height: 300px;
+    }
+
+    .diretriz-imagem img {
+        min-height: 300px;
+        max-height: 350px;
+    }
+
+    .diretriz-card:nth-child(even) .diretriz-imagem,
+    .diretriz-card:nth-child(even) .diretriz-conteudo {
+        order: initial;
+    }
+
+    .diretriz-conteudo {
+        padding: var(--espaco-lg);
+    }
+}
+
+@media (max-width: 600px) {
+    .diretrizes-page {
+        padding: var(--espaco-xl) 0;
+    }
+
+    .diretrizes-intro h1 {
+        font-size: 2rem;
+    }
+
+    .diretrizes-intro p {
+        font-size: 0.95rem;
+    }
+
+    .diretrizes-conteudo {
+        padding: 0 1rem;
+        gap: var(--espaco-lg);
+    }
+
+    .diretriz-imagem {
+        min-height: 220px;
+    }
+
+    .diretriz-imagem img {
+        min-height: 220px;
+        max-height: 260px;
+    }
+
+    .diretriz-conteudo {
+        padding: 1.25rem;
+    }
+
+    .diretriz-conteudo h2 {
+        font-size: 1.4rem;
+    }
+}
