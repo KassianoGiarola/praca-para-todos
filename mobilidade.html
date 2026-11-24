@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/mobiliarios.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="stylesheet" href="css/privacidade.css">
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+    <title>Rotas Acessíveis | Praça para Todos</title>
+    <meta
+        name="description"
+        content="Conheça os critérios de acessibilidade para rotas, calçadas, rampas e pisos em espaços públicos."
+    >
+</head>
+
+<body>
+
+    <a class="pular-conteudo" href="#conteudo-principal">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/icons/logo.svg"
+                    alt=""
+                    class="logo-icone"
+                    width="36"
+                    height="36"
+                >
+                <span>Praça para Todos</span>
+            </a>
+
+            <button
+                class="botao-menu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+
+                <!-- Ícone de abrir -->
+                <svg
+                    class="icone-menu icone-abrir"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="M2 7h16"/>
+                    <path d="M2 13h10"/>
+                </svg>
+
+                <!-- Ícone de fechar -->
+                <svg
+                    class="icone-menu icone-fechar"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    aria-hidden="true"
+                >
+                    <path d="M5 5L15 15"/>
+                    <path d="M15 5L5 15"/>
+                </svg>
+
+            </button>
+
+            <nav id="menu-principal" aria-label="Navegação principal">
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo-principal" tabindex="-1">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="rotas-hero" aria-labelledby="titulo-pagina">
+
+            <div class="container rotas-hero-conteudo">
+
+                <div class="rotas-hero-texto">
+
+                    <span class="rotas-etiqueta">
+                        Mobilidade e inclusão
+                    </span>
+
+                    <h1 id="titulo-pagina">
+                        Rotas Acessíveis
+                    </h1>
+
+                    <p>
+                        Uma praça acessível deve permitir que todas as pessoas
+                        circulem com segurança, autonomia e conforto,
+                        independentemente de suas condições físicas ou
+                        de mobilidade.
+                    </p>
+
+                    <p>
+                        Para isso, caminhos, calçadas, rampas e pisos precisam
+                        oferecer condições adequadas de deslocamento,
+                        eliminando barreiras que possam dificultar o acesso
+                        e a utilização dos espaços públicos.
+                    </p>
+
+                    <!-- CARD DE DESTAQUE -->
+                    <div class="mobiliarios-hero-destaque">
+
+                        <div class="mobiliarios-hero-card">
+
+                            <p>
+                                Acessibilidade também significa permitir que
+                                todas as pessoas utilizem os espaços públicos
+                                com autonomia e segurança.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <a href="#conteudo-rotas" class="botao botao-primario">
+                        Conheça os critérios
+                    </a>
+
+                </div>
+
+                <div class="rotas-hero-imagem">
+
+                    <img
+                        src="assets/mobilidade.png"
+                        alt="Representação de uma rota acessível em um espaço público."
+                        loading="eager"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+        <section class="rotas-introducao secao">
+
+            <div class="container">
+
+                <div class="rotas-titulo-secao">
+
+                    <span class="rotas-etiqueta">
+                        Acessibilidade nos espaços públicos
+                    </span>
+
+                    <h2>
+                        Caminhos que conectam pessoas
+                    </h2>
+
+                    <p>
+                        A acessibilidade é fundamental para garantir que
+                        pessoas com deficiência ou mobilidade reduzida
+                        possam utilizar os espaços públicos em igualdade
+                        de condições.
+                    </p>
+
+                    <p>
+                        A ABNT NBR 9050:2020 estabelece parâmetros para
+                        promover a acessibilidade e contribuir para a
+                        eliminação de barreiras nos ambientes urbanos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDO -->
+        <section
+            class="rotas-conteudo secao"
+            id="conteudo-rotas"
+            aria-labelledby="titulo-conteudo"
+        >
+
+            <div class="container">
+
+                <div class="rotas-titulo-secao">
+
+                    <span class="rotas-etiqueta">
+                        Parâmetros de acessibilidade
+                    </span>
+
+                    <h2 id="titulo-conteudo">
+                        O que uma rota acessível precisa oferecer?
+                    </h2>
+
+                    <p>
+                        Conheça os principais elementos que devem ser
+                        considerados no planejamento e na avaliação
+                        da acessibilidade de uma praça.
+                    </p>
+
+                </div>
+
+
+                <!-- 01 - ROTAS E LARGURA -->
+                <article class="rota-item">
+
+                    <div class="rota-imagem">
+
+                        <img
+                            src="assets/mobilidade.png"
+                            alt="Caminho de circulação em espaço público, representando uma rota acessível."
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="rota-conteudo">
+
+                        <span class="rota-numero">01</span>
+
+                        <h3>Rotas acessíveis e largura de circulação</h3>
+
+                        <p>
+                            As rotas acessíveis devem permitir o deslocamento
+                            contínuo e seguro de todas as pessoas. Para isso,
+                            precisam estar livres de obstáculos e apresentar
+                            dimensões adequadas para a circulação.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Faixa livre de circulação com largura mínima
+                                de 1,20 m.
+                            </li>
+
+                            <li>
+                                Altura livre de pelo menos 2,10 m.
+                            </li>
+
+                            <li>
+                                Ausência de obstáculos que dificultem
+                                a passagem dos pedestres.
+                            </li>
+
+                            <li>
+                                Organização dos elementos do mobiliário
+                                urbano sem prejudicar o deslocamento.
+                            </li>
+
+                            <li>
+                                Preferência por larguras maiores em locais
+                                com grande circulação de pessoas.
+                            </li>
+                        </ul>
+
+                        <span class="rota-referencia">
+                            Referência: ABNT NBR 9050:2020.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 02 - CALÇADAS -->
+                <article class="rota-item rota-alternada">
+
+                    <div class="rota-imagem">
+
+                        <img
+                            src="assets/mobilidade.png"
+                            alt="Calçada de espaço público representando uma superfície adequada para circulação."
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="rota-conteudo">
+
+                        <span class="rota-numero">02</span>
+
+                        <h3>Calçadas e passeios</h3>
+
+                        <p>
+                            As calçadas e os passeios devem oferecer uma
+                            superfície adequada para a circulação de
+                            pedestres. Buracos, degraus, obstáculos e
+                            desníveis podem dificultar o deslocamento,
+                            principalmente de cadeirantes, idosos e pessoas
+                            que utilizam bengalas ou andadores.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Superfície regular, firme e segura.
+                            </li>
+
+                            <li>
+                                Inclinação transversal máxima de 3%
+                                nas calçadas externas.
+                            </li>
+
+                            <li>
+                                Inclinação longitudinal dos passeios
+                                acompanhando, em regra, a inclinação da via.
+                            </li>
+
+                            <li>
+                                Atenção aos trechos com inclinação igual
+                                ou superior a 5%, caracterizados como rampas.
+                            </li>
+
+                            <li>
+                                Manutenção das superfícies para evitar
+                                buracos, irregularidades e desníveis.
+                            </li>
+                        </ul>
+
+                        <span class="rota-referencia">
+                            Referência: ABNT NBR 9050:2020.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 03 - RAMPAS -->
+                <article class="rota-item">
+
+                    <div class="rota-imagem">
+
+                        <img
+                            src="assets/mobilidade.png"
+                            alt="Rampa em espaço público representando uma alternativa acessível para vencer desníveis."
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="rota-conteudo">
+
+                        <span class="rota-numero">03</span>
+
+                        <h3>Inclinação das rampas acessíveis</h3>
+
+                        <p>
+                            As rampas permitem vencer desníveis e realizar
+                            a circulação entre diferentes níveis. Seu
+                            dimensionamento deve considerar a altura
+                            do desnível, o comprimento horizontal e
+                            a inclinação permitida.
+                        </p>
+
+                        <h4>Como calcular a inclinação?</h4>
+
+                        <p>
+                            A inclinação é calculada dividindo-se a altura
+                            vencida pelo comprimento horizontal e
+                            multiplicando o resultado por 100.
+                        </p>
+
+                        <div
+                            class="rota-formula"
+                            aria-label="Fórmula da inclinação: i é igual a h dividido por c, multiplicado por 100."
+                        >
+
+                            <span class="formula-titulo">
+                                Fórmula da inclinação
+                            </span>
+
+                            <span class="formula-equacao">
+                                i = (h / c) × 100
+                            </span>
+
+                            <span class="formula-legenda">
+                                i = inclinação (%) · h = altura · c = comprimento horizontal
+                            </span>
+
+                        </div>
+
+                        <h4>Aspectos importantes</h4>
+
+                        <ul>
+                            <li>
+                                A inclinação de 8,33% (relação de 1:12)
+                                é uma referência bastante utilizada,
+                                respeitando as condições e os limites
+                                estabelecidos pela norma.
+                            </li>
+
+                            <li>
+                                Largura adequada para a circulação.
+                            </li>
+
+                            <li>
+                                Corrimãos e patamares quando exigidos.
+                            </li>
+
+                            <li>
+                                Dimensionamento de acordo com a altura
+                                do desnível e o comprimento da rampa.
+                            </li>
+                        </ul>
+
+                        <span class="rota-referencia">
+                            Referência: ABNT NBR 9050:2020.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 04 - PISOS -->
+                <article class="rota-item rota-alternada">
+
+                    <div class="rota-imagem">
+
+                        <img
+                            src="assets/mobilidade.png"
+                            alt="Piso de circulação em espaço público, representando uma superfície acessível."
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="rota-conteudo">
+
+                        <span class="rota-numero">04</span>
+
+                        <h3>Características dos pisos acessíveis</h3>
+
+                        <p>
+                            Os pisos das rotas acessíveis devem facilitar
+                            a circulação e reduzir o risco de acidentes.
+                            Superfícies inadequadas, peças soltas,
+                            buracos e irregularidades podem dificultar
+                            o deslocamento e comprometer a segurança.
+                        </p>
+
+                        <h4>Critérios de acessibilidade</h4>
+
+                        <ul>
+                            <li>
+                                Superfícies regulares, firmes e estáveis.
+                            </li>
+
+                            <li>
+                                Características antiderrapantes tanto
+                                em condições secas quanto molhadas.
+                            </li>
+
+                            <li>
+                                Ausência de buracos, peças soltas
+                                e irregularidades.
+                            </li>
+
+                            <li>
+                                Manutenção periódica das áreas
+                                de circulação.
+                            </li>
+
+                            <li>
+                                Utilização de materiais adequados
+                                para os espaços de circulação.
+                            </li>
+                        </ul>
+
+                        <h4>O papel do piso tátil</h4>
+
+                        <p>
+                            O piso tátil é utilizado para orientar e alertar
+                            pessoas com deficiência visual. Ele pode indicar
+                            direções de deslocamento e alertar sobre
+                            obstáculos ou situações que exigem atenção.
+                            Sua instalação deve seguir os critérios
+                            de sinalização tátil previstos na norma.
+                        </p>
+
+                        <span class="rota-referencia">
+                            Referência: ABNT NBR 9050:2020.
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPORTÂNCIA E DIAGNÓSTICO -->
+        <section
+            class="rotas-importancia secao"
+            aria-labelledby="titulo-importancia"
+        >
+
+            <div class="container">
+
+                <div class="rotas-importancia-intro">
+
+                    <span class="rotas-etiqueta">
+                        Avaliação dos espaços públicos
+                    </span>
+
+                    <h2 id="titulo-importancia">
+                        A importância da acessibilidade nas praças
+                    </h2>
+
+                    <p>
+                        A aplicação dos critérios de acessibilidade
+                        contribui para tornar os espaços públicos mais
+                        seguros, inclusivos e acessíveis a toda a população.
+                        Nas praças, esses cuidados permitem utilizar
+                        caminhos, bancos, áreas de convivência e demais
+                        equipamentos com maior autonomia.
+                    </p>
+
+                </div>
+
+
+                <div class="rotas-importancia-imagem">
+
+                    <img
+                        src="assets/mobilidade.png"
+                        alt="Espaço público com caminhos e estruturas que favorecem a circulação de pessoas."
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="rotas-avaliacao">
+
+                    <h3>O que observar durante a avaliação?</h3>
+
+                    <p>
+                        A análise das condições de acessibilidade de uma
+                        praça deve considerar diferentes aspectos do
+                        ambiente e identificar possíveis barreiras
+                        ao deslocamento.
+                    </p>
+
+                    <div class="rotas-avaliacao-grid">
+
+                        <article class="rotas-avaliacao-item">
+                            <h4>Rotas de circulação</h4>
+                            <p>
+                                Verificar as larguras disponíveis,
+                                a continuidade dos caminhos e a
+                                presença de obstáculos.
+                            </p>
+                        </article>
+
+                        <article class="rotas-avaliacao-item">
+                            <h4>Calçadas e pisos</h4>
+                            <p>
+                                Observar as condições das superfícies,
+                                a existência de irregularidades
+                                e a segurança durante a circulação.
+                            </p>
+                        </article>
+
+                        <article class="rotas-avaliacao-item">
+                            <h4>Rampas</h4>
+                            <p>
+                                Identificar a existência de rampas
+                                e verificar suas condições de
+                                acessibilidade.
+                            </p>
+                        </article>
+
+                        <article class="rotas-avaliacao-item">
+                            <h4>Obstáculos</h4>
+                            <p>
+                                Identificar elementos que possam
+                                dificultar ou impedir o deslocamento
+                                dos usuários.
+                            </p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rotas-conclusao">
+
+                    <h3>Mobilidade acessível é direito de todos</h3>
+
+                    <p>
+                        Planejar espaços públicos acessíveis significa
+                        considerar as diferentes necessidades das pessoas
+                        desde a organização dos caminhos até as condições
+                        de circulação e permanência.
+                    </p>
+
+                    <p>
+                        A avaliação das praças com base nos parâmetros
+                        de acessibilidade permite identificar problemas
+                        e propor melhorias para que todos possam utilizar
+                        esses ambientes com mais segurança e autonomia.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REFERÊNCIA -->
+        <section class="rotas-referencias">
+
+            <div class="container">
+
+                <h2>Referência bibliográfica</h2>
+
+                <p>
+                    ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS.
+                    <strong>ABNT NBR 9050:2020:</strong>
+                    Acessibilidade a edificações, mobiliário,
+                    espaços e equipamentos urbanos.
+                    Rio de Janeiro: ABNT, 2020.
+                    Versão corrigida em 2021.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container">
+
+            <div class="rodape-conteudo">
+
+                <!-- Informações do projeto -->
+                <div class="rodape-sobre">
+                    <h2>Praça para Todos</h2>
+
+                    <p>
+                        Promovendo acessibilidade, inclusão e
+                        conhecimento para transformar os
+                        espaços públicos.
+                    </p>
+                </div>
+
+                <!-- Navegação -->
+                <nav
+                    class="rodape-navegacao"
+                    aria-label="Navegação do rodapé"
+                >
+                    <h3>Navegação</h3>
+
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre o projeto</a></li>
+                        <li><a href="diretrizes.html">Diretrizes</a></li>
+                        <li><a href="mobiliarios.html">Mobiliários Urbanos</a></li>
+                        <li><a href="biblioteca.html">Biblioteca</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Informações institucionais -->
+                <div class="rodape-institucional">
+                    <h3>Projeto de extensão</h3>
+
+                    <p>
+                        Iniciativa acadêmica voltada à
+                        acessibilidade e à inclusão
+                        nos espaços públicos.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="rodape-inferior">
+
+                <ul
+                    class="rodape-legal"
+                    aria-label="Privacidade e condições de uso"
+                >
+                    <li>
+                        <a href="privacidade.html">
+                            Privacidade (minuta)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="termos.html">
+                            Termos de uso (minuta)
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="cookies.html#preferencias"
+                            data-privacidade-abrir
+                        >
+                            Preferências de privacidade
+                        </a>
+                    </li>
+                </ul>
+
+                <p>
+                    Praça para Todos — Projeto de extensão universitária
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/global.js" defer></script>
+    <script src="js/acessibilidade.js" defer></script>
+    <script src="js/privacidade.js" defer></script>
+
+</body>
+</html>

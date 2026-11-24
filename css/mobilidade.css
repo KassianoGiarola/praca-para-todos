@@ -1,0 +1,636 @@
+
+/* ==========================================
+   PÁGINA - ROTAS ACESSÍVEIS
+========================================== */
+
+
+/* ==========================================
+   ELEMENTOS GERAIS
+========================================== */
+
+.rotas-hero,
+.rotas-introducao,
+.rotas-conteudo,
+.rotas-importancia,
+.rotas-referencias {
+    overflow: hidden;
+}
+
+.rotas-etiqueta {
+    display: inline-block;
+    margin-bottom: var(--espaco-sm);
+
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.rotas-titulo-secao {
+    max-width: 780px;
+    margin: 0 auto var(--espaco-xxl);
+    text-align: center;
+}
+
+.rotas-titulo-secao h2 {
+    margin: 0 0 var(--espaco-md);
+}
+
+.rotas-titulo-secao p {
+    margin: 0 auto var(--espaco-sm);
+    color: #514B60;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.rotas-hero {
+    padding-block: var(--espaco-xxl);
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--cor-fundo) 0%,
+            #FFFFFF 75%
+        );
+}
+
+.rotas-hero-conteudo {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: var(--espaco-xxl);
+}
+
+.rotas-hero-texto {
+    max-width: 650px;
+}
+
+.rotas-hero-texto h1 {
+    margin: 0 0 var(--espaco-lg);
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    line-height: 1.15;
+}
+
+.rotas-hero-texto p {
+    margin: 0 0 var(--espaco-md);
+    color: #514B60;
+    line-height: 1.8;
+}
+
+.rotas-hero-texto > .botao {
+    margin-top: var(--espaco-sm);
+}
+
+.rotas-hero-imagem {
+    width: 100%;
+    min-height: 340px;
+    overflow: hidden;
+
+    border-radius: var(--borda-xl);
+    background-color: var(--cor-fundo2);
+    box-shadow: 0 16px 40px rgba(58, 31, 93, 0.12);
+}
+
+.rotas-hero-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   CARD DE DESTAQUE DO HERO
+   Mesmo conceito visual de Mobiliários Urbanos
+========================================== */
+
+.mobiliarios-hero-destaque {
+    width: 100%;
+    margin-top: var(--espaco-lg);
+    margin-bottom: var(--espaco-lg);
+}
+
+.mobiliarios-hero-card {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 125px;
+    padding: var(--espaco-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cor-primaria),
+            var(--cor-secundaria)
+        );
+
+    border-radius: var(--borda-xl);
+    box-shadow: 0 12px 28px rgba(58, 31, 93, 0.15);
+}
+
+.mobiliarios-hero-card p {
+    margin: 0;
+    color: var(--cor-clara);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   INTRODUÇÃO
+========================================== */
+
+.rotas-introducao {
+    background-color: var(--cor-clara);
+}
+
+.rotas-introducao .rotas-titulo-secao {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   CONTEÚDO - SEÇÕES DOS CRITÉRIOS
+========================================== */
+
+.rotas-conteudo {
+    background-color: var(--cor-fundo);
+}
+
+.rota-item {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: var(--espaco-xxl);
+
+    padding: var(--espaco-xl);
+    margin-bottom: var(--espaco-xl);
+
+    background-color: var(--cor-clara);
+    border: 1px solid rgba(167, 139, 217, 0.25);
+    border-radius: var(--borda-xl);
+
+    box-shadow: 0 8px 28px rgba(58, 31, 93, 0.05);
+}
+
+.rota-item:last-child {
+    margin-bottom: 0;
+}
+
+.rota-alternada {
+    grid-template-columns: 1.1fr 0.9fr;
+}
+
+.rota-alternada .rota-imagem {
+    order: 2;
+}
+
+.rota-alternada .rota-conteudo {
+    order: 1;
+}
+
+.rota-imagem {
+    width: 100%;
+    min-height: 320px;
+    overflow: hidden;
+
+    border-radius: var(--borda-lg);
+    background-color: var(--cor-fundo);
+}
+
+.rota-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+}
+
+.rota-conteudo {
+    min-width: 0;
+}
+
+.rota-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    margin-bottom: var(--espaco-sm);
+
+    color: var(--cor-clara);
+    background-color: var(--cor-secundaria);
+    border-radius: 50%;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.rota-conteudo h3 {
+    margin: 0 0 var(--espaco-md);
+    font-size: 1.65rem;
+}
+
+.rota-conteudo h4 {
+    margin: var(--espaco-lg) 0 var(--espaco-sm);
+    font-size: 1.05rem;
+}
+
+.rota-conteudo p {
+    margin: 0 0 var(--espaco-md);
+    color: #514B60;
+    line-height: 1.8;
+}
+
+.rota-conteudo ul {
+    display: grid;
+    gap: 0.75rem;
+
+    margin: 0;
+    padding-left: 1.3rem;
+
+    color: #514B60;
+}
+
+.rota-conteudo li {
+    padding-left: 0.25rem;
+    line-height: 1.7;
+}
+
+.rota-conteudo li::marker {
+    color: var(--cor-secundaria);
+}
+
+.rota-referencia {
+    display: block;
+    margin-top: var(--espaco-lg);
+    padding-top: var(--espaco-sm);
+
+    color: #655B73;
+    border-top: 1px solid rgba(167, 139, 217, 0.35);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   FÓRMULA DA INCLINAÇÃO
+========================================== */
+
+.rota-formula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espaco-sm);
+
+    margin-block: var(--espaco-lg);
+    padding: var(--espaco-lg);
+
+    text-align: center;
+    background-color: var(--cor-fundo);
+    border: 1px solid rgba(167, 139, 217, 0.4);
+    border-radius: var(--borda-lg);
+}
+
+.formula-titulo {
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.formula-equacao {
+    color: var(--cor-secundaria);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.formula-legenda {
+    color: #655B73;
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   IMPORTÂNCIA DA ACESSIBILIDADE
+========================================== */
+
+.rotas-importancia {
+    background-color: var(--cor-clara);
+}
+
+.rotas-importancia-intro {
+    max-width: 800px;
+    margin: 0 auto var(--espaco-xl);
+    text-align: center;
+}
+
+.rotas-importancia-intro h2 {
+    margin: 0 0 var(--espaco-md);
+}
+
+.rotas-importancia-intro p {
+    color: #514B60;
+    line-height: 1.8;
+}
+
+.rotas-importancia-imagem {
+    width: 100%;
+    max-height: 430px;
+    margin-bottom: var(--espaco-xxl);
+    overflow: hidden;
+
+    background-color: var(--cor-fundo);
+    border-radius: var(--borda-xl);
+}
+
+.rotas-importancia-imagem img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   AVALIAÇÃO DAS PRAÇAS
+========================================== */
+
+.rotas-avaliacao {
+    margin-bottom: var(--espaco-xxl);
+}
+
+.rotas-avaliacao > h3 {
+    margin: 0 0 var(--espaco-sm);
+    text-align: center;
+}
+
+.rotas-avaliacao > p {
+    max-width: 760px;
+    margin: 0 auto var(--espaco-xl);
+
+    color: #514B60;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.rotas-avaliacao-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--espaco-md);
+}
+
+.rotas-avaliacao-item {
+    padding: var(--espaco-lg);
+
+    background-color: var(--cor-fundo);
+    border: 1px solid rgba(167, 139, 217, 0.3);
+    border-radius: var(--borda-lg);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.rotas-avaliacao-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(58, 31, 93, 0.08);
+}
+
+.rotas-avaliacao-item h4 {
+    margin: 0 0 var(--espaco-sm);
+    color: var(--cor-primaria);
+}
+
+.rotas-avaliacao-item p {
+    margin: 0;
+    color: #514B60;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   CONCLUSÃO
+========================================== */
+
+.rotas-conclusao {
+    padding: var(--espaco-xl);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cor-primaria),
+            var(--cor-secundaria)
+        );
+
+    border-radius: var(--borda-xl);
+}
+
+.rotas-conclusao h3 {
+    margin: 0 0 var(--espaco-md);
+    color: var(--cor-clara);
+    font-size: 1.6rem;
+}
+
+.rotas-conclusao p {
+    margin: 0 0 var(--espaco-sm);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+}
+
+.rotas-conclusao p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   REFERÊNCIAS
+========================================== */
+
+.rotas-referencias {
+    padding-block: var(--espaco-xl);
+    background-color: var(--cor-fundo);
+}
+
+.rotas-referencias h2 {
+    margin: 0 0 var(--espaco-md);
+    font-size: 1.3rem;
+}
+
+.rotas-referencias p {
+    max-width: 850px;
+    margin: 0;
+
+    color: #514B60;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .rotas-hero-conteudo {
+        grid-template-columns: 1fr;
+        gap: var(--espaco-xl);
+    }
+
+    .rotas-hero-texto {
+        max-width: 100%;
+    }
+
+    .rotas-hero-imagem {
+        min-height: 300px;
+    }
+
+    .rotas-hero-imagem img {
+        min-height: 300px;
+    }
+
+    .rota-item,
+    .rota-alternada {
+        grid-template-columns: 1fr;
+        gap: var(--espaco-lg);
+    }
+
+    .rota-alternada .rota-imagem,
+    .rota-alternada .rota-conteudo {
+        order: initial;
+    }
+
+    .rota-imagem,
+    .rota-imagem img {
+        min-height: 280px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .rotas-hero {
+        padding-block: var(--espaco-xl);
+    }
+
+    .rotas-hero-texto h1 {
+        font-size: 2.2rem;
+    }
+
+    .rotas-titulo-secao h2,
+    .rotas-importancia-intro h2 {
+        font-size: 1.65rem;
+    }
+
+    .mobiliarios-hero-card {
+        min-height: auto;
+        padding: var(--espaco-md);
+    }
+
+    .mobiliarios-hero-card p {
+        font-size: 0.95rem;
+    }
+
+    .rota-item {
+        padding: var(--espaco-md);
+        margin-bottom: var(--espaco-lg);
+    }
+
+    .rota-conteudo h3 {
+        font-size: 1.4rem;
+    }
+
+    .rota-imagem,
+    .rota-imagem img {
+        min-height: 220px;
+    }
+
+    .rotas-importancia-imagem img {
+        height: 260px;
+    }
+
+    .rotas-avaliacao-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rotas-conclusao {
+        padding: var(--espaco-lg);
+    }
+
+}
+
+
+/* ==========================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rotas-avaliacao-item {
+        transition: none;
+    }
+
+    .rotas-avaliacao-item:hover {
+        transform: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}
+
+
+/* ==========================================
+   IMPRESSÃO
+========================================== */
+
+@media print {
+
+    .rotas-hero,
+    .rotas-introducao,
+    .rotas-conteudo,
+    .rotas-importancia,
+    .rotas-referencias {
+        overflow: visible;
+    }
+
+    .rota-item,
+    .rotas-avaliacao-item,
+    .rotas-conclusao {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .rotas-hero {
+        background: none;
+    }
+
+    .rotas-conclusao {
+        background: none;
+        border: 1px solid var(--cor-primaria);
+    }
+
+    .rotas-conclusao h3,
+    .rotas-conclusao p {
+        color: var(--cor-texto);
+    }
+
+}
