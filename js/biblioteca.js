@@ -1,5 +1,5 @@
 
-const API_URL = "https://SUA-API-HOSPEDADA.com";
+const API_URL = "praca-para-todos-api.onrender.com";
 
 const lista = document.getElementById("biblioteca-lista");
 const modal = document.getElementById("modal-visualizador");
@@ -217,4 +217,3 @@ document.addEventListener("keydown", evento => {
 });
 
 carregarBiblioteca();
-    
