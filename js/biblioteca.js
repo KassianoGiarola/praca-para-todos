@@ -1,5 +1,5 @@
 
-const API_URL = "praca-para-todos-api.onrender.com";
+const API_URL = "https://praca-para-todos-api.onrender.com";
 
 const lista = document.getElementById("biblioteca-lista");
 const modal = document.getElementById("modal-visualizador");
@@ -73,31 +73,40 @@ function criarCard(modelo) {
 }
 
 async function carregarBiblioteca() {
-  try {
-    const resposta = await fetch(`${API_URL}/api/models`);
+    try {
+        const resposta = await fetch(`${API_URL}/api/models`);
 
-    if (!resposta.ok) {
-      throw new Error("Falha ao consultar a biblioteca.");
+        if (!resposta.ok) {
+            const detalhe = await resposta.text();
+
+            throw new Error(
+                `Erro ${resposta.status}: ${detalhe}`
+            );
+        }
+
+        modelos = await resposta.json();
+
+        lista.replaceChildren();
+
+        if (!modelos.length) {
+            lista.textContent = "Nenhum projeto disponível.";
+            return;
+        }
+
+        modelos.forEach(modelo => {
+            lista.appendChild(criarCard(modelo));
+        });
+
+    } catch (erro) {
+        console.error("Erro ao carregar biblioteca:", erro);
+
+        lista.innerHTML = `
+            <p class="mensagem-erro">
+                Não foi possível carregar os projetos técnicos.
+                Tente novamente mais tarde.
+            </p>
+        `;
     }
-
-    modelos = await resposta.json();
-
-    lista.replaceChildren();
-
-    if (!modelos.length) {
-      lista.textContent = "Nenhum projeto disponível no momento.";
-      return;
-    }
-
-    modelos.forEach(modelo => {
-      lista.appendChild(criarCard(modelo));
-    });
-
-  } catch (erro) {
-    console.error(erro);
-    lista.textContent =
-      "Não foi possível carregar os projetos. Tente novamente mais tarde.";
-  }
 }
 
 async function obterToken() {
