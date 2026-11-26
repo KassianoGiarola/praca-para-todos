@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="css/biblioteca.css">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="css/privacidade.css">
+
+    <!-- Autodesk Viewer -->
+    <link
+        rel="stylesheet"
+        href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css"
+    >
 </head>
 
 <body>
@@ -84,7 +90,7 @@
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="diretrizes.html">Diretrizes</a></li>
-                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="biblioteca.html" aria-current="page">Biblioteca</a></li>
                 </ul>
             </nav>
 
@@ -120,125 +126,94 @@
 
         </section>
 
-        <!-- LISTA DE MATERIAIS -->
+        <!-- PROJETOS TÉCNICOS -->
         <section
             class="lista-materiais"
-            aria-label="Materiais da biblioteca"
+            aria-label="Projetos técnicos da biblioteca"
         >
 
-            <!-- Material 1 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
+            <div class="biblioteca-lista" id="biblioteca-lista">
 
-                <div class="informacoes-material">
-                    <h2>Título do material 1</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
+                <div class="biblioteca-carregando" role="status">
+                    <span class="indicador-carregamento"></span>
+                    <p>Carregando projetos técnicos...</p>
                 </div>
-            </article>
 
-            <!-- Material 2 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
+            </div>
 
-                <div class="informacoes-material">
-                    <h2>Título do material 2</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 3 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 3</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 4 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 4</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 5 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 5</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 6 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 6</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 7 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 7</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 8 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 8</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 9 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 9</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
-
-            <!-- Material 10 -->
-            <article class="card-material">
-                <div class="imagem-material"></div>
-
-                <div class="informacoes-material">
-                    <h2>Título do material 10</h2>
-                    <p>Descrição breve sobre o conteúdo deste material.</p>
-                    <a href="#" class="link-material">Acessar material</a>
-                </div>
-            </article>
+            <noscript>
+                <p class="mensagem-erro">
+                    Ative o JavaScript para visualizar os projetos da biblioteca.
+                </p>
+            </noscript>
 
         </section>
 
     </main>
+
+    <!-- MODAL DO AUTODESK VIEWER -->
+    <div
+        class="modal-visualizador"
+        id="modal-visualizador"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-visualizador-conteudo"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-titulo"
+        >
+
+            <div class="modal-visualizador-cabecalho">
+
+                <div class="modal-titulo-grupo">
+                    <span class="biblioteca-etiqueta">
+                        VISUALIZAÇÃO TÉCNICA
+                    </span>
+
+                    <h2 id="modal-titulo">
+                        Projeto
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="fechar-visualizador"
+                    id="fechar-visualizador"
+                    aria-label="Fechar visualização"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M18 6 6 18"/>
+                        <path d="M6 6l12 12"/>
+                    </svg>
+                </button>
+
+            </div>
+
+            <div
+                id="autodesk-viewer"
+                class="autodesk-viewer"
+                aria-label="Visualizador interativo do projeto"
+            ></div>
+
+            <div class="visualizador-rodape">
+                <p>
+                    Utilize as ferramentas do visualizador para explorar
+                    o desenho técnico.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- RODAPÉ -->
     <footer class="rodape">
@@ -292,11 +267,17 @@
                     aria-label="Privacidade e condições de uso"
                 >
                     <li>
-                        <a href="privacidade.html">Privacidade (minuta)</a>
+                        <a href="privacidade.html">
+                            Privacidade (minuta)
+                        </a>
                     </li>
+
                     <li>
-                        <a href="termos.html">Termos de uso (minuta)</a>
+                        <a href="termos.html">
+                            Termos de uso (minuta)
+                        </a>
                     </li>
+
                     <li>
                         <a
                             href="cookies.html#preferencias"
@@ -316,10 +297,16 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="js/global.js"></script>
-    <script src="js/acessibilidade.js"></script>
-    <script src="js/privacidade.js"></script>
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="js/global.js" defer></script>
+    <script src="js/acessibilidade.js" defer></script>
+    <script src="js/privacidade.js" defer></script>
+
+    <!-- Autodesk Viewer SDK -->
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+
+    <!-- Biblioteca -->
+    <script src="js/biblioteca.js" defer></script>
 
 </body>
 </html>

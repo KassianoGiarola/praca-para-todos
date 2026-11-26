@@ -1,0 +1,66 @@
+[
+  {
+    "id": "banco",
+    "nome": "Banco acessível",
+    "descricao": "Desenho técnico de banco para espaços públicos.",
+    "arquivo": "DWG MOBILIÁRIOS URBANOS - BANCO.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9iYW5jby5kd2c",
+    "objectKey": "banco.dwg"
+  },
+  {
+    "id": "lixeira",
+    "nome": "Lixeira acessível",
+    "descricao": "Desenho técnico de lixeira para espaços públicos.",
+    "arquivo": "DWG MOBILIÁRIOS URBANOS - LIXEIRA.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9saXhlaXJhLmR3Zw",
+    "objectKey": "lixeira.dwg"
+  },
+  {
+    "id": "emissor-sonoro",
+    "nome": "Emissor sonoro acessível",
+    "descricao": "Projeto de equipamento emissor de sinalização sonora.",
+    "arquivo": "EMISSOR SONORO ACESSIVEL DWG.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9lbWlzc29yLXNvbm9yby5kd2c",
+    "objectKey": "emissor-sonoro.dwg"
+  },
+  {
+    "id": "mapa-tatil",
+    "nome": "Mapa tátil acessível",
+    "descricao": "Desenho técnico de mapa tátil para orientação.",
+    "arquivo": "MAPA TATIL ACESSIVEL DWG.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9tYXBhLXRhdGlsLmR3Zw",
+    "objectKey": "mapa-tatil.dwg"
+  },
+  {
+    "id": "placa-acessivel",
+    "nome": "Placa acessível",
+    "descricao": "Projeto de sinalização acessível.",
+    "arquivo": "PLACA ACESSIVEL DWG.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9wbGFjYS1hY2Vzc2l2ZWwuZHdn",
+    "objectKey": "placa-acessivel.dwg"
+  },
+  {
+    "id": "bebedouro",
+    "nome": "Bebedouro acessível",
+    "descricao": "Desenho técnico de bebedouro acessível.",
+    "arquivo": "DWG MOBILIÁRIOS URBANOS - BEBEDOURO.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9iZWJlZG91cm8uZHdn",
+    "objectKey": "bebedouro.dwg"
+  },
+  {
+    "id": "mesa",
+    "nome": "Mesa acessível",
+    "descricao": "Desenho técnico de mesa para espaços públicos.",
+    "arquivo": "DWG MOBILIÁRIOS URBANOS - MESA.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9tZXNhLmR3Zw",
+    "objectKey": "mesa.dwg"
+  },
+  {
+    "id": "piso-tatil",
+    "nome": "Piso tátil",
+    "descricao": "Desenho técnico de piso tátil.",
+    "arquivo": "PISO TÁTIL DWG.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9waXNvLXRhdGlsLmR3Zw",
+    "objectKey": "piso-tatil.dwg"
+  }
+]
