@@ -202,10 +202,9 @@
 }
 
 /* Quadro dimensional */
-
 .quadro-dimensional-imagem {
     width: 100%;
-    max-width: 650px;
+    max-width: none;
     margin: 3rem auto;
 }
 
