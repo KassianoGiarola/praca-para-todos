@@ -23,9 +23,13 @@ app.use(cors({
 
 app.use(express.json());
 
-// Cache separado para cada conjunto de permissões.
+// Cache de tokens separado por permissões.
 const tokenCache = new Map();
 
+/**
+ * Obtém um token Autodesk com os escopos solicitados.
+ * Os tokens ficam armazenados somente no backend.
+ */
 async function getApsToken(scope) {
   const cached = tokenCache.get(scope);
 
@@ -33,8 +37,15 @@ async function getApsToken(scope) {
     return cached.accessToken;
   }
 
+  const clientId = process.env.APS_CLIENT_ID;
+  const clientSecret = process.env.APS_CLIENT_SECRET;
+
+  if (!clientId || !clientSecret) {
+    throw new Error("Credenciais Autodesk não configuradas.");
+  }
+
   const credentials = Buffer.from(
-    `${process.env.APS_CLIENT_ID}:${process.env.APS_CLIENT_SECRET}`
+    `${clientId}:${clientSecret}`
   ).toString("base64");
 
   const response = await fetch(
@@ -55,11 +66,12 @@ async function getApsToken(scope) {
   const data = await response.json();
 
   if (!response.ok) {
-    console.error("Erro de autenticação APS:", data);
-    throw new Error("Falha na autenticação Autodesk.");
+    console.error("Erro de autenticação Autodesk:", data);
+    throw new Error("Não foi possível autenticar na Autodesk.");
   }
 
-  const expiresAt = Date.now() + (data.expires_in - 120) * 1000;
+  const expiresAt =
+    Date.now() + Math.max(0, data.expires_in - 120) * 1000;
 
   tokenCache.set(scope, {
     accessToken: data.access_token,
@@ -69,13 +81,27 @@ async function getApsToken(scope) {
   return data.access_token;
 }
 
+/**
+ * Lê o arquivo models.json.
+ */
 async function carregarModelos() {
-  const file = path.join(__dirname, "models.json");
-  const content = await fs.readFile(file, "utf8");
-  return JSON.parse(content);
+  const arquivo = path.join(__dirname, "models.json");
+  const conteudo = await fs.readFile(arquivo, "utf8");
+
+  return JSON.parse(conteudo);
 }
 
-// Token de leitura para o Autodesk Viewer.
+/**
+ * Rota inicial.
+ */
+app.get("/", (req, res) => {
+  res.send("API Praça para Todos — Autodesk Viewer");
+});
+
+/**
+ * Token com permissão somente de visualização.
+ * Utilizado pelo Autodesk Viewer no navegador.
+ */
 app.get("/api/token", async (req, res) => {
   try {
     const scope = "viewables:read";
@@ -90,8 +116,9 @@ app.get("/api/token", async (req, res) => {
         Math.floor((cached.expiresAt - Date.now()) / 1000)
       )
     });
+
   } catch (error) {
-    console.error("Erro /api/token:", error);
+    console.error("Erro em /api/token:", error);
 
     res.status(500).json({
       error: "Não foi possível obter autorização para visualizar os projetos."
@@ -99,13 +126,17 @@ app.get("/api/token", async (req, res) => {
   }
 });
 
-// Lista de modelos.
+/**
+ * Lista todos os projetos cadastrados.
+ */
 app.get("/api/models", async (req, res) => {
   try {
     const modelos = await carregarModelos();
+
     res.json(modelos);
+
   } catch (error) {
-    console.error("Erro /api/models:", error);
+    console.error("Erro em /api/models:", error);
 
     res.status(500).json({
       error: "Não foi possível carregar os modelos."
@@ -113,7 +144,9 @@ app.get("/api/models", async (req, res) => {
   }
 });
 
-// Miniaturas dos modelos.
+/**
+ * Retorna a miniatura de um projeto.
+ */
 app.get("/api/models/:id/thumbnail", async (req, res) => {
   try {
     const modelos = await carregarModelos();
@@ -130,7 +163,7 @@ app.get("/api/models/:id/thumbnail", async (req, res) => {
 
     const token = await getApsToken("viewables:read");
 
-    const response = await fetch(
+    const resposta = await fetch(
       `${APS_BASE}/modelderivative/v2/designdata/${modelo.urn}/thumbnail?width=600&height=450`,
       {
         headers: {
@@ -139,29 +172,37 @@ app.get("/api/models/:id/thumbnail", async (req, res) => {
       }
     );
 
-    if (!response.ok) {
-      const detalhe = await response.text();
+    if (!resposta.ok) {
+      const detalhe = await resposta.text();
 
-      console.error("Erro na miniatura APS:", response.status, detalhe);
+      console.error("Erro na miniatura Autodesk:", {
+        status: resposta.status,
+        detalhe
+      });
 
-      return res.status(response.status).json({
+      return res.status(resposta.status).json({
         error: "Miniatura ainda não está disponível."
       });
     }
 
-    const image = Buffer.from(await response.arrayBuffer());
+    const imagem = Buffer.from(
+      await resposta.arrayBuffer()
+    );
 
     res.setHeader(
       "Content-Type",
-      response.headers.get("content-type") || "image/png"
+      resposta.headers.get("content-type") || "image/png"
     );
 
-    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.setHeader(
+      "Cache-Control",
+      "public, max-age=86400"
+    );
 
-    res.send(image);
+    res.send(imagem);
 
   } catch (error) {
-    console.error("Erro na miniatura:", error);
+    console.error("Erro ao carregar miniatura:", error);
 
     res.status(500).json({
       error: "Erro ao carregar a miniatura."
@@ -169,7 +210,10 @@ app.get("/api/models/:id/thumbnail", async (req, res) => {
   }
 });
 
-// Download do arquivo DWG original.
+/**
+ * Gera uma URL temporária e redireciona
+ * o navegador para o arquivo DWG original.
+ */
 app.get("/api/models/:id/download", async (req, res) => {
   try {
     const modelos = await carregarModelos();
@@ -192,54 +236,57 @@ app.get("/api/models/:id/download", async (req, res) => {
       });
     }
 
-    // A permissão data:read fica somente no backend.
     const token = await getApsToken("data:read");
 
+    const bucketKey = encodeURIComponent(bucket);
     const objectKey = encodeURIComponent(modelo.objectKey);
 
-    const url =
-      `${APS_BASE}/oss/v2/buckets/${bucket}/objects/${objectKey}`;
+    const parametros = new URLSearchParams({
+      minutesExpiration: "5",
+      "response-content-type": "application/octet-stream",
+      "response-content-disposition":
+        `attachment; filename="${modelo.id}.dwg"`
+    });
 
-    const response = await fetch(url, {
+    const url =
+      `${APS_BASE}/oss/v2/buckets/${bucketKey}` +
+      `/objects/${objectKey}/signeds3download?${parametros}`;
+
+    const resposta = await fetch(url, {
+      method: "GET",
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
 
-    if (!response.ok) {
-      const detalhe = await response.text();
+    const dados = await resposta.json();
 
-      console.error(
-        "Erro no download APS:",
-        response.status,
-        detalhe
-      );
+    if (!resposta.ok) {
+      console.error("Erro ao gerar URL de download:", {
+        status: resposta.status,
+        detalhes: dados
+      });
 
-      return res.status(response.status).json({
-        error: "Não foi possível baixar o arquivo original."
+      return res.status(resposta.status).json({
+        error: "A Autodesk não autorizou o download.",
+        detalhe: dados
       });
     }
 
-    const arquivo = Buffer.from(await response.arrayBuffer());
+    if (dados.status !== "complete" || !dados.url) {
+      console.error("Arquivo não está pronto para download:", dados);
 
-    const nomeArquivo = modelo.arquivo || `${modelo.id}.dwg`;
+      return res.status(409).json({
+        error: "O arquivo ainda não está disponível.",
+        status: dados.status
+      });
+    }
 
-    res.setHeader(
-      "Content-Type",
-      "application/octet-stream"
-    );
-
-    res.setHeader(
-      "Content-Disposition",
-      `attachment; filename*=UTF-8''${encodeURIComponent(nomeArquivo)}`
-    );
-
-    res.setHeader("Content-Length", arquivo.length);
-
-    res.send(arquivo);
+    // A URL é temporária e não contém o token OAuth.
+    return res.redirect(302, dados.url);
 
   } catch (error) {
-    console.error("Erro no download:", error);
+    console.error("Erro na rota de download:", error);
 
     res.status(500).json({
       error: "Erro interno ao baixar o arquivo."
@@ -247,10 +294,7 @@ app.get("/api/models/:id/download", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("API Praça para Todos — Autodesk Viewer");
-});
-
+// Inicialização do servidor.
 app.listen(PORT, () => {
   console.log(`Servidor iniciado na porta ${PORT}`);
 });
