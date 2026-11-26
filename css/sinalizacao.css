@@ -11,10 +11,10 @@
 
 :root {
     --sinalizacao-primary:
-        var(--primary-color, var(--cor-primaria, #472272));
+        var(--primary-color, var(--cor-primaria, #3A1F5D));
 
     --sinalizacao-secondary:
-        var(--secondary-color, var(--cor-secundaria, #eaf2ed));
+        var(--secondary-color, var(--cor-fundo2, #6A3FB2));
 
     --sinalizacao-background:
         var(--background-color, var(--cor-fundo, #f7f9f7));
