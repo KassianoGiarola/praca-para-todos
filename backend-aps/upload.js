@@ -60,6 +60,30 @@ const arquivos = [
     nome: "Piso tátil",
     arquivo: "PISO TÁTIL DWG.dwg",
     descricao: "Desenho técnico de piso tátil."
+  },
+  {
+    id: "balanco",
+    nome: "Balanço",
+    arquivo: "BALANÇO.dwg",
+    descricao: "Desenho técnico de equipamento de balanço para espaços públicos."
+  },
+  {
+    id: "cavalgada",
+    nome: "Cavalgada",
+    arquivo: "CAVALGADA.dwg",
+    descricao: "Desenho técnico de equipamento recreativo para espaços públicos."
+  },
+  {
+    id: "gira-gira",
+    nome: "Gira-gira",
+    arquivo: "GIRA-GIRA.dwg",
+    descricao: "Desenho técnico de equipamento recreativo giratório."
+  },
+  {
+    id: "playground",
+    nome: "Playground",
+    arquivo: "PLAYGROUND.dwg",
+    descricao: "Projeto técnico de espaço e equipamentos recreativos infantis."
   }
 ];
 

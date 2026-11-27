@@ -62,5 +62,37 @@
     "arquivo": "PISO TÁTIL DWG.dwg",
     "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9waXNvLXRhdGlsLmR3Zw",
     "objectKey": "piso-tatil.dwg"
+  },
+  {
+    "id": "balanco",
+    "nome": "Balanço",
+    "descricao": "Desenho técnico de equipamento de balanço para espaços públicos.",
+    "arquivo": "BALANÇO.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9iYWxhbmNvLmR3Zw",
+    "objectKey": "balanco.dwg"
+  },
+  {
+    "id": "cavalgada",
+    "nome": "Cavalgada",
+    "descricao": "Desenho técnico de equipamento recreativo para espaços públicos.",
+    "arquivo": "CAVALGADA.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9jYXZhbGdhZGEuZHdn",
+    "objectKey": "cavalgada.dwg"
+  },
+  {
+    "id": "gira-gira",
+    "nome": "Gira-gira",
+    "descricao": "Desenho técnico de equipamento recreativo giratório.",
+    "arquivo": "GIRA-GIRA.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9naXJhLWdpcmEuZHdn",
+    "objectKey": "gira-gira.dwg"
+  },
+  {
+    "id": "playground",
+    "nome": "Playground",
+    "descricao": "Projeto técnico de espaço e equipamentos recreativos infantis.",
+    "arquivo": "PLAYGROUND.dwg",
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cHJhY2FfcGFyYV90b2Rvc19kd2dfMjAyNi9wbGF5Z3JvdW5kLmR3Zw",
+    "objectKey": "playground.dwg"
   }
 ]
